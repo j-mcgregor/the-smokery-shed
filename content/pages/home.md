@@ -1,30 +1,31 @@
 ---
 template: HomePage
 slug: ''
-title: Yellowcake
-featuredImage: 'https://ucarecdn.com/159203d3-881d-4218-baa1-ca4427b48d0d/'
-subtitle: ' Welcome to the ultimate Gatsby and Netlify starter project.'
+title: The Smokery Shed
+featuredImage: 'https://ucarecdn.com/8d2d8bc1-7b7a-4159-b855-4386341966ea/'
+subtitle: Catering and bar snacks
 meta:
-  description: This is a meta description.
-  title: The Ultimate Gatsby Starter
+  description: Catering in Wokingham and the Berkshire area
+  title: The Smokery Shed | Home
 ---
-Yellowcake is an opinionated starter project created by [Thrive Digital](https://thriveweb.com.au/) a [Gold Coast Web Design](https://thriveweb.com.au/) studio. to help you create lightening fast websites with [Gatsby](https://gatsbyjs.org) and [Netlify CMS](https://netlifycms.org).
+Welcome to The Smokery Shed Catering & Snacks!
 
-View the [project overview](https://thriveweb.com.au/the-lab/yellowcake-gatsby-react-js-starter-project/) and the [docs](https://github.com/thriveweb/yellowcake/blob/master/README.md).
 
-# Features
 
-* **[Gatsby](https://gatsbyjs.org)** static site generator
-* **[Netlify CMS](https://github.com/netlify/netlify-cms)** for content management
-* Dynamic menus and forms
-* **[Mailchimp](http://mailchimp.com)** and **[Uploadcare](https://uploadcare.com)** integrations
-* Fully responsive layout for mobile and widescreen browsing
-* Blog searching and paging functionality
-* Seamless image and content sliders
-* Instagram feed integration
+Whether you're looking for caterers with a difference for your special event or some gourmet snacks for yourself or your establishment, we provide food to remember!
 
-## Get started
 
-View the [Netlify CMS Docs](https://www.netlifycms.org/docs/) and the [Netlify CMS Repo](https://github.com/netlify/netlify-cms).
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thriveweb/yellowcake&stack=cms)
+We offer chef hire & catering services within Reading, Berkshire, Hampshire, Oxfordshire & London. From **Canapes** & **Sit**-**down** **meals** to **Afternoon** **Teas**, **Hampers,** **Smoked** **Food** **workshop & [](http://thesmokeryshed.co.uk/weddings/4594714113)weddings**, we can tailor *your* event to *you*.
+
+
+
+Based in Wokingham we provide beautiful food, delivered to you or catered in house. Have a look at our [Catering](http://thesmokeryshed.co.uk/catering/4594354717) page for more information.
+
+
+
+Our mouth-watering nuts are all lovingly roasted, coated and smoked by us to deliver a flavour-packed punch. Contact us for a list of our stockists or directly for purchases.
+
+
+
+All our bar snacks are vegan too and our packaging is 100% recyclable, so you can enjoy totally guilt free! Have a look below at our range
