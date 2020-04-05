@@ -8,7 +8,7 @@ meta:
   description: Catering in Wokingham and the Berkshire area
   title: The Smokery Shed | Home
 ---
-Welcome to The Smokery Shed Catering & Snacks!
+# Welcome to The Smokery Shed Catering & Snacks!
 
 
 
