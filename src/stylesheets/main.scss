@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. Vendors
+@import 'vendors/bootstrap';
+@import 'vendors/normalize';
+
+// 3. Base stuff
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/helpers';
+@import 'base/form';
+@import 'base/images';
+
+// 4. Layout-related sections
+@import 'layout/nav';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/content';
+@import 'layout/pageHeader';
+
+// 5. Components
+@import 'components/accordion';
+@import 'components/backgroundVideo';
+@import 'components/button';
+@import 'components/card';
+@import 'components/instagram';
+@import 'components/popup';
+@import 'components/postSection';
+@import 'components/svgIcon';
+
+// 6. Page-specific styles
+@import 'pages/home';
+
+// 7. Themes
+@import 'themes/default';

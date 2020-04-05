@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './SVGIcon.css'
-
 export default ({ src }) => {
   const icon = {
     maskImage: `url(${src})`,

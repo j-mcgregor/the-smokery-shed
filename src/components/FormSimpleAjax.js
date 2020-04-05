@@ -3,8 +3,6 @@ import Helmet from 'react-helmet'
 import { stringify } from 'qs'
 import { serialize } from 'dom-form-serializer'
 
-import './Form.css'
-
 class Form extends React.Component {
   static defaultProps = {
     name: 'Simple Form Ajax',

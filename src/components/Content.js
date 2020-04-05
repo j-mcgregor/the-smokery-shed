@@ -4,8 +4,6 @@ import Marked from 'react-markdown'
 import PropTypes from 'prop-types'
 import Image from './Image'
 
-import './Content.css'
-
 const encodeMarkdownURIs = (source = '') => {
   const markdownLinkRegex = /\[(.+)\]\((.+)(".+)\)/g
   console.log(source)
