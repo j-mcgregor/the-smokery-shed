@@ -119,11 +119,17 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - { label: Template, name: template, widget: hidden, default: HomePage }
           - { label: Slug, name: slug, widget: hidden, default: '' }
+          - { label: Hero Image, name: featuredImage, widget: image }
           - { label: Title, name: title, widget: string }
-          - { label: Featured Image, name: featuredImage, widget: image }
-          - { label: Banner Image 1, name: bannerImage1, widget: image }
-          - { label: Banner Image 2, name: bannerImage2, widget: image }
           - { label: Subtitle, name: subtitle, widget: markdown, required: false }
+          - { label: Section 2 Title, name: section2title, widget: string }
+          - { label: Section 2 Subtitle, name: section2subtitle, widget: markdown, required: false }
+          - { label: Section 2 body, name: section2body, widget: markdown, required: false }
+          - { label: Section 2 Image, name: section2image, widget: image }
+          - { label: Section 3 Title, name: section3title, widget: string }
+          - { label: Section 3 Subtitle, name: section3subtitle, widget: markdown, required: false }
+          - { label: Section 3 body, name: section3body, widget: markdown, required: false }
+          - { label: Section 3 Image, name: section3image, widget: image }
           - { label: Tagline, name: tagline, widget: markdown }
           - { label: Body, name: body, widget: markdown }
           - label: 'Accordion'
