@@ -1,36 +1,33 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import PageHeader from '../components/pageComponents/PageHeader'
-import Content from '../components/layout/Content'
-import Layout from '../components/layout/Layout'
+import PageHeader from '../components/pageComponents/PageHeader';
+import Content from '../components/layout/Content';
+import Layout from '../components/layout/Layout';
 
 // Export Template for use in CMS preview
 export const HomePageTemplate = ({ title, subtitle, featuredImage, body }) => (
   <main className="Home">
-    <PageHeader
-      large
-      title={title}
-      subtitle={subtitle}
-      backgroundImage={featuredImage}
-    />
+    <PageHeader large title={title} subtitle={subtitle} backgroundImage={featuredImage} />
 
     <section className="section">
       <div className="container">
         <Content source={body} />
       </div>
     </section>
+
+    <PageHeader large title={title} subtitle={subtitle} backgroundImage={featuredImage} />
   </main>
-)
+);
 
 // Export Default HomePage for front-end
 const HomePage = ({ data: { page } }) => (
   <Layout meta={page.frontmatter.meta || false}>
     <HomePageTemplate {...page} {...page.frontmatter} body={page.html} />
   </Layout>
-)
+);
 
-export default HomePage
+export default HomePage;
 
 export const pageQuery = graphql`
   ## Query for HomePage data
@@ -48,4 +45,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
