@@ -1,9 +1,14 @@
 ---
 template: HomePage
 slug: ''
-title: The Smokery Shed
 featuredImage: 'https://ucarecdn.com/8d2d8bc1-7b7a-4159-b855-4386341966ea/'
+title: The Smokery Shed
 subtitle: Catering and bar snacks
+section2title: What we do
+bannerImage2: >-
+  https://ucarecdn.com/560893e8-c4c9-459c-a45d-7c50f0880e9a/-/crop/968x511/0,95/-/preview/
+section3title: How we work
+bannerImage3: 'https://ucarecdn.com/d926ae8d-760f-4c2a-9747-3257a63f2a4b/'
 tagline: lorem
 meta:
   description: Catering in Wokingham and the Berkshire area
