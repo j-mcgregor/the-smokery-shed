@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
-import Meta from './Meta'
-import Nav from './Nav'
-import Footer from './Footer'
+import React, { Fragment } from 'react';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+import Meta from '../Meta';
+import Nav from './Nav';
+import Footer from './Footer';
 
-import 'modern-normalize/modern-normalize.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import '../stylesheets/main.scss'
+import 'modern-normalize/modern-normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import '../../stylesheets/main.scss';
+import '../../stylesheets/main.scss';
 
 export default ({ children, meta, title }) => {
   return (
@@ -40,22 +41,18 @@ export default ({ children, meta, title }) => {
         }
       `}
       render={data => {
-        const { siteTitle, socialMediaCard, googleTrackingId } =
-            data.settingsYaml || {},
+        const { siteTitle, socialMediaCard, googleTrackingId } = data.settingsYaml || {},
           subNav = {
             posts: data.allPosts.hasOwnProperty('edges')
               ? data.allPosts.edges.map(post => {
-                  return { ...post.node.fields, ...post.node.frontmatter }
+                  return { ...post.node.fields, ...post.node.frontmatter };
                 })
               : false
-          }
+          };
 
         return (
           <Fragment>
-            <Helmet
-              defaultTitle={siteTitle}
-              titleTemplate={`%s | ${siteTitle}`}
-            >
+            <Helmet defaultTitle={siteTitle} titleTemplate={`%s | ${siteTitle}`}>
               {title}
               <link href="https://ucarecdn.com" rel="preconnect" crossorigin />
               <link rel="dns-prefetch" href="https://ucarecdn.com" />
@@ -63,11 +60,7 @@ export default ({ children, meta, title }) => {
             </Helmet>
             <Meta
               googleTrackingId={googleTrackingId}
-              absoluteImageUrl={
-                socialMediaCard &&
-                socialMediaCard.image &&
-                socialMediaCard.image
-              }
+              absoluteImageUrl={socialMediaCard && socialMediaCard.image && socialMediaCard.image}
               {...meta}
               {...data.settingsYaml}
             />
@@ -78,8 +71,8 @@ export default ({ children, meta, title }) => {
 
             <Footer />
           </Fragment>
-        )
+        );
       }}
     />
-  )
-}
+  );
+};

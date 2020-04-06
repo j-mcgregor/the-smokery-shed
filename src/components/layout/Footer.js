@@ -1,5 +1,5 @@
 import React from 'react'
-import InstagramFeed from './InstagramFeed'
+import InstagramFeed from '../socialComponents/InstagramFeed'
 
 export default () => (
   <div>

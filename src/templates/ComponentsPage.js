@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import PageHeader from '../components/PageHeader'
-import Content from '../components/Content.js'
-import Layout from '../components/Layout.js'
-import Accordion from '../components/Accordion'
-import BackgroundVideo from '../components/BackgroundVideo'
-import Gallery from '../components/Gallery'
-import Popup from '../components/Popup'
+import PageHeader from '../components/pageComponents/PageHeader'
+import Content from '../components/layout/Content.js'
+import Layout from '../components/layout/Layout.js'
+import Accordion from '../components/shared/Accordion'
+import BackgroundVideo from '../components/shared/BackgroundVideo'
+import Gallery from '../components/shared/Gallery'
+import Popup from '../components/pageComponents/Popup'
 
 // Export Template for use in CMS preview
 export const ComponentsPageTemplate = ({

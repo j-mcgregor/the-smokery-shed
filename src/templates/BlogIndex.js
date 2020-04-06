@@ -3,10 +3,10 @@ import { graphql } from 'gatsby'
 import { Location } from '@reach/router'
 import qs from 'qs'
 
-import PageHeader from '../components/PageHeader'
-import PostSection from '../components/PostSection'
-import PostCategoriesNav from '../components/PostCategoriesNav'
-import Layout from '../components/Layout'
+import PageHeader from '../components/pageComponents/PageHeader'
+import PostSection from '../components/postComponents/PostSection'
+import PostCategoriesNav from '../components/postComponents/PostCategoriesNav'
+import Layout from '../components/layout/Layout'
 
 /**
  * Filter posts by date. Feature dates will be fitered

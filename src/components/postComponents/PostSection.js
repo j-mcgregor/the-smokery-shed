@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import PostCard from '../components/PostCard'
+import PostCard from './PostCard';
 
 class PostSection extends React.Component {
   static defaultProps = {
@@ -10,21 +10,21 @@ class PostSection extends React.Component {
     showLoadMore: true,
     loadMoreTitle: 'Load More',
     perPageLimit: 12
-  }
+  };
 
   state = {
     limit: this.props.limit
-  }
+  };
 
   increaseLimit = () =>
     this.setState(prevState => ({
       limit: prevState.limit + this.props.perPageLimit
-    }))
+    }));
 
   render() {
     const { posts, title, showLoadMore, loadMoreTitle } = this.props,
       { limit } = this.state,
-      visiblePosts = posts.slice(0, limit || posts.length)
+      visiblePosts = posts.slice(0, limit || posts.length);
 
     return (
       <div className="PostSection">
@@ -44,8 +44,8 @@ class PostSection extends React.Component {
           </div>
         )}
       </div>
-    )
+    );
   }
 }
 
-export default PostSection
+export default PostSection;

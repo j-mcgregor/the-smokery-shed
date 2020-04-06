@@ -2,11 +2,11 @@ import React from 'react'
 import { MapPin, Smartphone, Mail } from 'react-feather'
 import { graphql } from 'gatsby'
 
-import PageHeader from '../components/PageHeader'
-import FormSimpleAjax from '../components/FormSimpleAjax'
-import Content from '../components/Content'
-import GoogleMap from '../components/GoogleMap'
-import Layout from '../components/Layout'
+import PageHeader from '../components/pageComponents/PageHeader'
+import FormSimpleAjax from '../components/forms/FormSimpleAjax'
+import Content from '../components/layout/Content'
+import GoogleMap from '../components/socialComponents/GoogleMap'
+import Layout from '../components/layout/Layout'
 import './ContactPage.css'
 
 // Export Template for use in CMS preview

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import Observer from './Observer'
+import Observer from '../Observer'
 
 class Image extends React.Component {
   constructor(props) {

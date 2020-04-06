@@ -3,8 +3,8 @@ import _get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
 import { ChevronLeft } from 'react-feather'
 
-import Content from '../components/Content'
-import Layout from '../components/Layout'
+import Content from '../components/layout/Content'
+import Layout from '../components/layout/Layout'
 import './SinglePost.css'
 
 export const SinglePostTemplate = ({

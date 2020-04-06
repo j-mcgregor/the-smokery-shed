@@ -4,7 +4,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import _get from 'lodash/get'
 import AlertTriangle from 'react-feather/dist/icons/alert-triangle'
 
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout'
 
 export default ({ children }) => (
   <StaticQuery

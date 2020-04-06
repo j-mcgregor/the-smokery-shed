@@ -1,4 +1,4 @@
-const postcssPresetEnv = require('postcss-preset-env')
+const postcssPresetEnv = require('postcss-preset-env');
 
 module.exports = {
   siteMetadata: {
@@ -8,7 +8,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',
-    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
@@ -137,4 +136,4 @@ module.exports = {
     },
     'gatsby-plugin-netlify' // make sure to keep it last in the array
   ]
-}
+};
