@@ -7,8 +7,9 @@ import Footer from './Footer';
 
 import 'modern-normalize/modern-normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import '../../stylesheets/main.scss';
 import '../../stylesheets/main.scss';
+import 'typeface-amatic-sc';
+import 'typeface-josefin-slab';
 
 export default ({ children, meta, title }) => {
   return (

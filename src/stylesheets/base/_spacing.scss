@@ -1,0 +1,113 @@
+$spacing: 1rem;
+
+@for $i from 0 through 10 {
+  .p-#{$i} {
+    padding: $i * $spacing !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: $i * $spacing !important;
+  }
+
+  .pl-#{$i} {
+    padding-left: $i * $spacing !important;
+  }
+
+  .pt-#{$i} {
+    padding-top: $i * $spacing !important;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: $i * $spacing !important;
+  }
+
+  .pv-#{$i} {
+    padding-top: $i * $spacing !important;
+    padding-bottom: $i * $spacing !important;
+  }
+
+  .ph-#{$i} {
+    padding-left: $i * $spacing !important;
+    padding-right: $i * $spacing !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .m-#{$i} {
+    margin: $i * $spacing !important;
+  }
+
+  .mr-#{$i} {
+    margin-right: $i * $spacing !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: $i * $spacing !important;
+  }
+
+  .mt-#{$i} {
+    margin-top: $i * $spacing !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $i * $spacing !important;
+  }
+
+  .mv-#{$i} {
+    margin-top: $i * $spacing !important;
+    margin-bottom: $i * $spacing !important;
+  }
+
+  .mh-#{$i} {
+    margin-left: $i * $spacing !important;
+    margin-right: $i * $spacing !important;
+  }
+}
+
+$borders: border-top border-bottom border-left border-right;
+$default-border-size: 1px;
+$default-border: $default-border-size solid #666;
+
+@each $border in $borders {
+  @for $i from 0 through 10 {
+    .b-#{$i} {
+      $default-border: $default-border !important;
+    }
+
+    .br-#{$i} {
+      $default-border: $default-border !important;
+    }
+
+    .bl-#{$i} {
+      $default-border: $default-border !important;
+    }
+
+    .bt-#{$i} {
+      $default-border: $default-border !important;
+    }
+
+    .bb-#{$i} {
+      $default-border: $default-border !important;
+    }
+
+    .bv-#{$i} {
+      border-top: $default-border !important;
+      border-bottom: $default-border !important;
+    }
+
+    .bh-#{$i} {
+      border-left: $default-border !important;
+      border-right: $default-border !important;
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  .line-sp-#{$i} {
+    line-height: $i * $spacing !important;
+  }
+}
+
+.bxs-0 {
+  box-shadow: none !important;
+}

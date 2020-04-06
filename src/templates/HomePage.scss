@@ -1,0 +1,57 @@
+.Home {
+  font-family: 'Amatic SC';
+  font-size: 14px;
+
+  .hero {
+    h1 {
+      font-size: 8em;
+      position: relative;
+    }
+    p {
+      font-family: 'Josefin Slab';
+      font-size: 2em;
+    }
+  }
+
+  .section__1 {
+    font-size: 1.5em;
+    h1 {
+      text-align: center;
+      color: white;
+      padding: 10px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 4rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: rotate(1deg) translateY(6px);
+        transform-origin: right;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: rotate(-1deg) translateY(6px);
+        transform-origin: left;
+      }
+    }
+    p {
+      text-align: justify;
+      font-family: 'Josefin Slab';
+    }
+  }
+}

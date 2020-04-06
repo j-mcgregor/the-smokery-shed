@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { Location } from '@reach/router';
 import { Link } from 'gatsby';
 import { Menu, X } from 'react-feather';
-import logo from '../../img/logo-simplified.png';
+import logo from '../../img/logo-simplified-inverted.png';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 
 const NavLink = ({ to, currentPath, children }) => (
@@ -26,7 +26,10 @@ export const Navigation = ({ location, subNav }) => {
             <NavLink to="/" currentPath={currentPath}>
               Home
             </NavLink>
-            <NavLink to="/components/" currentPath={currentPath}>
+            <NavLink to="/blog" currentPath={currentPath}>
+              Blog
+            </NavLink>
+            <NavLink to="/components" currentPath={currentPath}>
               Components
             </NavLink>
             <NavDropdown title="Catering" id="collasible-nav-dropdown">
@@ -85,6 +88,7 @@ export class Navigation2 extends Component {
         <div className="Nav--Container container">
           <div className="Nav--Links">
             <NavLink to="/">Home</NavLink>
+            <NavLink to="/blog/">Blog</NavLink>
             <NavLink to="/components/">Catering</NavLink>
             <div className={`Nav--Group ${this.state.activeSubNav === 'posts' ? 'active' : ''}`}>
               <span

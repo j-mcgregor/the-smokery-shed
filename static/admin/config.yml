@@ -130,7 +130,6 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Section 3 Subtitle, name: section3subtitle, widget: markdown, required: false }
           - { label: Section 3 body, name: section3body, widget: markdown, required: false }
           - { label: Section 3 Image, name: section3image, widget: image }
-          - { label: Tagline, name: tagline, widget: markdown }
           - { label: Body, name: body, widget: markdown }
           - label: 'Accordion'
             name: 'accordion'
