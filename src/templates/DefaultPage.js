@@ -1,24 +1,15 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import PageHeader from '../components/pageComponents/PageHeader'
-import Content from '../components/layout/Content'
-import Layout from '../components/layout/Layout'
-import SVGIcon from '../components/SVGIcon'
+import PageHeader from '../components/pageComponents/PageHeader';
+import Content from '../components/layout/Content';
+import Layout from '../components/layout/Layout';
+import SVGIcon from '../components/shared/SVGIcon';
 
 // Export Template for use in CMS preview
-export const DefaultPageTemplate = ({
-  title,
-  subtitle,
-  featuredImage,
-  body
-}) => (
+export const DefaultPageTemplate = ({ title, subtitle, featuredImage, body }) => (
   <main className="DefaultPage">
-    <PageHeader
-      title={title}
-      subtitle={subtitle}
-      backgroundImage={featuredImage}
-    />
+    <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
 
     <section className="section">
       <div className="container">
@@ -27,17 +18,14 @@ export const DefaultPageTemplate = ({
       </div>
     </section>
   </main>
-)
+);
 
 const DefaultPage = ({ data: { page } }) => (
-  <Layout
-    meta={page.frontmatter.meta || false}
-    title={page.frontmatter.title || false}
-  >
+  <Layout meta={page.frontmatter.meta || false} title={page.frontmatter.title || false}>
     <DefaultPageTemplate {...page.frontmatter} body={page.html} />
   </Layout>
-)
-export default DefaultPage
+);
+export default DefaultPage;
 
 export const pageQuery = graphql`
   query DefaultPage($id: String!) {
@@ -51,4 +39,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

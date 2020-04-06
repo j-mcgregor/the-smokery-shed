@@ -1,28 +1,70 @@
-import React, { Component } from 'react'
-import { Location } from '@reach/router'
-import { Link } from 'gatsby'
-import { Menu, X } from 'react-feather'
-import Logo from './Logo'
+import React, { Component, useState } from 'react';
+import { Location } from '@reach/router';
+import { Link } from 'gatsby';
+import { Menu, X } from 'react-feather';
+import logo from '../../img/logo-simplified.png';
+import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 
-export class Navigation extends Component {
+const NavLink = ({ to, currentPath, children }) => (
+  <Link to={to} className={`nav-link ${to === currentPath ? 'active' : ''}`}>
+    {children}
+  </Link>
+);
+
+export const Navigation = ({ location, subNav }) => {
+  const [currentPath] = useState(location.pathname);
+
+  return (
+    <Navbar collapseOnSelect expand="md">
+      <Container>
+        <Navbar.Brand href="#home">
+          <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="React Bootstrap logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ml-auto">
+            <NavLink to="/" currentPath={currentPath}>
+              Home
+            </NavLink>
+            <NavLink to="/components/" currentPath={currentPath}>
+              Components
+            </NavLink>
+            <NavDropdown title="Catering" id="collasible-nav-dropdown">
+              {subNav.posts.map((l, i) => {
+                console.log(l);
+                return (
+                  <NavDropdown.Item href={l.slug} key={l.slug}>
+                    {l.title}
+                  </NavDropdown.Item>
+                );
+              })}
+            </NavDropdown>
+            <NavLink to="/default/">Default</NavLink>
+            <NavLink to="/contact/">Contact</NavLink>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
+export class Navigation2 extends Component {
   state = {
     active: false,
     activeSubNav: false,
     currentPath: false
-  }
+  };
 
-  componentDidMount = () =>
-    this.setState({ currentPath: this.props.location.pathname })
+  componentDidMount = () => this.setState({ currentPath: this.props.location.pathname });
 
-  handleMenuToggle = () => this.setState({ active: !this.state.active })
+  handleMenuToggle = () => this.setState({ active: !this.state.active });
 
   // Only close nav if it is open
-  handleLinkClick = () => this.state.active && this.handleMenuToggle()
+  handleLinkClick = () => this.state.active && this.handleMenuToggle();
 
   toggleSubNav = subNav =>
     this.setState({
       activeSubNav: this.state.activeSubNav === subNav ? false : subNav
-    })
+    });
 
   render() {
     const { active } = this.state,
@@ -30,30 +72,21 @@ export class Navigation extends Component {
       NavLink = ({ to, className, children, ...props }) => (
         <Link
           to={to}
-          className={`NavLink ${
-            to === this.state.currentPath ? 'active' : ''
-          } ${className}`}
+          className={`NavLink ${to === this.state.currentPath ? 'active' : ''} ${className}`}
           onClick={this.handleLinkClick}
           {...props}
         >
           {children}
         </Link>
-      )
+      );
 
     return (
       <nav className={`Nav ${active ? 'Nav-active' : ''}`}>
         <div className="Nav--Container container">
-          <Link to="/" onClick={this.handleLinkClick}>
-            <Logo />
-          </Link>
           <div className="Nav--Links">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/components/">Components</NavLink>
-            <div
-              className={`Nav--Group ${
-                this.state.activeSubNav === 'posts' ? 'active' : ''
-              }`}
-            >
+            <NavLink to="/components/">Catering</NavLink>
+            <div className={`Nav--Group ${this.state.activeSubNav === 'posts' ? 'active' : ''}`}>
               <span
                 className={`NavLink Nav--GroupParent ${
                   this.props.location.pathname.includes('posts') ||
@@ -70,11 +103,7 @@ export class Navigation extends Component {
                     All Posts
                   </NavLink>
                   {subNav.posts.map((link, index) => (
-                    <NavLink
-                      to={link.slug}
-                      key={'posts-subnav-link-' + index}
-                      className="Nav--GroupLink"
-                    >
+                    <NavLink to={link.slug} key={'posts-subnav-link-' + index} className="Nav--GroupLink">
                       {link.title}
                     </NavLink>
                   ))}
@@ -84,18 +113,13 @@ export class Navigation extends Component {
             <NavLink to="/default/">Default</NavLink>
             <NavLink to="/contact/">Contact</NavLink>
           </div>
-          <button
-            className="Button-blank Nav--MenuButton"
-            onClick={this.handleMenuToggle}
-          >
+          <button className="Button-blank Nav--MenuButton" onClick={this.handleMenuToggle}>
             {active ? <X /> : <Menu />}
           </button>
         </div>
       </nav>
-    )
+    );
   }
 }
 
-export default ({ subNav }) => (
-  <Location>{route => <Navigation subNav={subNav} {...route} />}</Location>
-)
+export default ({ subNav }) => <Location>{route => <Navigation subNav={subNav} {...route} />}</Location>;

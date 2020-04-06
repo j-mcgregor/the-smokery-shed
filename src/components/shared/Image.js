@@ -1,51 +1,39 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import Observer from '../Observer'
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Observer from '../Observer';
 
 class Image extends React.Component {
   constructor(props) {
-    super(props)
-    this.ref = React.createRef()
+    super(props);
+    this.ref = React.createRef();
   }
 
-  imageSizes = [
-    '320',
-    '450',
-    '640',
-    '750',
-    '800',
-    '900',
-    '1000',
-    '1200',
-    '1500',
-    '1600',
-    '2000'
-  ] // image sizes used for image source sets
+  imageSizes = ['320', '450', '640', '750', '800', '900', '1000', '1200', '1500', '1600', '2000']; // image sizes used for image source sets
 
   state = {
     isIntersecting: false
-  }
+  };
 
   handleIntersection = e => {
     if (e.isIntersecting) {
-      this.setState({ isIntersecting: true })
+      this.setState({ isIntersecting: true });
     }
-  }
+  };
 
   checkIsUploadcare(src) {
-    return typeof src === 'string' && src.includes('ucarecdn.com')
+    return typeof src === 'string' && src.includes('ucarecdn.com');
   }
 
   getResolutionString(res) {
     /* add resolutions options for inline images */
     if (res === 'small') {
-      res = '800x'
+      res = '800x';
     } else if (res === 'medium') {
-      res = '1000x'
+      res = '1000x';
     } else if (res === 'large') {
-      res = '2000x'
+      res = '2000x';
     }
-    return res
+    return res;
   }
 
   render() {
@@ -62,37 +50,29 @@ class Image extends React.Component {
       title = '',
       alt = '',
       lazy = true
-    } = this.props
+    } = this.props;
 
     const isUploadcare = this.checkIsUploadcare(src),
-      fullImage = !isUploadcare || !lazy
+      fullImage = !isUploadcare || !lazy;
 
     /* create source set for images */
     if (isUploadcare) {
       secSet = this.imageSizes.map(size => {
-        return `${src}-/progressive/yes/-/format/auto/-/preview/${size}x${size}/-/quality/lightest/${size}.jpg ${size}w`
-      })
+        return `${src}-/progressive/yes/-/format/auto/-/preview/${size}x${size}/-/quality/lightest/${size}.jpg ${size}w`;
+      });
     }
 
     fullSrc = `${src}${
-      isUploadcare
-        ? '-/progressive/yes/-/format/auto/-/resize/' +
-          this.getResolutionString(resolutions) +
-          '/'
-        : ''
-    }`
-    smallSrc = `${src}${
-      isUploadcare ? '-/progressive/yes/-/format/auto/-/resize/10x/' : ''
-    }`
+      isUploadcare ? '-/progressive/yes/-/format/auto/-/resize/' + this.getResolutionString(resolutions) + '/' : ''
+    }`;
+    smallSrc = `${src}${isUploadcare ? '-/progressive/yes/-/format/auto/-/resize/10x/' : ''}`;
 
-    let style = {}
+    let style = {};
     if (background) {
       style = {
-        backgroundImage: `url(${
-          this.state.isIntersecting ? fullSrc : smallSrc
-        })`,
+        backgroundImage: `url(${this.state.isIntersecting ? fullSrc : smallSrc})`,
         backgroundSize
-      }
+      };
     }
 
     return (
@@ -109,9 +89,7 @@ class Image extends React.Component {
             >
               {!background && (
                 <img
-                  className={`LazyImage ${
-                    className + this.state.isIntersecting ? ' faded' : ''
-                  }`}
+                  className={`LazyImage ${className + this.state.isIntersecting ? ' faded' : ''}`}
                   src={this.state.isIntersecting ? fullSrc : ''}
                   srcSet={this.state.isIntersecting ? secSet : ''}
                   sizes={'100vw'}
@@ -133,12 +111,7 @@ class Image extends React.Component {
         )}
         {fullImage && (
           <Fragment>
-            {background && (
-              <div
-                className={`BackgroundImage absolute ${className}`}
-                style={style}
-              />
-            )}
+            {background && <div className={`BackgroundImage absolute ${className}`} style={style} />}
             {!background && (
               <img
                 className={`${className}`}
@@ -153,12 +126,12 @@ class Image extends React.Component {
           </Fragment>
         )}
       </Fragment>
-    )
+    );
   }
 }
 
 Image.propTypes = {
   alt: PropTypes.string.isRequired
-}
+};
 
-export default Image
+export default Image;
