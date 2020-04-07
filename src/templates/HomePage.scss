@@ -1,3 +1,5 @@
+@import '../stylesheets/abstracts/mixins';
+
 .Home {
   font-family: 'Amatic SC';
   font-size: 14px;
@@ -12,46 +14,39 @@
       font-size: 2em;
     }
   }
-
   .section__1 {
     font-size: 1.5em;
     h1 {
       text-align: center;
-      color: white;
-      padding: 10px;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 4rem;
 
-      &::before {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transform: rotate(1deg) translateY(6px);
-        transform-origin: right;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.3);
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transform: rotate(-1deg) translateY(6px);
-        transform-origin: left;
-      }
+      @include title-banner;
     }
     p {
       text-align: justify;
       font-family: 'Josefin Slab';
+    }
+  }
+
+  .section__2 {
+    font-size: 1.5em;
+    h2 {
+      font-size: 3em;
+      @include title-banner;
+    }
+  }
+
+  .section__3 {
+    font-size: 1.5em;
+    h2 {
+      font-size: 3em;
+      @include title-banner;
+    }
+    p {
+      text-align: justify;
+      font-family: 'Josefin Slab';
+    }
+    img {
+      box-shadow: 0 3px 10px -3px black;
     }
   }
 }

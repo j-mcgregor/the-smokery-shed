@@ -16,24 +16,30 @@ export const HomePageTemplate = ({
   body,
   section2image,
   section2title,
+  section2subtitle,
   section3image,
-  section3title
+  section3title,
+  section3subtitle
 }) => {
-  const hero = {
-    background: `url(${featuredImage})`,
+  const hero = (image, minHeight) => ({
+    background: `url(${image})`,
     backgroundAttachment: 'fixed',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'right center',
-    minHeight: '700px'
-  };
+    minHeight: `${minHeight}px`
+  });
   return (
     <main className="Home">
       {/* HERO */}
-      <div className="jumbotron jumbotron-fluid hero flex flex-center" style={{ ...hero }}>
+      <div className="jumbotron jumbotron-fluid hero flex flex-center" style={{ ...hero(featuredImage, 700) }}>
         <Container>
-          <h1 className="PageHeader--Title">{title}</h1>
-          {subtitle && <Content className="PageHeader--Subtitle" src={subtitle} />}
+          <Row>
+            <Col>
+              <h1 className="PageHeader--Title title-banner">{title}</h1>
+              {subtitle && <Content className="PageHeader--Subtitle" src={subtitle} />}
+            </Col>
+          </Row>
         </Container>
       </div>
 
@@ -43,16 +49,27 @@ export const HomePageTemplate = ({
       </Container>
 
       {/* SECTION 2 */}
-      <PageHeader title={section2title} backgroundImage={section2image} />
+      <div className="jumbotron jumbotron-fluid hero flex flex-center" style={{ ...hero(section2image, 400) }}>
+        <Container className="section__2">
+          <Row>
+            <Col md={6} sm={0} />
+            <Col md={6} sm={12} className="flex flex-center flex-column text-center">
+              <h2 className="title-banner">{section2title}</h2>
+              {section2subtitle && <Content className="PageHeader--Subtitle" src={section2subtitle} />}
+            </Col>
+          </Row>
+        </Container>
+      </div>
 
       {/* SECTION 3 */}
-      <Container className="p-10">
+      <Container className="p-10 section__3">
         <Row className="text-center">
-          <Col md={6} sm={12}>
-            <Image src={section3image} rounded width="200" />
+          <Col md={6} sm={12} className="flex flex-column flex-center">
+            <h2>{section3title}</h2>
+            {section3subtitle && <Content className="PageHeader--Subtitle" src={section3subtitle} />}
           </Col>
-          <Col md={6} sm={12} className="flex flex-center">
-            <h2>{section2title}</h2>
+          <Col md={6} sm={12}>
+            <Image src={section3image} rounded width="300" />
           </Col>
         </Row>
       </Container>
@@ -87,8 +104,10 @@ export const pageQuery = graphql`
         featuredImage
         section2image
         section2title
+        section2subtitle
         section3image
         section3title
+        section3subtitle
       }
     }
   }
