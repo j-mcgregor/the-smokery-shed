@@ -17,20 +17,14 @@ export const Navigation = ({ location, subNav }) => {
   return (
     <Navbar collapseOnSelect expand="md">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="React Bootstrap logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            <NavLink to="/" currentPath={currentPath}>
-              Home
-            </NavLink>
-            <NavLink to="/blog" currentPath={currentPath}>
-              Blog
-            </NavLink>
-            <NavLink to="/components" currentPath={currentPath}>
-              Components
+            <NavLink to="/about" currentPath={currentPath}>
+              About
             </NavLink>
             <NavDropdown title="Catering" id="collasible-nav-dropdown">
               {subNav.posts.map((l, i) => {
@@ -41,8 +35,16 @@ export const Navigation = ({ location, subNav }) => {
                   </NavDropdown.Item>
                 );
               })}
+              <NavDropdown.Item href="/default">Default</NavDropdown.Item>
+              <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
+              <NavDropdown.Item href="/components">Components</NavDropdown.Item>
             </NavDropdown>
-            <NavLink to="/default/">Default</NavLink>
+            <NavLink to="/weddings" currentPath={currentPath}>
+              Weddings
+            </NavLink>
+            <NavLink to="/faq" currentPath={currentPath}>
+              FAQ
+            </NavLink>
             <NavLink to="/contact/">Contact</NavLink>
           </Nav>
         </Navbar.Collapse>
