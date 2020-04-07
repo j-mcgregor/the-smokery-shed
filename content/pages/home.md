@@ -16,7 +16,7 @@ section3subtitle: Sed ut perspiciatis unde omnis iste natus erro
 section4image: >-
   https://ucarecdn.com/66ccee60-e4e1-43e5-933d-c13dbfab7000/-/crop/1055x288/0,125/-/preview/-/grayscale/
 section4title: '"Something something dark side"'
-section4subtitle: '- Darth Vader'
+section4subtitle: ~ Darth Vader
 meta:
   description: Catering in Wokingham and the Berkshire area
   title: The Smokery Shed | Home
