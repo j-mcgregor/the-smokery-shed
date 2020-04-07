@@ -3,12 +3,16 @@
 // -----------------------------------------------------------------------------
 
 .footer {
-  padding: 2rem 0;
-  background: var(--lightGrey);
-  font-size: 1.2rem;
-}
+  background: #222;
+  color: #ccc;
 
-.footer a {
-  color: black;
-  text-decoration: none;
+  .list-group {
+    .list-group-item {
+      background: none;
+    }
+  }
+
+  .sub-footer {
+    background: #111;
+  }
 }

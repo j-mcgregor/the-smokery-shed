@@ -5,16 +5,22 @@ import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
 import SVGIcon from '../components/shared/SVGIcon';
+import Accordion from '../components/shared/Accordion';
 
 // Export Template for use in CMS preview
-export const DefaultPageTemplate = ({ title, subtitle, featuredImage, body }) => (
+export const DefaultPageTemplate = ({ title, subtitle, featuredImage, body, accordion }) => (
   <main className="DefaultPage">
     <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
 
     <section className="section">
       <div className="container">
         <Content source={body} />
-        <SVGIcon src="/images/calendar.svg" />
+      </div>
+    </section>
+
+    <section className="section">
+      <div className="container">
+        <Accordion items={accordion} />
       </div>
     </section>
   </main>
@@ -36,6 +42,10 @@ export const pageQuery = graphql`
         title
         subtitle
         featuredImage
+        accordion {
+          title
+          content
+        }
       }
     }
   }

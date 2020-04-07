@@ -122,15 +122,18 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Hero Image, name: featuredImage, widget: image }
           - { label: Title, name: title, widget: string }
           - { label: Subtitle, name: subtitle, widget: markdown, required: false }
+          - { label: Body, name: body, widget: markdown }
+          - { label: Section 2 Image, name: section2image, widget: image }
           - { label: Section 2 Title, name: section2title, widget: string }
           - { label: Section 2 Subtitle, name: section2subtitle, widget: markdown, required: false }
           - { label: Section 2 body, name: section2body, widget: markdown, required: false }
-          - { label: Section 2 Image, name: section2image, widget: image }
+          - { label: Section 3 Image, name: section3image, widget: image }
           - { label: Section 3 Title, name: section3title, widget: string }
           - { label: Section 3 Subtitle, name: section3subtitle, widget: markdown, required: false }
           - { label: Section 3 body, name: section3body, widget: markdown, required: false }
-          - { label: Section 3 Image, name: section3image, widget: image }
-          - { label: Body, name: body, widget: markdown }
+          - { label: Section 4 Image, name: section4image, widget: image }
+          - { label: Section 4 Title, name: section4title, widget: markdown }
+          - { label: Section 4 Subtitle, name: section4subtitle, widget: string }
           - label: 'Accordion'
             name: 'accordion'
             widget: 'list'
@@ -161,6 +164,13 @@ collections: # A list of collections the CMS should be able to edit
       - { label: Title, name: title, widget: string }
       - { label: Featured Image, name: featuredImage, widget: image }
       - { label: Body, name: body, widget: markdown }
+      - label: 'Accordion'
+        name: 'accordion'
+        widget: 'list'
+        required: false
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: Content, name: content, widget: text }
       - label: 'Meta'
         required: false
         name: 'meta'

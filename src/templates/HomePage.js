@@ -1,10 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import PageHeader from '../components/pageComponents/PageHeader';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
-import { Container, Row, Col, Image, Jumbotron } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 
 import './HomePage.scss';
 
@@ -19,7 +21,10 @@ export const HomePageTemplate = ({
   section2subtitle,
   section3image,
   section3title,
-  section3subtitle
+  section3subtitle,
+  section4image,
+  section4title,
+  section4subtitle
 }) => {
   const hero = (image, minHeight) => ({
     background: `url(${image})`,
@@ -65,7 +70,7 @@ export const HomePageTemplate = ({
       <Container className="p-10 section__3">
         <Row className="text-center">
           <Col md={6} sm={12} className="flex flex-column flex-center">
-            <h2>{section3title}</h2>
+            <h2 className="title-banner">{section3title}</h2>
             {section3subtitle && <Content className="PageHeader--Subtitle" src={section3subtitle} />}
           </Col>
           <Col md={6} sm={12}>
@@ -75,7 +80,23 @@ export const HomePageTemplate = ({
       </Container>
 
       {/* SECTION 4 */}
-      <PageHeader title={section3title} backgroundImage={section3image} />
+      <div
+        className="jumbotron jumbotron-fluid hero flex flex-center"
+        style={{ ...hero(section4image, 400), backgroundAttachment: 'scroll' }}
+      >
+        <Container className="section__4">
+          <Row>
+            <Col className="flex flex-center flex-column">
+              <h2 className="title-banner">
+                <FontAwesomeIcon icon={faQuoteLeft} />
+                {section4title}
+                <FontAwesomeIcon icon={faQuoteRight} />
+              </h2>
+              {section4subtitle && <Content className="PageHeader--Subtitle ml-auto mr-2" src={section4subtitle} />}
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </main>
   );
 };
@@ -108,6 +129,9 @@ export const pageQuery = graphql`
         section3image
         section3title
         section3subtitle
+        section4image
+        section4title
+        section4subtitle
       }
     }
   }

@@ -14,39 +14,46 @@
       font-size: 2em;
     }
   }
-  .section__1 {
+  .section__1,
+  .section__2,
+  .section__3,
+  .section__4 {
     font-size: 1.5em;
-    h1 {
-      text-align: center;
 
+    h1,
+    h2 {
+      text-align: center;
       @include title-banner;
     }
+    h2 {
+      font-size: 3em;
+    }
     p {
-      text-align: justify;
       font-family: 'Josefin Slab';
+      text-align: justify;
+      font-size: 1.5em;
     }
   }
 
-  .section__2 {
-    font-size: 1.5em;
-    h2 {
-      font-size: 3em;
-      @include title-banner;
+  .section__1 {
+    p {
+      font-size: 1.2em;
     }
   }
 
   .section__3 {
-    font-size: 1.5em;
-    h2 {
-      font-size: 3em;
-      @include title-banner;
-    }
-    p {
-      text-align: justify;
-      font-family: 'Josefin Slab';
-    }
     img {
       box-shadow: 0 3px 10px -3px black;
+    }
+  }
+  .section__4 {
+    h2 {
+      svg {
+        padding: 0 20px;
+      }
+    }
+    p {
+      text-align: right;
     }
   }
 }
