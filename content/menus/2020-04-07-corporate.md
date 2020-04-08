@@ -7,7 +7,8 @@ featuredImage: 'https://ucarecdn.com/0fc38080-ed9a-4baa-be6f-146bee247c1b/'
 excerpt: >-
   Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
   cum soluta nobis est eligendi optio cumque nihil impedit quo minus
-categories: []
+categories:
+  - category: Work
 meta:
   title: corporate
   description: corporate
