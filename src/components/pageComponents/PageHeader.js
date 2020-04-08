@@ -1,41 +1,28 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Image from '../shared/Image'
-import Content from '../layout/Content'
+import Image from '../shared/Image';
+import Content from '../layout/Content';
 
-const PageHeader = ({
-  title,
-  subtitle,
-  backgroundImage,
-  large,
-  className = ''
-}) => {
-  if (large) className += ' PageHeader-large'
+const PageHeader = ({ title, subtitle, backgroundImage, large, className = '' }) => {
+  if (large) className += ' PageHeader-large';
   return (
     <div className={`PageHeader relative ${className}`}>
-      {backgroundImage && (
-        <Image
-          background
-          resolutions="large"
-          src={backgroundImage}
-          alt={title}
-          size="cover"
-        />
-      )}
+      {backgroundImage && <Image background resolutions="large" src={backgroundImage} alt={title} size="cover" />}
       <div className="container relative">
-        <h1 className="PageHeader--Title">{title}</h1>
-        {subtitle && (
-          <Content className="PageHeader--Subtitle" src={subtitle} />
-        )}
+        <h1 className="PageHeader--Title">
+          <span />
+          {title}
+        </h1>
+        {subtitle && <Content className="PageHeader--Subtitle" src={subtitle} />}
       </div>
     </div>
-  )
-}
+  );
+};
 
 PageHeader.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string
-}
+};
 
-export default PageHeader
+export default PageHeader;

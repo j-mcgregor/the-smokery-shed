@@ -21,7 +21,7 @@
     font-family: 'Amatic SC';
     // width: auto;
     display: inline-block;
-    @include title-banner;
+    @include title-banner(white, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
   }
 
   .PageHeader--Subtitle {

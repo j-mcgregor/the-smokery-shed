@@ -32,23 +32,49 @@
   }
 }
 
-@mixin title-foreground {
-  color: white;
+@mixin title-foreground($color) {
+  color: $color;
   padding: 10px 1.6em;
   position: relative;
   z-index: 1;
   margin-bottom: 4rem;
 }
 
-@mixin title-banner {
-  @include title-foreground;
+@mixin title-banner($color, $bgColor1, $bgColor2) {
+  @include title-foreground($color);
+
+  span {
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 77px;
+      bottom: 0;
+      left: 10px;
+      border-bottom: 2px solid $color;
+      transform: rotate(-2deg) translateY(-45%);
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 77px;
+      bottom: 0;
+      right: 10px;
+      border-bottom: 2px solid $color;
+      transform: rotate(-1deg) translateY(-45%);
+      z-index: -1;
+    }
+  }
 
   &::before {
     content: '';
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: $bgColor1;
     top: 0;
     left: 0;
     z-index: -1;
@@ -61,11 +87,120 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: $bgColor2;
     top: 0;
     left: 0;
     z-index: -1;
     transform: rotate(-1deg) translateY(6px);
     transform-origin: left;
+  }
+}
+
+@mixin corner-banner($color) {
+  @include title-foreground;
+  color: $color;
+
+  span {
+    &::before {
+      content: '';
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      bottom: 0;
+      left: 0;
+      border-bottom: 2px solid $color;
+      border-left: 2px solid $color;
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      bottom: 0;
+      right: 0;
+      border-bottom: 2px solid $color;
+      border-right: 2px solid $color;
+      z-index: -1;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 0;
+    left: 0;
+    border-top: 2px solid $color;
+    border-left: 2px solid $color;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 0;
+    right: 0;
+    border-top: 2px solid $color;
+    border-right: 2px solid $color;
+    z-index: -1;
+  }
+}
+
+@mixin hipster-banner($color) {
+  @include title-foreground;
+  color: $color;
+  padding: 10px 1em;
+  margin-bottom: 1em;
+  span {
+    &::before {
+      content: '';
+      position: absolute;
+      height: 50%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      border-left: 2px solid $color;
+      transform: translate(50%, -100%);
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 50%;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      border-left: 2px solid $color;
+      transform: translate(50%, 100%);
+      z-index: -1;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top: 2px solid $color;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    border-bottom: 2px solid $color;
+    z-index: -1;
   }
 }
