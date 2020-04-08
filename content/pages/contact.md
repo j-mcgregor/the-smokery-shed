@@ -7,7 +7,10 @@ subtitle: This is the contact page subtitle.
 address: 'Wokingham, Berskshire, UK'
 phone: 0987 123 456
 email: info@thesmokeryshed.co.uk
-facebook: ''
+facebook: 'https://www.facebook.com/The-Smokery-Shed-Catering-Snacks-186727151905323/'
+twitter: 'https://twitter.com/thesmokeryshed'
+instagram: 'https://www.instagram.com/thesmokeryshed'
+youtube: 'https://www.youtube.com/channel/UCW92h-Zr7TyT36C7LOim-aA'
 locations:
   - lat: '51.4105'
     lng: '0.8339'
