@@ -40,6 +40,12 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Address, name: address, widget: text }
           - { label: Phone, name: phone, widget: string }
           - { label: Email Address, name: email, widget: string }
+          - { label: Facebook, name: facebook, widget: string, required: false }
+          - { label: Twitter, name: twitter, widget: string, required: false }
+          - { label: Instagram, name: instagram, widget: string, required: false }
+          - { label: YouTube, name: youtube, widget: string, required: false }
+          - { label: Pinterest, name: pinterest, widget: string, required: false }
+          - { label: Etsy, name: etsy, widget: string, required: false }
           - name: locations
             label: locations
             widget: list
@@ -60,6 +66,25 @@ collections: # A list of collections the CMS should be able to edit
       - file: 'content/pages/blog.md'
         label: 'Blog Page'
         name: 'blog-page'
+        fields:
+          - { label: Template, name: template, widget: hidden, default: BlogIndex }
+          - { label: Slug, name: slug, widget: hidden, default: 'blog' }
+          - { label: Title, name: title, widget: string }
+          - { label: Featured Image, name: featuredImage, widget: image }
+          - { label: Subtitle, name: subtitle, widget: markdown }
+          - label: 'Meta'
+            required: false
+            name: 'meta'
+            widget: 'object'
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Description, name: description, widget: text, required: false }
+              - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
+              - { label: Noindex, name: noindex, widget: boolean, required: false }
+
+      - file: 'content/pages/menus.md'
+        label: 'Menu Page'
+        name: 'menus'
         fields:
           - { label: Template, name: template, widget: hidden, default: BlogIndex }
           - { label: Slug, name: slug, widget: hidden, default: 'blog' }
@@ -171,6 +196,68 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: Content, name: content, widget: text }
+      - label: 'Meta'
+        required: false
+        name: 'meta'
+        widget: 'object'
+        fields:
+          - { label: Title, name: title, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
+          - { label: Noindex, name: noindex, widget: boolean, required: false }
+
+  - name: menus
+    label: Menus
+    editor:
+      preview: true
+    folder: content/menus
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: Template, name: template, widget: hidden, default: Menu }
+      - { label: Title, name: title, widget: string }
+      - label: 'Status'
+        name: 'status'
+        widget: 'select'
+        options: ['Published', 'Featured', 'Draft']
+        default: 'Published'
+      - { label: Date / Order, name: date, widget: date }
+      - { label: Featured Image, name: featuredImage, widget: image, required: false }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Content, name: body, widget: markdown }
+      - label: 'Categories'
+        name: 'categories'
+        widget: 'list'
+        required: false
+        fields:
+          - label: 'Category'
+            name: 'category'
+            widget: 'relation'
+            collection: 'menuCategories'
+            searchFields: ['title']
+            valueField: 'title'
+      - label: 'Meta'
+        required: false
+        name: 'meta'
+        widget: 'object'
+        fields:
+          - { label: Title, name: title, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
+          - { label: Noindex, name: noindex, widget: boolean, required: false }
+
+  - name: menuCategories
+    label: Menu Category
+    editor:
+      preview: false
+    folder: content/menuCategories
+    slug: '{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: Template, name: template, widget: hidden, default: MenuContainer }
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - { label: Featured Image, name: featuredImage, widget: image, required: false }
       - label: 'Meta'
         required: false
         name: 'meta'

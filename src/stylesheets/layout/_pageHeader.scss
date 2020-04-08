@@ -2,28 +2,33 @@
   background-color: var(--darkGrey);
   color: white;
   padding: 15rem 0;
-}
 
-.PageHeader .BackgroundImage {
-  opacity: 0.8;
-}
+  .BackgroundImage {
+    opacity: 0.8;
+  }
 
-.PageHeader-large {
-  padding: 20rem 0;
-}
+  .container {
+    animation: fadeIn 0.5s ease-out;
+  }
 
-.PageHeader--Title {
-  font-size: 6rem;
-  margin-bottom: 0;
-}
+  .PageHeader-large {
+    padding: 20rem 0;
+  }
 
-.PageHeader--Subtitle {
-  font-weight: 400;
-  font-size: 1.8rem;
-}
+  .PageHeader--Title {
+    font-size: 8rem;
+    margin-bottom: 0;
+    font-family: 'Amatic SC';
+    // width: auto;
+    display: inline-block;
+    @include title-banner;
+  }
 
-.PageHeader .container {
-  animation: fadeIn 0.5s ease-out;
+  .PageHeader--Subtitle {
+    font-weight: 400;
+    font-size: 3rem;
+    font-family: 'josefin-slab';
+  }
 }
 
 @media (max-width: 600px) {

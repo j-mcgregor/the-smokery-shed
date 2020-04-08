@@ -1,0 +1,78 @@
+.SingleMenu {
+  background: var(--lightGrey);
+}
+
+.SingleMenu--BackButton {
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+.SingleMenu--BackButton svg {
+  transition: transform 0.2s ease-out;
+  transform: translateX(0);
+  height: 1.2em;
+}
+
+.SingleMenu--BackButton:hover svg,
+.SingleMenu--BackButton:focus svg {
+  transform: translateX(-0.25em);
+}
+
+.SingleMenu--Content {
+  background: white;
+  padding: 8rem 8rem 4rem 8rem;
+}
+
+@media screen and (max-width: 750px) {
+  .SingleMenu--Content {
+    padding: 4rem 2rem;
+  }
+}
+
+.SingleMenu--Meta {
+  font-size: 1rem;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.SingleMenu--Meta > * + * {
+  margin-left: 0.75em;
+}
+
+.SingleMenu--Title {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.SingleMenu--InnerContent {
+  padding: 0 8rem;
+}
+
+@media screen and (max-width: 750px) {
+  .SingleMenu--InnerContent {
+    padding: 0;
+  }
+}
+
+.SingleMenu--Pagination {
+  margin: 4rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SingleMenu--Pagination--Link {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.SingleMenu--Pagination--Link.next {
+  margin-left: auto;
+}

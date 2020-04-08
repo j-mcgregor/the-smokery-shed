@@ -5,19 +5,19 @@ import { ChevronLeft } from 'react-feather';
 
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
-import './SinglePost.scss';
+import './Menu.scss';
 
-export const SinglePostTemplate = ({ title, date, body, nextPostURL, prevPostURL, categories = [] }) => (
+export const SingleMenuTemplate = ({ title, date, body, nextMenuURL, prevMenuURL, categories = [] }) => (
   <main>
-    <article className="SinglePost section light" itemScope itemType="http://schema.org/BlogPosting">
+    <article className="Menu section light" itemScope itemType="http://schema.org/BlogPosting">
       <div className="container skinny">
-        <Link className="SinglePost--BackButton" to="/blog/">
+        <Link className="Menu--BackButton" to="/menus">
           <ChevronLeft /> BACK
         </Link>
-        <div className="SinglePost--Content relative">
-          <div className="SinglePost--Meta">
+        <div className="Menu--Content relative">
+          <div className="Menu--Meta">
             {date && (
-              <time className="SinglePost--Meta--Date" itemProp="dateCreated pubdate datePublished" date={date}>
+              <time className="Menu--Meta--Date" itemProp="dateCreated pubdate datePublished" date={date}>
                 {date}
               </time>
             )}
@@ -25,7 +25,7 @@ export const SinglePostTemplate = ({ title, date, body, nextPostURL, prevPostURL
               <Fragment>
                 <span>|</span>
                 {categories.map((cat, index) => (
-                  <span key={cat.category} className="SinglePost--Meta--Category">
+                  <span key={cat.category} className="Menu--Meta--Category">
                     {cat.category}
                     {/* Add a comma on all but last category */}
                     {index !== categories.length - 1 ? ',' : ''}
@@ -36,23 +36,23 @@ export const SinglePostTemplate = ({ title, date, body, nextPostURL, prevPostURL
           </div>
 
           {title && (
-            <h1 className="SinglePost--Title" itemProp="title">
+            <h1 className="Menu--Title" itemProp="title">
               {title}
             </h1>
           )}
 
-          <div className="SinglePost--InnerContent">
+          <div className="Menu--InnerContent">
             <Content source={body} />
           </div>
 
-          <div className="SinglePost--Pagination">
-            {prevPostURL && (
-              <Link className="SinglePost--Pagination--Link prev" to={prevPostURL}>
+          <div className="Menu--Pagination">
+            {prevMenuURL && (
+              <Link className="Menu--Pagination--Link prev" to={prevMenuURL}>
                 Previous Post
               </Link>
             )}
-            {nextPostURL && (
-              <Link className="SinglePost--Pagination--Link next" to={nextPostURL}>
+            {nextMenuURL && (
+              <Link className="Menu--Pagination--Link next" to={nextMenuURL}>
                 Next Post
               </Link>
             )}
@@ -63,30 +63,30 @@ export const SinglePostTemplate = ({ title, date, body, nextPostURL, prevPostURL
   </main>
 );
 
-// Export Default SinglePost for front-end
-const SinglePost = ({ data: { post, allPosts } }) => {
-  const thisEdge = allPosts.edges.find(edge => edge.node.id === post.id);
+// Export Default Menu for front-end
+const Menu = ({ data: { post, allMenus } }) => {
+  const thisEdge = allMenus.edges.find(edge => edge.node.id === post.id);
   return (
     <Layout meta={post.frontmatter.meta || false} title={post.frontmatter.title || false}>
-      <SinglePostTemplate
+      <SingleMenuTemplate
         {...post}
         {...post.frontmatter}
         body={post.html}
-        nextPostURL={_get(thisEdge, 'next.fields.slug')}
-        prevPostURL={_get(thisEdge, 'previous.fields.slug')}
+        nextMenuURL={_get(thisEdge, 'next.fields.slug')}
+        prevMenuURL={_get(thisEdge, 'previous.fields.slug')}
       />
     </Layout>
   );
 };
 
-export default SinglePost;
+export default Menu;
 
 export const pageQuery = graphql`
-  ## Query for SinglePost data
+  ## Query for Menu data
   ## Use GraphiQL interface (http://localhost:8000/___graphql)
   ## $id is processed via gatsby-node.js
   ## query name must be unique to this file
-  query SinglePost($id: String!) {
+  query Menu($id: String!) {
     post: markdownRemark(id: { eq: $id }) {
       ...Meta
       html
@@ -102,7 +102,7 @@ export const pageQuery = graphql`
       }
     }
 
-    allPosts: allMarkdownRemark(
+    allMenus: allMarkdownRemark(
       filter: { fields: { contentType: { eq: "posts" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {

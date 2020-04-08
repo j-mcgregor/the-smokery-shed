@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
-import { stringify } from 'qs'
-import { serialize } from 'dom-form-serializer'
+import React, { Fragment } from 'react';
+import Helmet from 'react-helmet';
+import { stringify } from 'qs';
+import { serialize } from 'dom-form-serializer';
 
 class Form extends React.Component {
   static defaultProps = {
@@ -9,50 +9,49 @@ class Form extends React.Component {
     subject: '', // optional subject of the notification email
     action: '',
     successMessage: 'Thanks for your enquiry, we will get back to you soon',
-    errorMessage:
-      'There is a problem, your message has not been sent, please try contacting us via email'
-  }
+    errorMessage: 'There is a problem, your message has not been sent, please try contacting us via email'
+  };
 
   state = {
     alert: '',
     disabled: false
-  }
+  };
 
   handleSubmit = e => {
-    e.preventDefault()
-    if (this.state.disabled) return
+    e.preventDefault();
+    if (this.state.disabled) return;
 
-    const form = e.target
-    const data = serialize(form)
-    this.setState({ disabled: true })
+    const form = e.target;
+    const data = serialize(form);
+    this.setState({ disabled: true });
     fetch(form.action + '?' + stringify(data), {
       method: 'POST'
     })
       .then(res => {
         if (res.ok) {
-          return res
+          return res;
         } else {
-          throw new Error('Network error')
+          throw new Error('Network error');
         }
       })
       .then(() => {
-        form.reset()
+        form.reset();
         this.setState({
           alert: this.props.successMessage,
           disabled: false
-        })
+        });
       })
       .catch(err => {
-        console.error(err)
+        console.error(err);
         this.setState({
           disabled: false,
           alert: this.props.errorMessage
-        })
-      })
-  }
+        });
+      });
+  };
 
   render() {
-    const { name, subject, action } = this.props
+    const { name, subject, action } = this.props;
 
     return (
       <Fragment>
@@ -67,9 +66,7 @@ class Form extends React.Component {
           data-netlify=""
           netlify-recaptcha=""
         >
-          {this.state.alert && (
-            <div className="Form--Alert">{this.state.alert}</div>
-          )}
+          {this.state.alert && <div className="Form--Alert">{this.state.alert}</div>}
           <div className="Form--Group">
             <label className="Form--Label">
               <input
@@ -92,27 +89,6 @@ class Form extends React.Component {
               <span>Lastname</span>
             </label>
           </div>
-          <fieldset>
-            <label className="Form--Label Form--Radio">
-              <input
-                className="Form--RadioInput"
-                type="radio"
-                name="gender"
-                value="male"
-                defaultChecked
-              />
-              <span>Male</span>
-            </label>
-            <label className="Form--Label Form--Radio">
-              <input
-                className="Form--RadioInput"
-                type="radio"
-                name="gender"
-                value="female"
-              />
-              <span>Female</span>
-            </label>
-          </fieldset>
           <label className="Form--Label">
             <input
               className="Form--Input Form--InputText"
@@ -124,18 +100,15 @@ class Form extends React.Component {
             <span>Email address</span>
           </label>
           <label className="Form--Label has-arrow">
-            <select
-              className="Form--Input Form--Select"
-              name="type"
-              defaultValue="Type of Enquiry"
-              required
-            >
+            <select className="Form--Input Form--Select" name="type" defaultValue="Type of Enquiry" required>
               <option disabled hidden>
                 Type of Enquiry
               </option>
               <option>Need to know more</option>
-              <option>Found a bug</option>
+              <option>Catering</option>
               <option>Want to say hello</option>
+              <option>Feedback</option>
+              <option>Allergies and Dietary requirements</option>
             </select>
           </label>
           <label className="Form--Label">
@@ -149,29 +122,17 @@ class Form extends React.Component {
             <span>Message</span>
           </label>
           <label className="Form--Label Form-Checkbox">
-            <input
-              className="Form--Input Form--Textarea Form--CheckboxInput"
-              name="newsletter"
-              type="checkbox"
-            />
+            <input className="Form--Input Form--Textarea Form--CheckboxInput" name="newsletter" type="checkbox" />
             <span>Get news updates</span>
           </label>
-          <div
-            className="g-recaptcha"
-            data-sitekey="6LfKN3kUAAAAAGIM1CbXmaRZx3LIh_W2twn1tzkA"
-          />
+          <div className="g-recaptcha" data-sitekey="6LfKN3kUAAAAAGIM1CbXmaRZx3LIh_W2twn1tzkA" />
           {!!subject && <input type="hidden" name="subject" value={subject} />}
           <input type="hidden" name="form-name" value={name} />
-          <input
-            className="Button Form--SubmitButton"
-            type="submit"
-            value="Enquire"
-            disabled={this.state.disabled}
-          />
+          <input className="Button Form--SubmitButton" type="submit" value="Enquire" disabled={this.state.disabled} />
         </form>
       </Fragment>
-    )
+    );
   }
 }
 
-export default Form
+export default Form;

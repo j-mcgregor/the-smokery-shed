@@ -1,9 +1,10 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Location } from '@reach/router';
 import { Link } from 'gatsby';
-import { Menu, X } from 'react-feather';
 import logo from '../../img/logo-simplified-inverted.png';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { faFacebookF, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const NavLink = ({ to, currentPath, children }) => (
   <Link to={to} className={`nav-link ${to === currentPath ? 'active' : ''}`}>
@@ -11,14 +12,14 @@ const NavLink = ({ to, currentPath, children }) => (
   </Link>
 );
 
-export const Navigation = ({ location, subNav }) => {
+export const Navigation = ({ location, subNav, ...props }) => {
   const [currentPath] = useState(location.pathname);
-
+  const { social } = subNav;
   return (
     <Navbar collapseOnSelect expand="md">
       <Container>
         <Navbar.Brand href="/">
-          <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="React Bootstrap logo" />
+          <img src={logo} width="50" height="50" className="d-inline-block align-top" alt="React Bootstrap logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -26,9 +27,9 @@ export const Navigation = ({ location, subNav }) => {
             <NavLink to="/about" currentPath={currentPath}>
               About
             </NavLink>
-            <NavDropdown title="Catering" id="collasible-nav-dropdown">
+            {/* <NavDropdown title="More" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/blog">Home</NavDropdown.Item>
               {subNav.posts.map((l, i) => {
-                console.log(l);
                 return (
                   <NavDropdown.Item href={l.slug} key={l.slug}>
                     {l.title}
@@ -36,8 +37,17 @@ export const Navigation = ({ location, subNav }) => {
                 );
               })}
               <NavDropdown.Item href="/default">Default</NavDropdown.Item>
-              <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
               <NavDropdown.Item href="/components">Components</NavDropdown.Item>
+            </NavDropdown> */}
+            <NavDropdown title="Catering" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/menus">All</NavDropdown.Item>
+              {subNav.menus.map((l, i) => {
+                return (
+                  <NavDropdown.Item href={l.slug} key={l.slug}>
+                    {l.title}
+                  </NavDropdown.Item>
+                );
+              })}
             </NavDropdown>
             <NavLink to="/weddings" currentPath={currentPath}>
               Weddings
@@ -46,86 +56,31 @@ export const Navigation = ({ location, subNav }) => {
               FAQ
             </NavLink>
             <NavLink to="/contact/">Contact</NavLink>
+            {social.facebook && (
+              <a className="nav-link" href={social.facebook} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faFacebookF} />
+              </a>
+            )}
+            {social.twitter && (
+              <a className="nav-link" href={social.twitter} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
+            )}
+            {social.instagram && (
+              <a className="nav-link" href={social.instagram} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            )}
+            {social.youtube && (
+              <a className="nav-link" href={social.youtube} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faYoutube} />
+              </a>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 };
-export class Navigation2 extends Component {
-  state = {
-    active: false,
-    activeSubNav: false,
-    currentPath: false
-  };
-
-  componentDidMount = () => this.setState({ currentPath: this.props.location.pathname });
-
-  handleMenuToggle = () => this.setState({ active: !this.state.active });
-
-  // Only close nav if it is open
-  handleLinkClick = () => this.state.active && this.handleMenuToggle();
-
-  toggleSubNav = subNav =>
-    this.setState({
-      activeSubNav: this.state.activeSubNav === subNav ? false : subNav
-    });
-
-  render() {
-    const { active } = this.state,
-      { subNav } = this.props,
-      NavLink = ({ to, className, children, ...props }) => (
-        <Link
-          to={to}
-          className={`NavLink ${to === this.state.currentPath ? 'active' : ''} ${className}`}
-          onClick={this.handleLinkClick}
-          {...props}
-        >
-          {children}
-        </Link>
-      );
-
-    return (
-      <nav className={`Nav ${active ? 'Nav-active' : ''}`}>
-        <div className="Nav--Container container">
-          <div className="Nav--Links">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/blog/">Blog</NavLink>
-            <NavLink to="/components/">Catering</NavLink>
-            <div className={`Nav--Group ${this.state.activeSubNav === 'posts' ? 'active' : ''}`}>
-              <span
-                className={`NavLink Nav--GroupParent ${
-                  this.props.location.pathname.includes('posts') ||
-                  this.props.location.pathname.includes('blog') ||
-                  this.props.location.pathname.includes('post-categories')
-                    ? 'active'
-                    : ''
-                }`}
-                onClick={() => this.toggleSubNav('posts')}
-              >
-                Blog
-                <div className="Nav--GroupLinks">
-                  <NavLink to="/blog/" className="Nav--GroupLink">
-                    All Posts
-                  </NavLink>
-                  {subNav.posts.map((link, index) => (
-                    <NavLink to={link.slug} key={'posts-subnav-link-' + index} className="Nav--GroupLink">
-                      {link.title}
-                    </NavLink>
-                  ))}
-                </div>
-              </span>
-            </div>
-            <NavLink to="/default/">Default</NavLink>
-            <NavLink to="/contact/">Contact</NavLink>
-          </div>
-          <button className="Button-blank Nav--MenuButton" onClick={this.handleMenuToggle}>
-            {active ? <X /> : <Menu />}
-          </button>
-        </div>
-      </nav>
-    );
-  }
-}
 
 export default ({ subNav }) => <Location>{route => <Navigation subNav={subNav} {...route} />}</Location>;

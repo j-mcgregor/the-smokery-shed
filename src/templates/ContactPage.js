@@ -1,13 +1,15 @@
-import React from 'react'
-import { MapPin, Smartphone, Mail } from 'react-feather'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { MapPin, Smartphone, Mail, Facebook, Twitter, Instagram, Youtube } from 'react-feather';
+import { faPinterest, faEtsy } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { graphql } from 'gatsby';
 
-import PageHeader from '../components/pageComponents/PageHeader'
-import FormSimpleAjax from '../components/forms/FormSimpleAjax'
-import Content from '../components/layout/Content'
-import GoogleMap from '../components/socialComponents/GoogleMap'
-import Layout from '../components/layout/Layout'
-import './ContactPage.css'
+import PageHeader from '../components/pageComponents/PageHeader';
+import FormSimpleAjax from '../components/forms/FormSimpleAjax';
+import Content from '../components/layout/Content';
+import GoogleMap from '../components/socialComponents/GoogleMap';
+import Layout from '../components/layout/Layout';
+import './ContactPage.scss';
 
 // Export Template for use in CMS preview
 export const ContactPageTemplate = ({
@@ -17,42 +19,79 @@ export const ContactPageTemplate = ({
   featuredImage,
   address,
   phone,
+  facebook,
+  twitter,
+  instagram,
+  youtube,
+  etsy,
+  pinterest,
   email,
   locations
 }) => (
   <main className="Contact">
-    <PageHeader
-      title={title}
-      subtitle={subtitle}
-      backgroundImage={featuredImage}
-    />
+    <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
     <section className="section Contact--Section1">
       <div className="container Contact--Section1--Container">
         <div>
           <Content source={body} />
           <div className="Contact--Details">
             {address && (
-              <a
-                className="Contact--Details--Item"
-                href={`https://www.google.com.au/maps/search/${encodeURI(
-                  address
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MapPin /> {address}
-              </a>
+              <div className="Contact--Details--Item">
+                <a
+                  href={`https://www.google.com.au/maps/search/${encodeURI(address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MapPin /> {address}
+                </a>
+              </div>
             )}
             {phone && (
-              <a className="Contact--Details--Item" href={`tel:${phone}`}>
-                <Smartphone /> {phone}
-              </a>
+              <div className="Contact--Details--Item">
+                <a href={`tel:${phone}`}>
+                  <Smartphone /> {phone}
+                </a>
+              </div>
             )}
             {email && (
-              <a className="Contact--Details--Item" href={`mailto:${email}`}>
-                <Mail /> {email}
-              </a>
+              <div className="Contact--Details--Item">
+                <a href={`mailto:${email}`}>
+                  <Mail /> {email}
+                </a>
+              </div>
             )}
+            <div className="flex">
+              {facebook && (
+                <a className="Contact--Details--Item" href={facebook} target="_blank" rel="noopener noreferrer">
+                  <Facebook />
+                </a>
+              )}
+              {twitter && (
+                <a className="Contact--Details--Item" href={twitter} target="_blank" rel="noopener noreferrer">
+                  <Twitter />
+                </a>
+              )}
+              {instagram && (
+                <a className="Contact--Details--Item" href={instagram} target="_blank" rel="noopener noreferrer">
+                  <Instagram />
+                </a>
+              )}
+              {youtube && (
+                <a className="Contact--Details--Item" href={youtube} target="_blank" rel="noopener noreferrer">
+                  <Youtube />
+                </a>
+              )}
+              {pinterest && (
+                <a className="Contact--Details--Item" href={pinterest} target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faPinterest} />
+                </a>
+              )}
+              {etsy && (
+                <a className="Contact--Details--Item" href={etsy} target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faEtsy} />
+                </a>
+              )}
+            </div>
           </div>
         </div>
 
@@ -64,18 +103,15 @@ export const ContactPageTemplate = ({
 
     <GoogleMap locations={locations} />
   </main>
-)
+);
 
 const ContactPage = ({ data: { page } }) => (
-  <Layout
-    meta={page.frontmatter.meta || false}
-    title={page.frontmatter.title || false}
-  >
+  <Layout meta={page.frontmatter.meta || false} title={page.frontmatter.title || false}>
     <ContactPageTemplate {...page.frontmatter} body={page.html} />
   </Layout>
-)
+);
 
-export default ContactPage
+export default ContactPage;
 
 export const pageQuery = graphql`
   query ContactPage($id: String!) {
@@ -90,6 +126,10 @@ export const pageQuery = graphql`
         address
         phone
         email
+        facebook
+        twitter
+        instagram
+        youtube
         locations {
           mapLink
           lat
@@ -98,4 +138,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

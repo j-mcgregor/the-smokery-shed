@@ -4,8 +4,8 @@ import { graphql } from 'gatsby';
 import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
-import SVGIcon from '../components/shared/SVGIcon';
 import Accordion from '../components/shared/Accordion';
+import './DefaultPage.scss';
 
 // Export Template for use in CMS preview
 export const DefaultPageTemplate = ({ title, subtitle, featuredImage, body, accordion }) => (
