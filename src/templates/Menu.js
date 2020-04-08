@@ -1,40 +1,22 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import _get from 'lodash/get';
 import { Link, graphql } from 'gatsby';
 import { ChevronLeft } from 'react-feather';
 
+import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
 import './Menu.scss';
 
-export const SingleMenuTemplate = ({ title, date, body, nextMenuURL, prevMenuURL, categories = [] }) => (
+export const SingleMenuTemplate = ({ title, body, featuredImage, nextMenuURL, prevMenuURL }) => (
   <main>
+    <PageHeader title={title} backgroundImage={featuredImage} />
     <article className="Menu section light" itemScope itemType="http://schema.org/BlogPosting">
       <div className="container skinny">
         <Link className="Menu--BackButton" to="/menus">
           <ChevronLeft /> BACK
         </Link>
         <div className="Menu--Content relative">
-          <div className="Menu--Meta">
-            {date && (
-              <time className="Menu--Meta--Date" itemProp="dateCreated pubdate datePublished" date={date}>
-                {date}
-              </time>
-            )}
-            {categories && (
-              <Fragment>
-                <span>|</span>
-                {categories.map((cat, index) => (
-                  <span key={cat.category} className="Menu--Meta--Category">
-                    {cat.category}
-                    {/* Add a comma on all but last category */}
-                    {index !== categories.length - 1 ? ',' : ''}
-                  </span>
-                ))}
-              </Fragment>
-            )}
-          </div>
-
           {title && (
             <h1 className="Menu--Title" itemProp="title">
               {title}
@@ -64,14 +46,14 @@ export const SingleMenuTemplate = ({ title, date, body, nextMenuURL, prevMenuURL
 );
 
 // Export Default Menu for front-end
-const Menu = ({ data: { post, allMenus } }) => {
-  const thisEdge = allMenus.edges.find(edge => edge.node.id === post.id);
+const Menu = ({ data: { menu, allMenus } }) => {
+  const thisEdge = allMenus.edges.find(edge => edge.node.id === menu.id);
   return (
-    <Layout meta={post.frontmatter.meta || false} title={post.frontmatter.title || false}>
+    <Layout meta={menu.frontmatter.meta || false} title={menu.frontmatter.title || false}>
       <SingleMenuTemplate
-        {...post}
-        {...post.frontmatter}
-        body={post.html}
+        {...menu}
+        {...menu.frontmatter}
+        body={menu.html}
         nextMenuURL={_get(thisEdge, 'next.fields.slug')}
         prevMenuURL={_get(thisEdge, 'previous.fields.slug')}
       />
@@ -86,8 +68,9 @@ export const pageQuery = graphql`
   ## Use GraphiQL interface (http://localhost:8000/___graphql)
   ## $id is processed via gatsby-node.js
   ## query name must be unique to this file
+
   query Menu($id: String!) {
-    post: markdownRemark(id: { eq: $id }) {
+    menu: markdownRemark(id: { eq: $id }) {
       ...Meta
       html
       id
@@ -95,7 +78,7 @@ export const pageQuery = graphql`
         title
         template
         subtitle
-        date(formatString: "MMMM Do, YYYY")
+        featuredImage
         categories {
           category
         }
@@ -103,7 +86,7 @@ export const pageQuery = graphql`
     }
 
     allMenus: allMarkdownRemark(
-      filter: { fields: { contentType: { eq: "posts" } } }
+      filter: { fields: { contentType: { eq: "menus" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {

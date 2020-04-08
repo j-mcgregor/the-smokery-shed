@@ -66,7 +66,6 @@ export default ({ children, meta, title }) => {
       `}
       render={data => {
         const { siteTitle, socialMediaCard, googleTrackingId } = data.settingsYaml || {};
-        console.log(data);
         const subNav = {
           posts: data.allPosts.hasOwnProperty('edges')
             ? data.allPosts.edges.map(post => {
