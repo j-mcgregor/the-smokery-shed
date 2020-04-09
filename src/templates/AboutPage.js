@@ -5,23 +5,25 @@ import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
 import './AboutPage.scss';
+import { Container, Row, Col } from 'react-bootstrap';
 
 // Export Template for use in CMS preview
 export const AboutTemplate = ({ title, subtitle, featuredImage, section1, image1, section2, image2 }) => (
   <main className="About">
     <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
 
-    <section className="section__1">
-      <div className="container">
-        <Content source={section1} />
-      </div>
-    </section>
-
-    <section className="section__2">
-      <div className="container">
-        <Content source={section2} />
-      </div>
-    </section>
+    <Container className="pv-5">
+      <Row className="section__1">
+        <Col md={{ span: 8, offset: 2 }}>
+          <Content source={section1} />
+        </Col>
+      </Row>
+      <Row className="section__2">
+        <Col md={{ span: 8, offset: 2 }}>
+          <Content source={section2} />
+        </Col>
+      </Row>
+    </Container>
   </main>
 );
 
