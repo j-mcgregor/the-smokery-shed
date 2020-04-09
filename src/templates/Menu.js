@@ -9,7 +9,8 @@ import Layout from '../components/layout/Layout';
 import './Menu.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 
-export const SingleMenuTemplate = ({ title, body, featuredImage, nextMenuURL, prevMenuURL }) => {
+export const SingleMenuTemplate = ({ title, body, featuredImage, nextMenuURL, prevMenuURL, ...props }) => {
+  console.log(props);
   useEffect(() => {
     const paragraphs = document.getElementsByTagName('p');
     if (paragraphs) {

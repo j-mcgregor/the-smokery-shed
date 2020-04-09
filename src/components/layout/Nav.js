@@ -55,7 +55,7 @@ export const Navigation = ({ location, subNav, ...props }) => {
             <NavLink to="/faq" currentPath={currentPath}>
               FAQ
             </NavLink>
-            <NavLink to="/contact/">Contact</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
             {social.facebook && (
               <a className="nav-link" href={social.facebook} target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faFacebookF} />

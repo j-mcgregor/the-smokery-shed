@@ -23,6 +23,29 @@ collections: # A list of collections the CMS should be able to edit
     editor:
       preview: true
     files:
+      - file: 'content/pages/about.md'
+        label: 'About Page'
+        name: 'about'
+        fields:
+          - { label: Template, name: template, widget: hidden, default: About }
+          - { label: Slug, name: slug, widget: hidden, default: 'about' }
+          - { label: Title, name: title, widget: string }
+          - { label: Featured Image, name: featuredImage, widget: image }
+          - { label: Subtitle, name: subtitle, widget: markdown, required: false }
+          - { label: Section1, name: section1, widget: markdown }
+          - { label: Image1, name: image1, widget: image }
+          - { label: Section2, name: section2, widget: markdown }
+          - { label: Image2, name: image2, widget: image }
+          - label: 'Meta'
+            required: false
+            name: 'meta'
+            widget: 'object'
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Description, name: description, widget: text, required: false }
+              - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
+              - { label: Noindex, name: noindex, widget: boolean, required: false }
+
       - file: 'content/pages/contact.md'
         label: 'Contact Page'
         name: 'contact-page'
