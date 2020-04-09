@@ -1,8 +1,9 @@
 ---
 template: AboutPage
-slug: 'about'
+slug: about
 title: About Us
 featuredImage: 'https://ucarecdn.com/ed99cd09-1c00-4e1b-9b14-f9d6ff8e941a/'
+subtitle: Subtitle here
 section1: >-
   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
   eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
