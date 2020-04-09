@@ -4,72 +4,74 @@ import { Location } from '@reach/router';
 import qs from 'qs';
 
 import PageHeader from '../components/pageComponents/PageHeader';
-import MenuSection from '../components/menuComponents/MenuSection';
-import MenuCategoriesNav from '../components/menuComponents/MenuCategoriesNav';
+import ServiceSection from '../components/serviceComponents/ServiceSection';
+import ServiceCategoriesNav from '../components/serviceComponents/ServiceCategoriesNav';
 import Layout from '../components/layout/Layout';
 
 /**
- * Filter menus by date. Feature dates will be fitered
+ * Filter services by date. Feature dates will be fitered
  * When used, make sure you run a cronejob each day to show schaduled content. See docs
  *
- * @param {menus} object
+ * @param {services} object
  */
-export const byDate = menus => {
+export const byDate = services => {
   const now = Date.now();
-  return menus.filter(menu => Date.parse(menu.date) <= now);
+  return services.filter(service => Date.parse(service.date) <= now);
 };
 
 /**
- * filter menus by category.
+ * filter services by category.
  *
- * @param {menus} object
+ * @param {services} object
  * @param {title} string
  * @param {contentType} string
  */
-export const byCategory = (menus, title, contentType) => {
-  const isCategory = contentType === 'menuCategories';
-  const byCategory = menu => menu.categories && menu.categories.filter(cat => cat.category === title).length;
-  return isCategory ? menus.filter(byCategory) : menus;
+export const byCategory = (services, title, contentType) => {
+  const isCategory = contentType === 'serviceCategories';
+  const byCategory = service => service.categories && service.categories.filter(cat => cat.category === title).length;
+  return isCategory ? services.filter(byCategory) : services;
 };
 
 // Export Template for use in CMS preview
-export const MenuContainerTemplate = ({
+export const ServiceContainerTemplate = ({
   title,
   subtitle,
   featuredImage,
-  menus = [],
-  menuCategories = [],
+  services = [],
+  serviceCategories = [],
   enableSearch = true,
   contentType
 }) => (
   <Location>
     {({ location }) => {
-      let filteredMenus = menus && !!menus.length ? byCategory(byDate(menus), title, contentType) : [];
+      let filteredServices = services && !!services.length ? byCategory(byDate(services), title, contentType) : [];
 
       let queryObj = location.search.replace('?', '');
       queryObj = qs.parse(queryObj);
 
       if (enableSearch && queryObj.s) {
         const searchTerm = queryObj.s.toLowerCase();
-        filteredMenus = filteredMenus.filter(menu => menu.frontmatter.title.toLowerCase().includes(searchTerm));
+        filteredServices = filteredServices.filter(service =>
+          service.frontmatter.title.toLowerCase().includes(searchTerm)
+        );
       }
 
       return (
         <main className="Blog">
           <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
 
-          {!!menuCategories.length && (
+          {!!serviceCategories.length && (
             <section className="section thin">
               <div className="container">
-                <MenuCategoriesNav enableSearch categories={menuCategories} />
+                <ServiceCategoriesNav enableSearch categories={serviceCategories} />
               </div>
             </section>
           )}
 
-          {!!menus.length && (
+          {!!services.length && (
             <section className="section">
               <div className="container">
-                <MenuSection menus={filteredMenus} />
+                <ServiceSection services={filteredServices} />
               </div>
             </section>
           )}
@@ -79,35 +81,35 @@ export const MenuContainerTemplate = ({
   </Location>
 );
 
-// Export Default MenuContainer for front-end
-const MenuContainer = ({ data: { page, menus, menuCategories } }) => (
+// Export Default ServiceContainer for front-end
+const ServiceContainer = ({ data: { page, services, serviceCategories } }) => (
   <Layout meta={page.frontmatter.meta || false} title={page.frontmatter.title || false}>
-    <MenuContainerTemplate
+    <ServiceContainerTemplate
       {...page}
       {...page.fields}
       {...page.frontmatter}
-      menus={menus.edges.map(menu => ({
-        ...menu.node,
-        ...menu.node.frontmatter,
-        ...menu.node.fields
+      services={services.edges.map(service => ({
+        ...service.node,
+        ...service.node.frontmatter,
+        ...service.node.fields
       }))}
-      menuCategories={menuCategories.edges.map(menu => ({
-        ...menu.node,
-        ...menu.node.frontmatter,
-        ...menu.node.fields
+      serviceCategories={serviceCategories.edges.map(service => ({
+        ...service.node,
+        ...service.node.frontmatter,
+        ...service.node.fields
       }))}
     />
   </Layout>
 );
 
-export default MenuContainer;
+export default ServiceContainer;
 
 export const pageQuery = graphql`
-  ## Query for MenuContainer data
+  ## Query for ServiceContainer data
   ## Use GraphiQL interface (http://localhost:8000/___graphql)
   ## $id is processed via gatsby-node.js
   ## query name must be unique to this file
-  query MenuContainer($id: String!) {
+  query ServiceContainer($id: String!) {
     page: markdownRemark(id: { eq: $id }) {
       ...Meta
       fields {
@@ -122,8 +124,8 @@ export const pageQuery = graphql`
       }
     }
 
-    menus: allMarkdownRemark(
-      filter: { fields: { contentType: { eq: "menus" } } }
+    services: allMarkdownRemark(
+      filter: { fields: { contentType: { eq: "services" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
@@ -143,8 +145,8 @@ export const pageQuery = graphql`
         }
       }
     }
-    menuCategories: allMarkdownRemark(
-      filter: { fields: { contentType: { eq: "menuCategories" } } }
+    serviceCategories: allMarkdownRemark(
+      filter: { fields: { contentType: { eq: "serviceCategories" } } }
       sort: { order: ASC, fields: [frontmatter___title] }
     ) {
       edges {

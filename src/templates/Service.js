@@ -6,10 +6,10 @@ import { ChevronLeft } from 'react-feather';
 import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
-import './Menu.scss';
+import './Service.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 
-export const SingleMenuTemplate = ({ title, body, featuredImage, nextMenuURL, prevMenuURL, ...props }) => {
+export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceURL, prevServiceURL, ...props }) => {
   useEffect(() => {
     const paragraphs = document.getElementsByTagName('p');
     if (paragraphs) {
@@ -24,12 +24,12 @@ export const SingleMenuTemplate = ({ title, body, featuredImage, nextMenuURL, pr
   }, []);
 
   return (
-    <main className="menu">
+    <main className="service">
       <PageHeader title={title} backgroundImage={featuredImage} />
       <Container className="pv-5">
         <Row>
           <Col sm={{ span: 8, offset: 2 }}>
-            <Link className="Menu--BackButton" to="/menus">
+            <Link className="Service--BackButton" to="/services">
               <ChevronLeft /> BACK
             </Link>
           </Col>
@@ -41,15 +41,15 @@ export const SingleMenuTemplate = ({ title, body, featuredImage, nextMenuURL, pr
         </Row>
         <Row className="pv-2">
           <Col sm={{ span: 8, offset: 2 }}>
-            <div className="Menu--Pagination flex space-between">
-              {prevMenuURL && (
-                <Link className="Menu--Pagination--Link prev" to={prevMenuURL}>
-                  Previous Menu
+            <div className="Service--Pagination flex space-between">
+              {prevServiceURL && (
+                <Link className="Service--Pagination--Link prev" to={prevServiceURL}>
+                  Previous Service
                 </Link>
               )}
-              {nextMenuURL && (
-                <Link className="Menu--Pagination--Link next" to={nextMenuURL}>
-                  Next Menu
+              {nextServiceURL && (
+                <Link className="Service--Pagination--Link next" to={nextServiceURL}>
+                  Next Service
                 </Link>
               )}
             </div>
@@ -60,32 +60,32 @@ export const SingleMenuTemplate = ({ title, body, featuredImage, nextMenuURL, pr
   );
 };
 
-// Export Default Menu for front-end
-const Menu = ({ data: { menu, allMenus } }) => {
-  const thisEdge = allMenus.edges.find(edge => edge.node.id === menu.id);
+// Export Default Service for front-end
+const Service = ({ data: { service, allServices } }) => {
+  const thisEdge = allServices.edges.find(edge => edge.node.id === service.id);
   return (
-    <Layout meta={menu.frontmatter.meta || false} title={menu.frontmatter.title || false}>
-      <SingleMenuTemplate
-        {...menu}
-        {...menu.frontmatter}
-        body={menu.html}
-        nextMenuURL={_get(thisEdge, 'next.fields.slug')}
-        prevMenuURL={_get(thisEdge, 'previous.fields.slug')}
+    <Layout meta={service.frontmatter.meta || false} title={service.frontmatter.title || false}>
+      <SingleServiceTemplate
+        {...service}
+        {...service.frontmatter}
+        body={service.html}
+        nextServiceURL={_get(thisEdge, 'next.fields.slug')}
+        prevServiceURL={_get(thisEdge, 'previous.fields.slug')}
       />
     </Layout>
   );
 };
 
-export default Menu;
+export default Service;
 
 export const pageQuery = graphql`
-  ## Query for Menu data
+  ## Query for Service data
   ## Use GraphiQL interface (http://localhost:8000/___graphql)
   ## $id is processed via gatsby-node.js
   ## query name must be unique to this file
 
-  query Menu($id: String!) {
-    menu: markdownRemark(id: { eq: $id }) {
+  query Service($id: String!) {
+    service: markdownRemark(id: { eq: $id }) {
       ...Meta
       html
       id
@@ -100,8 +100,8 @@ export const pageQuery = graphql`
       }
     }
 
-    allMenus: allMarkdownRemark(
-      filter: { fields: { contentType: { eq: "menus" } } }
+    allServices: allMarkdownRemark(
+      filter: { fields: { contentType: { eq: "services" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {

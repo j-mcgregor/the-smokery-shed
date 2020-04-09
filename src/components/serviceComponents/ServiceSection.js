@@ -1,10 +1,10 @@
 import React from 'react';
 
-import MenuCard from './MenuCard';
+import ServiceCard from './ServiceCard';
 
-class MenuSection extends React.Component {
+class ServiceSection extends React.Component {
   static defaultProps = {
-    menus: [],
+    services: [],
     title: '',
     limit: 12,
     showLoadMore: true,
@@ -22,21 +22,21 @@ class MenuSection extends React.Component {
     }));
 
   render() {
-    const { menus, title, showLoadMore, loadMoreTitle } = this.props,
+    const { services, title, showLoadMore, loadMoreTitle } = this.props,
       { limit } = this.state,
-      visibleMenus = menus.slice(0, limit || menus.length);
+      visibleServices = services.slice(0, limit || services.length);
 
     return (
       <div className="PostSection">
         {title && <h2 className="PostSection--Title">{title}</h2>}
-        {!!visibleMenus.length && (
+        {!!visibleServices.length && (
           <div className="PostSection--Grid">
-            {visibleMenus.map((menu, index) => (
-              <MenuCard key={menu.title + index} {...menu} />
+            {visibleServices.map((service, index) => (
+              <ServiceCard key={service.title + index} {...service} />
             ))}
           </div>
         )}
-        {showLoadMore && visibleMenus.length < menus.length && (
+        {showLoadMore && visibleServices.length < services.length && (
           <div className="taCenter">
             <button className="button" onClick={this.increaseLimit}>
               {loadMoreTitle}
@@ -48,4 +48,4 @@ class MenuSection extends React.Component {
   }
 }
 
-export default MenuSection;
+export default ServiceSection;

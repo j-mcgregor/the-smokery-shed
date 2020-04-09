@@ -40,8 +40,8 @@ export const Navigation = ({ location, subNav, ...props }) => {
               <NavDropdown.Item href="/components">Components</NavDropdown.Item>
             </NavDropdown> */}
             <NavDropdown title="Catering" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/menus">All</NavDropdown.Item>
-              {subNav.menus.map((l, i) => {
+              <NavDropdown.Item href="/services">All</NavDropdown.Item>
+              {subNav.services.map((l, i) => {
                 return (
                   <NavDropdown.Item href={l.slug} key={l.slug}>
                     {l.title}

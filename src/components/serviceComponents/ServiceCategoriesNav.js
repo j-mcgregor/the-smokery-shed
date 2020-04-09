@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 
 import BlogSearch from '../pageComponents/BlogSearch';
 
-const MenuCategoriesNav = ({ categories, enableSearch }) => (
-  <div className="MenuCategoriesNav">
-    <Link className="NavLink mr-1" exact="true" to={`/menus`}>
+const ServiceCategoriesNav = ({ categories, enableSearch }) => (
+  <div className="ServiceCategoriesNav">
+    <Link className="NavLink mr-1" exact="true" to={`/services`}>
       All
     </Link>
     {categories.map((category, index) => (
@@ -18,4 +18,4 @@ const MenuCategoriesNav = ({ categories, enableSearch }) => (
   </div>
 );
 
-export default MenuCategoriesNav;
+export default ServiceCategoriesNav;

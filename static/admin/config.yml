@@ -18,7 +18,7 @@ media_library:
 collections: # A list of collections the CMS should be able to edit
   - name: 'pages'
     label: 'Main Pages'
-    description: 'Pages that mainly contain dynamic data (blog, menus etc). For other pages, see "Static Pages"'
+    description: 'Pages that mainly contain dynamic data (blog, services etc). For other pages, see "Static Pages"'
     delete: false # Prevent users from deleting documents in this collection
     editor:
       preview: true
@@ -125,12 +125,12 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
               - { label: Noindex, name: noindex, widget: boolean, required: false }
 
-      - file: 'content/pages/menus.md'
-        label: 'Menu Page'
-        name: 'menus'
+      - file: 'content/pages/services.md'
+        label: 'Service Page'
+        name: 'services'
         fields:
-          - { label: Template, name: template, widget: hidden, default: MenuContainer }
-          - { label: Slug, name: slug, widget: hidden, default: 'menu' }
+          - { label: Template, name: template, widget: hidden, default: ServiceContainer }
+          - { label: Slug, name: slug, widget: hidden, default: 'service' }
           - { label: Title, name: title, widget: string }
           - { label: Featured Image, name: featuredImage, widget: image }
           - { label: Subtitle, name: subtitle, widget: markdown }
@@ -176,16 +176,16 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
           - { label: Noindex, name: noindex, widget: boolean, required: false }
 
-  - name: menus
-    label: Menus
-    description: 'List of menus that will appear in "/menus" (the catering section)'
+  - name: services
+    label: Services
+    description: 'List of services that will appear in "/services" (the catering section)'
     editor:
       preview: true
-    folder: content/menus
+    folder: content/services
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - { label: Template, name: template, widget: hidden, default: Menu }
+      - { label: Template, name: template, widget: hidden, default: Service }
       - { label: Title, name: title, widget: string }
       - label: 'Status'
         name: 'status'
@@ -204,7 +204,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: 'Category'
             name: 'category'
             widget: 'relation'
-            collection: 'menuCategories'
+            collection: 'serviceCategories'
             searchFields: ['title']
             valueField: 'title'
       - label: 'Meta'
@@ -217,16 +217,16 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
           - { label: Noindex, name: noindex, widget: boolean, required: false }
 
-  - name: menuCategories
-    label: Menu Category
-    description: 'A way to catergorise and group menus (eg Social | Business | Party | Celebration )'
+  - name: serviceCategories
+    label: Service Category
+    description: 'A way to catergorise and group services (eg Social | Business | Party | Celebration )'
     editor:
       preview: false
-    folder: content/menuCategories
+    folder: content/serviceCategories
     slug: '{{slug}}'
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - { label: Template, name: template, widget: hidden, default: MenuContainer }
+      - { label: Template, name: template, widget: hidden, default: ServiceContainer }
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string, required: false }
       - { label: Featured Image, name: featuredImage, widget: image, required: false }

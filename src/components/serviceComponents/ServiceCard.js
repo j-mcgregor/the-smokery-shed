@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import Image from '../shared/Image';
 
-const MenuCard = ({ featuredImage, title, excerpt, slug, categories = [], className = '', ...props }) => (
+const ServiceCard = ({ featuredImage, title, excerpt, slug, categories = [], className = '', ...props }) => (
   <Link to={slug} className={`PostCard ${className}`}>
     {featuredImage && (
       <div className="PostCard--Image relative">
@@ -18,4 +18,4 @@ const MenuCard = ({ featuredImage, title, excerpt, slug, categories = [], classN
   </Link>
 );
 
-export default MenuCard;
+export default ServiceCard;

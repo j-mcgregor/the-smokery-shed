@@ -39,8 +39,8 @@ export default ({ children, meta, title }) => {
               }
             }
           }
-          menus: allMarkdownRemark(
-            filter: { fields: { contentType: { eq: "menus" } } }
+          services: allMarkdownRemark(
+            filter: { fields: { contentType: { eq: "services" } } }
             sort: { order: DESC, fields: [frontmatter___date] }
           ) {
             edges {
@@ -72,9 +72,9 @@ export default ({ children, meta, title }) => {
                 return { ...post.node.fields, ...post.node.frontmatter };
               })
             : false,
-          menus: data.menus.hasOwnProperty('edges')
-            ? data.menus.edges.map(menu => {
-                return { ...menu.node.fields, ...menu.node.frontmatter };
+          services: data.services.hasOwnProperty('edges')
+            ? data.services.edges.map(service => {
+                return { ...service.node.fields, ...service.node.frontmatter };
               })
             : false,
           social: data.social.hasOwnProperty('frontmatter') ? data.social.frontmatter : false
