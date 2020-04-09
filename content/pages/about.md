@@ -1,5 +1,6 @@
 ---
 template: AboutPage
+slug: 'about'
 title: About Us
 featuredImage: 'https://ucarecdn.com/ed99cd09-1c00-4e1b-9b14-f9d6ff8e941a/'
 section1: >-
