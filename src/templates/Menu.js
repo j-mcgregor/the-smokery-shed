@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import _get from 'lodash/get';
 import { Link, graphql } from 'gatsby';
 import { ChevronLeft } from 'react-feather';
@@ -7,43 +7,58 @@ import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
 import './Menu.scss';
+import { Container, Row, Col } from 'react-bootstrap';
 
-export const SingleMenuTemplate = ({ title, body, featuredImage, nextMenuURL, prevMenuURL }) => (
-  <main>
-    <PageHeader title={title} backgroundImage={featuredImage} />
-    <article className="Menu section light" itemScope itemType="http://schema.org/BlogPosting">
-      <div className="container skinny">
-        <Link className="Menu--BackButton" to="/menus">
-          <ChevronLeft /> BACK
-        </Link>
-        <div className="Menu--Content relative">
-          {title && (
-            <h1 className="Menu--Title" itemProp="title">
-              {title}
-            </h1>
-          )}
+export const SingleMenuTemplate = ({ title, body, featuredImage, nextMenuURL, prevMenuURL }) => {
+  useEffect(() => {
+    const paragraphs = document.getElementsByTagName('p');
+    if (paragraphs) {
+      Array.from(paragraphs).forEach((p, i) => {
+        const hasChildren = !!Array.from(p.children).length;
+        if (hasChildren) {
+          paragraphs[i].classList.add('flex');
+          paragraphs[i].classList.add('flex-center');
+        }
+      });
+    }
+  }, []);
 
-          <div className="Menu--InnerContent">
+  return (
+    <main className="menu">
+      <PageHeader title={title} backgroundImage={featuredImage} />
+      <Container className="pv-5">
+        <Row>
+          <Col sm={{ span: 8, offset: 2 }}>
+            <Link className="Menu--BackButton" to="/menus">
+              <ChevronLeft /> BACK
+            </Link>
+          </Col>
+        </Row>
+        <Row className="pv-2">
+          <Col sm={{ span: 8, offset: 2 }}>
             <Content source={body} />
-          </div>
-
-          <div className="Menu--Pagination">
-            {prevMenuURL && (
-              <Link className="Menu--Pagination--Link prev" to={prevMenuURL}>
-                Previous Post
-              </Link>
-            )}
-            {nextMenuURL && (
-              <Link className="Menu--Pagination--Link next" to={nextMenuURL}>
-                Next Post
-              </Link>
-            )}
-          </div>
-        </div>
-      </div>
-    </article>
-  </main>
-);
+          </Col>
+        </Row>
+        <Row className="pv-2">
+          <Col sm={{ span: 8, offset: 2 }}>
+            <div className="Menu--Pagination flex space-between">
+              {prevMenuURL && (
+                <Link className="Menu--Pagination--Link prev" to={prevMenuURL}>
+                  Previous Menu
+                </Link>
+              )}
+              {nextMenuURL && (
+                <Link className="Menu--Pagination--Link next" to={nextMenuURL}>
+                  Next Menu
+                </Link>
+              )}
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </main>
+  );
+};
 
 // Export Default Menu for front-end
 const Menu = ({ data: { menu, allMenus } }) => {

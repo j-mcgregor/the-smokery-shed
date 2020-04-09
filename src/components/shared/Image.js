@@ -52,8 +52,8 @@ class Image extends React.Component {
       lazy = true
     } = this.props;
 
-    const isUploadcare = this.checkIsUploadcare(src),
-      fullImage = !isUploadcare || !lazy;
+    const isUploadcare = this.checkIsUploadcare(src);
+    const fullImage = !isUploadcare || !lazy;
 
     /* create source set for images */
     if (isUploadcare) {
@@ -68,6 +68,7 @@ class Image extends React.Component {
     smallSrc = `${src}${isUploadcare ? '-/progressive/yes/-/format/auto/-/resize/10x/' : ''}`;
 
     let style = {};
+
     if (background) {
       style = {
         backgroundImage: `url(${this.state.isIntersecting ? fullSrc : smallSrc})`,

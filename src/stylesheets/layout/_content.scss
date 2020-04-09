@@ -1,9 +1,17 @@
+@import '../abstracts/mixins';
+
+.Content p {
+  text-align: justify;
+  line-height: 2em;
+}
+
 .Content--Image,
 .Content img {
   max-width: 100%;
   display: block;
   height: auto;
   margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .Content--Iframe {

@@ -1,3 +1,17 @@
+@import '../stylesheets/abstracts/mixins';
+
+.shadow-effect-1 {
+  @include shadow-effect-1;
+}
+
+.menu {
+  .Content {
+    img {
+      width: 50%;
+      @include shadow-effect-1;
+    }
+  }
+}
 .SingleMenu {
   background: var(--lightGrey);
 }

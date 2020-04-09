@@ -18,9 +18,10 @@ const withContentImages = source => {
   const images = source.match(/<img(.*?)\\?>/gim);
 
   for (let i in images) {
-    const src = /src="(.*?)"/g.exec(images[i]),
-      alt = /alt="(.*?)"/g.exec(images[i]),
-      title = /title="(.*?)"/g.exec(images[i]);
+    const src = /src="(.*?)"/g.exec(images[i]);
+    const alt = /alt="(.*?)"/g.exec(images[i]);
+    const title = /title="(.*?)"/g.exec(images[i]);
+
     source = source.replace(
       images[i],
       ReactDOMServer.renderToStaticMarkup(

@@ -29,7 +29,7 @@ export const ContactPageTemplate = ({
   locations
 }) => (
   <main className="Contact">
-    <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
+    <PageHeader title={title} backgroundImage={featuredImage} />
     <section className="section Contact--Section1">
       <div className="container Contact--Section1--Container">
         <div>

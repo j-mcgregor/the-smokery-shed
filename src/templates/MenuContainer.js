@@ -56,7 +56,7 @@ export const MenuContainerTemplate = ({
 
       return (
         <main className="Blog">
-          <PageHeader title="Catering" subtitle={subtitle} backgroundImage={featuredImage} />
+          <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
 
           {!!menuCategories.length && (
             <section className="section thin">
