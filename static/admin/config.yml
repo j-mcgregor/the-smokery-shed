@@ -25,9 +25,9 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - file: 'content/pages/about.md'
         label: 'About Page'
-        name: 'about'
+        name: 'about-page'
         fields:
-          - { label: Template, name: template, widget: hidden, default: About }
+          - { label: Template, name: template, widget: hidden, default: AboutPage }
           - { label: Slug, name: slug, widget: hidden, default: 'about' }
           - { label: Title, name: title, widget: string }
           - { label: Featured Image, name: featuredImage, widget: image }

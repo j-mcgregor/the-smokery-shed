@@ -45,12 +45,11 @@ exports.createPages = ({ actions, graphql }) => {
 
       pagesToCreate.forEach((page, index) => {
         const id = page.node.id;
+        console.log(page.node.fields.slug);
         createPage({
           // page slug set in md frontmatter
           path: page.node.fields.slug,
-          component: path.resolve(
-            `src/templates/${String(page.node.frontmatter.template)}.js`
-          ),
+          component: path.resolve(`src/templates/${String(page.node.frontmatter.template)}.js`),
           // additional data can be passed via context
           context: {
             id
@@ -83,9 +82,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     ) {
       slug = `/`;
     } else if (_.get(node, 'frontmatter.title')) {
-      slug = `/${_.kebabCase(parsedFilePath.dir)}/${_.kebabCase(
-        node.frontmatter.title
-      )}/`;
+      slug = `/${_.kebabCase(parsedFilePath.dir)}/${_.kebabCase(node.frontmatter.title)}/`;
     } else if (parsedFilePath.dir === '') {
       slug = `/${parsedFilePath.name}/`;
     } else {

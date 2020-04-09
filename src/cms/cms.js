@@ -3,7 +3,7 @@ import CMS from 'netlify-cms-app';
 import './cms-utils';
 
 import { HomePageTemplate } from '../templates/HomePage';
-import { AboutTemplate } from '../templates/About';
+import { AboutTemplate } from '../templates/AboutPage';
 import { ComponentsPageTemplate } from '../templates/ComponentsPage';
 import { ContactPageTemplate } from '../templates/ContactPage';
 import { DefaultPageTemplate } from '../templates/DefaultPage';
@@ -21,7 +21,7 @@ if (window.location.hostname === 'localhost' && window.localStorage.getItem('net
 }
 
 CMS.registerPreviewTemplate('home-page', ({ entry }) => <HomePageTemplate {...entry.toJS().data} />);
-CMS.registerPreviewTemplate('about', ({ entry }) => <AboutTemplate {...entry.toJS().data} />);
+CMS.registerPreviewTemplate('about-page', ({ entry }) => <AboutTemplate {...entry.toJS().data} />);
 CMS.registerPreviewTemplate('components-page', ({ entry }) => <ComponentsPageTemplate {...entry.toJS().data} />);
 CMS.registerPreviewTemplate('contact-page', ({ entry }) => <ContactPageTemplate {...entry.toJS().data} />);
 CMS.registerPreviewTemplate('infoPages', ({ entry }) => <DefaultPageTemplate {...entry.toJS().data} />);
