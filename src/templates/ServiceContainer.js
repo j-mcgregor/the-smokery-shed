@@ -7,6 +7,7 @@ import PageHeader from '../components/pageComponents/PageHeader';
 import ServiceSection from '../components/serviceComponents/ServiceSection';
 import ServiceCategoriesNav from '../components/serviceComponents/ServiceCategoriesNav';
 import Layout from '../components/layout/Layout';
+import { Container, Row, Col } from 'react-bootstrap';
 
 /**
  * Filter services by date. Feature dates will be fitered
@@ -37,6 +38,7 @@ export const ServiceContainerTemplate = ({
   title,
   subtitle,
   featuredImage,
+  section1,
   services = [],
   serviceCategories = [],
   enableSearch = true,
@@ -59,6 +61,12 @@ export const ServiceContainerTemplate = ({
       return (
         <main className="Blog">
           <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
+
+          <Container>
+            <Row>
+              <Col md={{ span: 6, offset: 3 }}>{section1}</Col>
+            </Row>
+          </Container>
 
           {!!serviceCategories.length && (
             <section className="section thin">
@@ -121,6 +129,7 @@ export const pageQuery = graphql`
         template
         subtitle
         featuredImage
+        section1
       }
     }
 

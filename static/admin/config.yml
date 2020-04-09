@@ -133,7 +133,8 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Slug, name: slug, widget: hidden, default: 'service' }
           - { label: Title, name: title, widget: string }
           - { label: Featured Image, name: featuredImage, widget: image }
-          - { label: Subtitle, name: subtitle, widget: markdown }
+          - { label: Subtitle, name: subtitle, widget: markdown, required: false }
+          - { label: Section1, name: section1, widget: markdown }
           - label: 'Meta'
             required: false
             name: 'meta'
