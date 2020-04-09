@@ -7,6 +7,7 @@ featuredImage: 'https://ucarecdn.com/55eae9a1-3f50-4cf8-8792-7d1ca8481779/'
 excerpt: >-
   At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
   praesentium voluptatum deleniti atque corrupti quos dolores
+menu: Afternoon Tea - Summer 19
 categories:
   - category: Social
 meta:
