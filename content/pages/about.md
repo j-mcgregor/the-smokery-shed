@@ -1,8 +1,8 @@
 ---
-title: About
 slug: about
+title: About Us
 featuredImage: 'https://ucarecdn.com/c1689746-965c-4530-9942-5bd864256020/'
-subtitle: lorem
+subtitle: ''
 section1: >-
   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
   eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
