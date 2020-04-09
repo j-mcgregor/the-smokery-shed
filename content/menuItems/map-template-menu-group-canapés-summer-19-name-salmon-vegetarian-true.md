@@ -1,6 +1,6 @@
 ---
 template: Menu
-group: Canapés - Summer 19
+group: Sandwiches
 name: Salmon
 vegetarian: true
 ---
