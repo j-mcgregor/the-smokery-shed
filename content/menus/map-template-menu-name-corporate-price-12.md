@@ -1,5 +1,5 @@
 ---
 template: Menu
-name: Corporate
+name: Corporate - Summer 19
 price: '12'
 ---
