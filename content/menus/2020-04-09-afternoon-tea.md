@@ -7,6 +7,8 @@ featuredImage: 'https://ucarecdn.com/55eae9a1-3f50-4cf8-8792-7d1ca8481779/'
 excerpt: >-
   At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
   praesentium voluptatum deleniti atque corrupti quos dolores
+categories:
+  - category: Social
 meta:
   title: afternoon tea
   description: afternoon tea
