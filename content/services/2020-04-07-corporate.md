@@ -1,17 +1,18 @@
 ---
 template: Service
 title: Corporate
-status: Published
-date: 2020-04-07T22:43:15.555Z
 featuredImage: 'https://ucarecdn.com/0fc38080-ed9a-4baa-be6f-146bee247c1b/'
 excerpt: >-
   Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
   cum soluta nobis est eligendi optio cumque nihil impedit quo minus
-categories:
-  - category: Work
+menu: Corporate - Summer 19
 meta:
   title: corporate
   description: corporate
+date: 2020-04-07T22:43:15.555Z
+status: Published
+categories:
+  - category: Work
 ---
 
 Whether you just need a few nibbles for a business meeting or want to treat your corporate clients to a special working lunch on your company premises, The Smokery Shedwill have the right solution for you!
