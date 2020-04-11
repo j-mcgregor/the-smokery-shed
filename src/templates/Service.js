@@ -58,10 +58,11 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
   };
 
   const menuCard = (
-    <Card className="text-center font-primary fz-3 ls-1 no-border">
+    <Card className="text-center font-primary fz-3 ls-1">
       <Card.Body>
         <Card.Title>
           <h2 className="fz-4-5">{mappedMenu.name} menu</h2>
+          <hr />
         </Card.Title>
         {checkArray(mappedMenu, 'sections')
           ? mappedMenu.sections.map(mm => {
@@ -88,11 +89,7 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
               );
             })
           : null}
-        <Button variant="dark" onClick={handleDownload} className="fz-3 my-5">
-          <FontAwesomeIcon icon={faDownload} size="1x" /> Download Menu
-        </Button>
-      </Card.Body>
-      <Card.Footer className="text-muted fz-3">
+        <hr />
         {mappedMenu.price}
         <br />
         {mappedMenu.extras &&
@@ -101,7 +98,7 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
               {e}
             </p>
           ))}
-      </Card.Footer>
+      </Card.Body>
     </Card>
   );
 
@@ -122,7 +119,12 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
           </Col>
         </Row>
         <Row className="pv-2 text-center">
-          <Col sm={{ span: 8, offset: 2 }}>{mappedMenu && mappedMenu.hasOwnProperty('sections') ? menuCard : null}</Col>
+          <Col sm={{ span: 8, offset: 2 }}>
+            {mappedMenu && mappedMenu.hasOwnProperty('sections') ? menuCard : null}
+            <Button variant="dark" onClick={handleDownload} className="fz-3 my-5 font-primary px-5 py-2">
+              <FontAwesomeIcon icon={faDownload} size="1x" /> Download Menu
+            </Button>
+          </Col>
         </Row>
         <Row className="pv-2">
           <Col sm={{ span: 8, offset: 2 }}>

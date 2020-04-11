@@ -11,6 +11,28 @@
       @include shadow-effect-1;
     }
   }
+
+  .card {
+    background: url(../img/blackboard.jpg) no-repeat center center;
+    background-size: cover;
+
+    color: white;
+    padding: 11rem;
+    -webkit-box-shadow: inset 0 0 20px 0px black;
+    box-shadow: 0 0 20px 0px #00000024;
+    border: 5px rgba(0, 0, 0, 0.397);
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
 }
 .SingleService {
   background: var(--lightGrey);
@@ -53,8 +75,7 @@
   margin: 0 0 2rem 0;
   text-align: center;
 }
-
-.SingleService--Meta > * + * {
+0 .SingleService--Meta > * + * {
   margin-left: 0.75em;
 }
 
