@@ -11,4 +11,9 @@ menuSections:
     dishes:
       - menuItem: Cucumber preserve
       - menuItem: Fishcakes
+  - menuItemGroup: Cakes and Pastries
+    dishes:
+      - menuItem: Fishcakes
+      - menuItem: Cucumber preserve
+      - menuItem: Salmon
 ---
