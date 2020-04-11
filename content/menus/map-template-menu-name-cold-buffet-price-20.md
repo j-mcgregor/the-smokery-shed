@@ -1,5 +1,5 @@
 ---
 template: Menu
 name: Cold Buffet - Summer 19
-price: '20'
+price: 20 per buffet
 ---
