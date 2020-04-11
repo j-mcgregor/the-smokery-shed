@@ -7,7 +7,7 @@ excerpt: >-
   cum soluta nobis est eligendi optio cumque nihil impedit quo minus
 menu: Corporate - Summer 19
 meta:
-  title: corporate
+  title: Corporate
   description: corporate
 date: 2020-04-07T22:43:15.555Z
 status: Published
