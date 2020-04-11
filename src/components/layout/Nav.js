@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Location } from '@reach/router';
 import { Link } from 'gatsby';
-import logo from '../../img/logo-simplified-inverted.png';
+import logo from '../../img/logo-simplified.png';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { faFacebookF, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,10 +16,10 @@ export const Navigation = ({ location, subNav, ...props }) => {
   const [currentPath] = useState(location.pathname);
   const { social } = subNav;
   return (
-    <Navbar collapseOnSelect expand="md">
+    <Navbar collapseOnSelect expand="md" fixed="top">
       <Container>
         <Navbar.Brand href="/">
-          <img src={logo} width="50" height="50" className="d-inline-block align-top" alt="React Bootstrap logo" />
+          <img src={logo} width="60" height="60" className="d-inline-block align-top" alt="React Bootstrap logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

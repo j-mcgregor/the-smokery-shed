@@ -2,11 +2,16 @@
   font-family: 'Josefin Slab';
   font-size: 14px;
   text-transform: uppercase;
+  background: rgba(41, 41, 41, 0.705);
   a {
     font-size: 1.2em;
     font-weight: 900;
   }
   .dropdown-service {
     font-size: 1.2rem;
+  }
+
+  &.navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.801);
   }
 }

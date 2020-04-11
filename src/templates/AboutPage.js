@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
 import './AboutPage.scss';
-import { Container, Row, Col } from 'react-bootstrap';
 
 // Export Template for use in CMS preview
 export const AboutTemplate = ({ title, subtitle, featuredImage, section1, image1, section2, image2 }) => (

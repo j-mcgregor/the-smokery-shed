@@ -97,7 +97,7 @@
 }
 
 @mixin corner-banner($color) {
-  @include title-foreground;
+  @include title-foreground($color);
   color: $color;
 
   span {

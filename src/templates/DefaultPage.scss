@@ -4,12 +4,6 @@
   font-family: 'Amatic SC';
   font-size: 14px;
 
-  // h1,
-  // h2 {
-  //   width: 40%;
-  //   text-align: center;
-  //   @include title-banner;
-  // }
   h2 {
     font-size: 3em;
   }
@@ -28,7 +22,8 @@
     h1,
     h2 {
       text-align: center;
-      @include title-banner(white, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+      // @include title-banner(white, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+      // @include corner-banner(rgba(0, 0, 0, 0.7));
     }
     h2 {
       font-size: 3em;
@@ -59,6 +54,16 @@
     }
     p {
       text-align: right;
+    }
+  }
+  .Accordion--item {
+    h2 {
+      font-size: 1.6em;
+      text-align: left;
+    }
+
+    .description {
+      font-size: 1.4em;
     }
   }
 }

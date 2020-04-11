@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
@@ -12,17 +13,18 @@ export const DefaultPageTemplate = ({ title, subtitle, featuredImage, body, acco
   <main className="DefaultPage">
     <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
 
-    <section className="section">
-      <div className="container">
-        <Content source={body} />
-      </div>
-    </section>
-
-    <section className="section">
-      <div className="container">
-        <Accordion items={accordion} />
-      </div>
-    </section>
+    <Container className="pv-5">
+      <Row className="section__1">
+        <Col md={{ span: 8, offset: 2 }}>
+          <Content source={body} />
+        </Col>
+      </Row>
+      <Row className="section__2">
+        <Col md={{ span: 8, offset: 2 }}>
+          <Accordion items={accordion} />
+        </Col>
+      </Row>
+    </Container>
   </main>
 );
 

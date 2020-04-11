@@ -2,12 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Location } from '@reach/router';
 import qs from 'qs';
+import { Container, Row, Col } from 'react-bootstrap';
 
+import Layout from '../components/layout/Layout';
+import Content from '../components/layout/Content';
 import PageHeader from '../components/pageComponents/PageHeader';
 import ServiceSection from '../components/serviceComponents/ServiceSection';
 import ServiceCategoriesNav from '../components/serviceComponents/ServiceCategoriesNav';
-import Layout from '../components/layout/Layout';
-import { Container, Row, Col } from 'react-bootstrap';
 
 /**
  * Filter services by date. Feature dates will be fitered
@@ -62,27 +63,28 @@ export const ServiceContainerTemplate = ({
         <main className="Blog">
           <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
 
-          <Container>
-            <Row>
-              <Col md={{ span: 6, offset: 3 }}>{section1}</Col>
+          <Container className="pv-5">
+            <Row className="pv-5">
+              <Col md={{ span: 8, offset: 2 }}>
+                {' '}
+                <Content source={section1} className="font-secondary fz-2 ls-2" />
+              </Col>
             </Row>
+            {!!serviceCategories.length && (
+              <Row className="pv-5" style={{ background: '#d8d8d8' }}>
+                <Col>
+                  <ServiceCategoriesNav enableSearch categories={serviceCategories} />
+                </Col>
+              </Row>
+            )}
+            {!!services.length && (
+              <Row className="pv-5">
+                <Col>
+                  <ServiceSection services={filteredServices} />
+                </Col>
+              </Row>
+            )}
           </Container>
-
-          {!!serviceCategories.length && (
-            <section className="section thin">
-              <div className="container">
-                <ServiceCategoriesNav enableSearch categories={serviceCategories} />
-              </div>
-            </section>
-          )}
-
-          {!!services.length && (
-            <section className="section">
-              <div className="container">
-                <ServiceSection services={filteredServices} />
-              </div>
-            </section>
-          )}
         </main>
       );
     }}

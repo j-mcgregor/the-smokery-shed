@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import _get from 'lodash/get';
 import { Link, graphql } from 'gatsby';
-import { ChevronLeft } from 'react-feather';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
-import './Service.scss';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import _kebabCase from 'lodash/kebabCase';
 import parseDiet from '../lib/parseDiet';
 import checkArray from '../lib/checkArray';
 import { PDFMenu, savePdf } from '../components/shared/PDFTemplate';
+
+import './Service.scss';
 
 export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceURL, prevServiceURL, serviceMenu }) => {
   const mappedMenu = {};
@@ -91,7 +91,7 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
           : null}
         <hr />
         {mappedMenu.price}
-        <br />
+        <div className="pt-4 pb-4" />
         {mappedMenu.extras &&
           mappedMenu.extras.map(e => (
             <p className="fz-1-5 font-secondary" key={_kebabCase(e)}>
@@ -122,7 +122,7 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
             </div>
           </Col>
         </Row>
-        <Row className="pv-2">
+        <Row className="pv-2 font-secondary fz-2">
           <Col sm={{ span: 8, offset: 2 }}>
             <Content source={body} />
           </Col>
@@ -130,9 +130,11 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
         <Row className="pv-2 text-center">
           <Col sm={{ span: 8, offset: 2 }}>
             {mappedMenu && mappedMenu.hasOwnProperty('sections') ? menuCard : null}
-            <Button variant="dark" onClick={handleDownload} className="fz-3 my-5 font-primary px-5 py-2">
-              <FontAwesomeIcon icon={faDownload} size="1x" /> Download Menu
-            </Button>
+            {mappedMenu && mappedMenu.name && mappedMenu.price && mappedMenu.sections ? (
+              <Button variant="dark" onClick={handleDownload} className="fz-3 my-5 font-primary px-5 py-2">
+                <FontAwesomeIcon icon={faDownload} size="1x" /> Download Menu
+              </Button>
+            ) : null}
           </Col>
         </Row>
       </Container>
