@@ -6,4 +6,9 @@ menuSections:
   - menuItemGroup: Cakes and Pastries
     dishes:
       - menuItem: Fishcakes
+        dietList: []
+      - menuItem: Cucumber preserve
+        dietList:
+          - diet: Vegan
+          - diet: Vegetarian
 ---
