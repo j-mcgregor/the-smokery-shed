@@ -1,3 +1,3 @@
 ---
-diet: Gluten Free
+diet: Contains nuts
 ---
