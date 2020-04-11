@@ -106,11 +106,20 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
     <main className="service">
       <PageHeader title={title} backgroundImage={featuredImage} />
       <Container className="pv-5">
-        <Row>
+        <Row className="pv-2">
           <Col sm={{ span: 8, offset: 2 }}>
-            <Link className="Service--BackButton" to="/services">
-              <ChevronLeft /> BACK
-            </Link>
+            <div className="Service--Pagination flex space-between">
+              {prevServiceURL && (
+                <Link className="Service--Pagination--Link prev" to={prevServiceURL}>
+                  Previous
+                </Link>
+              )}
+              {nextServiceURL && (
+                <Link className="Service--Pagination--Link next" to={nextServiceURL}>
+                  Next
+                </Link>
+              )}
+            </div>
           </Col>
         </Row>
         <Row className="pv-2">
@@ -124,22 +133,6 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
             <Button variant="dark" onClick={handleDownload} className="fz-3 my-5 font-primary px-5 py-2">
               <FontAwesomeIcon icon={faDownload} size="1x" /> Download Menu
             </Button>
-          </Col>
-        </Row>
-        <Row className="pv-2">
-          <Col sm={{ span: 8, offset: 2 }}>
-            <div className="Service--Pagination flex space-between">
-              {prevServiceURL && (
-                <Link className="Service--Pagination--Link prev" to={prevServiceURL}>
-                  Previous Service
-                </Link>
-              )}
-              {nextServiceURL && (
-                <Link className="Service--Pagination--Link next" to={nextServiceURL}>
-                  Next Service
-                </Link>
-              )}
-            </div>
           </Col>
         </Row>
       </Container>
