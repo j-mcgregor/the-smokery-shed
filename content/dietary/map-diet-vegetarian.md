@@ -1,3 +1,3 @@
 ---
-diet: Vegan
+diet: Gluten Free
 ---
