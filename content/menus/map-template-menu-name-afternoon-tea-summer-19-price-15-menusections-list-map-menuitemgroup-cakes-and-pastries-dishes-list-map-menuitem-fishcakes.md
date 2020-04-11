@@ -17,4 +17,8 @@ menuSections:
         dietList:
           - diet: Gluten Free
           - diet: Contains nuts
+extra:
+  - info: £3.50 pp supplement for glass of Prosecco
+  - info: 'POA for equipment hire, delivery & collection costs may apply'
+  - info: Gluten Free & additional Vegan options available on request
 ---
