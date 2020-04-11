@@ -7,9 +7,37 @@ import PageHeader from '../components/pageComponents/PageHeader';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
 import './Service.scss';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import _kebabCase from 'lodash/kebabCase';
+import parseDiet from '../lib/parseDiet';
+import checkArray from '../lib/checkArray';
 
-export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceURL, prevServiceURL, ...props }) => {
+export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceURL, prevServiceURL, serviceMenu }) => {
+  console.log(serviceMenu);
+  const mappedMenu = {};
+
+  if (serviceMenu) {
+    const {
+      node: { id, frontmatter }
+    } = serviceMenu;
+    if (id) mappedMenu.id = id;
+    if (frontmatter.name) mappedMenu.name = frontmatter.name;
+    if (frontmatter.price) mappedMenu.price = frontmatter.price;
+    if (frontmatter.menuSections) {
+      mappedMenu.sections = frontmatter.menuSections.map(ms => ({
+        section: ms.menuItemGroup,
+        dishes: ms.dishes.map(d => ({
+          dish: d.menuItem,
+          dietRestrictions: d.dietList
+        }))
+      }));
+    }
+  }
+
+  console.log(mappedMenu);
+
   useEffect(() => {
     const paragraphs = document.getElementsByTagName('p');
     if (paragraphs) {
@@ -22,6 +50,48 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
       });
     }
   }, []);
+
+  const menuCard = (
+    <Card className="text-center font-primary fz-3 no-border">
+      <Card.Body>
+        <Card.Title>
+          <h2 className="fz-4-5">{mappedMenu.name} menu</h2>
+        </Card.Title>
+
+        {checkArray(mappedMenu, 'sections')
+          ? mappedMenu.sections.map(mm => {
+              return (
+                <div key={_kebabCase(mm.section)}>
+                  <h3 className="fz-3-5">{mm.section}</h3>
+                  {checkArray(mm, 'dishes')
+                    ? mm.dishes.map(d => {
+                        console.log(d);
+                        return (
+                          <Card.Text className="fz-2-5">
+                            {d.dish}{' '}
+                            {checkArray(d, 'dietRestrictions')
+                              ? d.dietRestrictions.map(dt => (
+                                  <small key={dt.diet} className="px-3 fz-2" title={dt.diet}>
+                                    ({parseDiet(dt.diet)})
+                                  </small>
+                                ))
+                              : null}
+                          </Card.Text>
+                        );
+                      })
+                    : null}
+                </div>
+              );
+            })
+          : null}
+        <Button variant="warning" className="mt-3">
+          {' '}
+          <FontAwesomeIcon icon={faDownload} /> Download Menu
+        </Button>
+      </Card.Body>
+      <Card.Footer className="text-muted">{mappedMenu.price}</Card.Footer>
+    </Card>
+  );
 
   return (
     <main className="service">
@@ -38,6 +108,9 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
           <Col sm={{ span: 8, offset: 2 }}>
             <Content source={body} />
           </Col>
+        </Row>
+        <Row className="pv-2 text-center">
+          <Col sm={{ span: 8, offset: 2 }}>{mappedMenu && mappedMenu.hasOwnProperty('sections') ? menuCard : null}</Col>
         </Row>
         <Row className="pv-2">
           <Col sm={{ span: 8, offset: 2 }}>
@@ -61,13 +134,15 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
 };
 
 // Export Default Service for front-end
-const Service = ({ data: { service, allServices } }) => {
+const Service = ({ data: { service, allServices, allMenus } }) => {
   const thisEdge = allServices.edges.find(edge => edge.node.id === service.id);
+  const menu = allMenus.edges.find(edge => _get(edge, 'node.frontmatter.name') === service.frontmatter.menu);
   return (
     <Layout meta={service.frontmatter.meta || false} title={service.frontmatter.title || false}>
       <SingleServiceTemplate
         {...service}
         {...service.frontmatter}
+        serviceMenu={menu}
         body={service.html}
         nextServiceURL={_get(thisEdge, 'next.fields.slug')}
         prevServiceURL={_get(thisEdge, 'previous.fields.slug')}
@@ -78,6 +153,7 @@ const Service = ({ data: { service, allServices } }) => {
 
 export default Service;
 
+// Srvice has a menu which has menuItems
 export const pageQuery = graphql`
   ## Query for Service data
   ## Use GraphiQL interface (http://localhost:8000/___graphql)
@@ -97,6 +173,7 @@ export const pageQuery = graphql`
         categories {
           category
         }
+        menu
       }
     }
 
@@ -122,6 +199,26 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+          }
+        }
+      }
+    }
+    allMenus: allMarkdownRemark(filter: { fields: { contentType: { eq: "menus" } } }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            name
+            price
+            menuSections {
+              menuItemGroup
+              dishes {
+                menuItem
+                dietList {
+                  diet
+                }
+              }
+            }
           }
         }
       }

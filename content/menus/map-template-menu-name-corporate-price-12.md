@@ -1,7 +1,7 @@
 ---
 template: Menu
 name: Corporate - Summer 19
-price: '30 per person '
+price: £30 per person
 menuItems:
   - menuItem: Salmon
   - menuItem: Fishcakes

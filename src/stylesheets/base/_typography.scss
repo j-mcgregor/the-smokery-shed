@@ -5,3 +5,23 @@ body {
   color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
 }
+
+$spacing: 1rem;
+
+@for $i from 0 through 10 {
+  .fz-#{$i} {
+    font-size: $i * $spacing;
+  }
+
+  @for $j from 1 through 10 {
+    $floatSize: $j / 10;
+
+    .fz-#{$i}-#{$j} {
+      font-size: #{$i + $floatSize}rem !important;
+    }
+  }
+}
+
+.text-underline {
+  text-decoration: underline;
+}

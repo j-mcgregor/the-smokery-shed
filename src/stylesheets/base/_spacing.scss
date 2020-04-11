@@ -103,11 +103,15 @@ $default-border: $default-border-size solid #666;
 }
 
 @for $i from 0 through 10 {
-  .line-sp-#{$i} {
+  .lh-#{$i} {
     line-height: $i * $spacing !important;
   }
 }
 
 .bxs-0 {
   box-shadow: none !important;
+}
+
+.no-border {
+  border: none !important;
 }

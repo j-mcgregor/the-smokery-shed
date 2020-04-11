@@ -1,7 +1,7 @@
 ---
 template: Menu
 name: Afternoon Tea - Summer 19
-price: 15 per person
+price: £15 per person
 menuSections:
   - menuItemGroup: Cakes and Pastries
     dishes:

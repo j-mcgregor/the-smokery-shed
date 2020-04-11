@@ -188,15 +188,16 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - { label: Template, name: template, widget: hidden, default: Service }
       - { label: Title, name: title, widget: string }
-      - label: 'Status'
-        name: 'status'
-        widget: 'select'
-        options: ['Published', 'Featured', 'Draft']
-        default: 'Published'
-      - { label: Date / Order, name: date, widget: date }
       - { label: Featured Image, name: featuredImage, widget: image, required: false }
       - { label: Excerpt, name: excerpt, widget: text }
       - { label: Content, name: body, widget: markdown }
+      - label: Menu
+        name: menu
+        widget: 'relation'
+        collection: 'menus'
+        searchFields: ['name']
+        valueField: 'name'
+
       - label: 'Categories'
         name: 'categories'
         widget: 'list'
@@ -231,6 +232,124 @@ collections: # A list of collections the CMS should be able to edit
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string, required: false }
       - { label: Featured Image, name: featuredImage, widget: image, required: false }
+      - label: 'Meta'
+        required: false
+        name: 'meta'
+        widget: 'object'
+        fields:
+          - { label: Title, name: title, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
+          - { label: Noindex, name: noindex, widget: boolean, required: false }
+
+  - name: menus
+    label: Menus
+    description: Lists comprised of individual menu items to be shown under Services
+    editor:
+      preview: true
+    folder: content/menus
+    slug: '{{slug}}'
+    create: true
+    fields:
+      - { label: Template, name: template, widget: hidden, default: Menu }
+      - { label: Name, name: name, widget: string }
+      - { label: Price (ex £10 pp), name: price, widget: string, required: false }
+      - label: Menu Sections
+        name: 'menuSections'
+        widget: 'list'
+        required: false
+        fields:
+          - label: 'Menu Item (Group)'
+            name: 'menuItemGroup'
+            widget: 'relation'
+            collection: 'menuItemGroup'
+            searchFields: ['group']
+            displayFields: ['group']
+            valueField: 'group'
+          - label: Dishes
+            name: 'dishes'
+            widget: 'list'
+            fields:
+              - label: 'Menu Item (Dish)'
+                name: 'menuItem'
+                widget: 'relation'
+                collection: 'menuItems'
+                searchFields: ['name']
+                displayFields: ['name']
+                valueField: 'name'
+              - label: Dietary List
+                name: dietList
+                widget: list
+                required: false
+                fields:
+                  - label: Diet
+                    name: diet
+                    widget: relation
+                    collection: 'dietary'
+                    searchFields: ['diet']
+                    displayFields: ['diet']
+                    valueField: 'diet'
+                    required: false
+  - name: menuItems
+    label: Menu Item
+    editor:
+      preview: false
+    folder: content/menuItems
+    slug: '{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: Template, name: template, widget: hidden, default: Menu }
+      - {
+          label: Group,
+          name: group,
+          widget: relation,
+          collection: 'menuItemGroup',
+          searchFields: ['group'],
+          valueField: group,
+          required: false,
+        }
+      - { label: Name, name: name, widget: string }
+
+      - label: 'Meta'
+        required: false
+        name: 'meta'
+        widget: 'object'
+        fields:
+          - { label: Title, name: title, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
+          - { label: Noindex, name: noindex, widget: boolean, required: false }
+
+  - name: menuItemGroup
+    label: Menu Item Group
+    description: 'Menu groupings for individual menu items (eg sandwiches, cakes & pastries)'
+    editor:
+      preview: false
+    folder: content/menuItemGroups
+    slug: '{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: Group, name: group, widget: string }
+      - label: 'Meta'
+        required: false
+        name: 'meta'
+        widget: 'object'
+        fields:
+          - { label: Title, name: title, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Canonical Link, name: canonicalLink, widget: string, required: false }
+          - { label: Noindex, name: noindex, widget: boolean, required: false }
+
+  - name: dietary
+    label: Diet and Allergy List
+    description: 'List of dietary and allergy requirements to be shown when adding dihes to a menu'
+    editor:
+      preview: false
+    folder: content/dietary
+    slug: '{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: Diet, name: diet, widget: string }
       - label: 'Meta'
         required: false
         name: 'meta'
