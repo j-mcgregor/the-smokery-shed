@@ -13,6 +13,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "@reach/router": "^1.2.1",
+    "@react-pdf/renderer": "^1.6.8",
+    "@react-pdf/styled-components": "^1.4.0",
     "bootstrap": "^4.4.1",
     "dom-form-serializer": "^1.0.7",
     "eslint-config-react-app": "^5.2.1",

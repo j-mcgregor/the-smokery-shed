@@ -246,12 +246,11 @@ collections: # A list of collections the CMS should be able to edit
     label: Menus
     description: Lists comprised of individual menu items to be shown under Services
     editor:
-      preview: true
+      preview: false
     folder: content/menus
     slug: '{{slug}}'
     create: true
     fields:
-      - { label: Template, name: template, widget: hidden, default: Menu }
       - { label: Name, name: name, widget: string }
       - { label: Price (ex £10 pp), name: price, widget: string, required: false }
       - label: Menu Sections
@@ -290,6 +289,13 @@ collections: # A list of collections the CMS should be able to edit
                     displayFields: ['diet']
                     valueField: 'diet'
                     required: false
+      - label: Extra Information
+        name: 'extra'
+        widget: 'list'
+        required: false
+        fields:
+          - { label: Info, name: info, widget: string, required: false }
+
   - name: menuItems
     label: Menu Item
     editor:

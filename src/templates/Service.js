@@ -13,9 +13,9 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import _kebabCase from 'lodash/kebabCase';
 import parseDiet from '../lib/parseDiet';
 import checkArray from '../lib/checkArray';
+import { PDFMenu, savePdf } from '../components/shared/PDFTemplate';
 
 export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceURL, prevServiceURL, serviceMenu }) => {
-  console.log(serviceMenu);
   const mappedMenu = {};
 
   if (serviceMenu) {
@@ -34,9 +34,10 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
         }))
       }));
     }
+    if (frontmatter.extra) {
+      mappedMenu.extras = frontmatter.extra.map(e => e.info);
+    }
   }
-
-  console.log(mappedMenu);
 
   useEffect(() => {
     const paragraphs = document.getElementsByTagName('p');
@@ -51,27 +52,30 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
     }
   }, []);
 
+  const handleDownload = async () => {
+    const doc = <PDFMenu menu={mappedMenu} />;
+    await savePdf(doc, mappedMenu.name);
+  };
+
   const menuCard = (
-    <Card className="text-center font-primary fz-3 no-border">
+    <Card className="text-center font-primary fz-3 ls-1 no-border">
       <Card.Body>
         <Card.Title>
           <h2 className="fz-4-5">{mappedMenu.name} menu</h2>
         </Card.Title>
-
         {checkArray(mappedMenu, 'sections')
           ? mappedMenu.sections.map(mm => {
               return (
-                <div key={_kebabCase(mm.section)}>
+                <div key={_kebabCase(mm.section)} className="py-4">
                   <h3 className="fz-3-5">{mm.section}</h3>
                   {checkArray(mm, 'dishes')
                     ? mm.dishes.map(d => {
-                        console.log(d);
                         return (
-                          <Card.Text className="fz-2-5">
+                          <Card.Text className="fz-2-5" key={_kebabCase(d.dish)}>
                             {d.dish}{' '}
                             {checkArray(d, 'dietRestrictions')
                               ? d.dietRestrictions.map(dt => (
-                                  <small key={dt.diet} className="px-3 fz-2" title={dt.diet}>
+                                  <small key={dt.diet} className="px-2 fz-2" title={dt.diet}>
                                     ({parseDiet(dt.diet)})
                                   </small>
                                 ))
@@ -84,12 +88,20 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
               );
             })
           : null}
-        <Button variant="warning" className="mt-3">
-          {' '}
-          <FontAwesomeIcon icon={faDownload} /> Download Menu
+        <Button variant="dark" onClick={handleDownload} className="fz-3 my-5">
+          <FontAwesomeIcon icon={faDownload} size="1x" /> Download Menu
         </Button>
       </Card.Body>
-      <Card.Footer className="text-muted">{mappedMenu.price}</Card.Footer>
+      <Card.Footer className="text-muted fz-3">
+        {mappedMenu.price}
+        <br />
+        {mappedMenu.extras &&
+          mappedMenu.extras.map(e => (
+            <p className="fz-1-5 font-secondary" key={_kebabCase(e)}>
+              {e}
+            </p>
+          ))}
+      </Card.Footer>
     </Card>
   );
 
@@ -210,6 +222,9 @@ export const pageQuery = graphql`
           frontmatter {
             name
             price
+            extra {
+              info
+            }
             menuSections {
               menuItemGroup
               dishes {

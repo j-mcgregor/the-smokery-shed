@@ -108,6 +108,12 @@ $default-border: $default-border-size solid #666;
   }
 }
 
+@for $i from 0 through 10 {
+  .ls-#{$i} {
+    letter-spacing: #{$i}px !important;
+  }
+}
+
 .bxs-0 {
   box-shadow: none !important;
 }
