@@ -60,11 +60,11 @@ class Form extends React.Component {
         </Helmet>
         <form
           className="Form"
-          name={name}
           action={action}
           onSubmit={this.handleSubmit}
-          data-netlify=""
-          netlify-recaptcha=""
+          name="contact-form"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
         >
           {this.state.alert && <div className="Form--Alert">{this.state.alert}</div>}
           <div className="Form--Group">
