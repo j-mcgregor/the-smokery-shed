@@ -3,7 +3,7 @@ const postcssPresetEnv = require('postcss-preset-env');
 module.exports = {
   siteMetadata: {
     title: 'Yellowcake',
-    siteUrl: 'https://gatsby-the-smokery-shed.netlify.com'
+    siteUrl: 'https://the-smokery-shed.netlify.com'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-the-smokery-shed',
-        short_name: 'gatsby-the-smokery-shed',
+        name: 'the-smokery-shed',
+        short_name: 'the-smokery-shed',
         start_url: '/',
         background_color: '#00C2BD',
         theme_color: '#00C2BD',
