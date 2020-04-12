@@ -51,7 +51,7 @@ class Form extends React.Component {
   };
 
   render() {
-    const { name, subject, action } = this.props;
+    const { subject } = this.props;
 
     return (
       <Fragment>
@@ -60,7 +60,6 @@ class Form extends React.Component {
         </Helmet>
         <form
           className="Form"
-          action={action}
           onSubmit={this.handleSubmit}
           name="contact-form"
           data-netlify="true"
@@ -127,7 +126,7 @@ class Form extends React.Component {
           </label>
           <div className="g-recaptcha" data-sitekey="6LfKN3kUAAAAAGIM1CbXmaRZx3LIh_W2twn1tzkA" />
           {!!subject && <input type="hidden" name="subject" value={subject} />}
-          <input type="hidden" name="form-name" value={name} />
+          <input type="hidden" name="form-name" value="contact-form" />
           <input className="Button Form--SubmitButton" type="submit" value="Enquire" disabled={this.state.disabled} />
         </form>
       </Fragment>
