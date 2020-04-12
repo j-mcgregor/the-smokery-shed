@@ -34,48 +34,20 @@ export const simpleForm = ({
   </form>
 );
 
-export default ({ action = '', rows = 10, subject = '' }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [enquiry, setEnquiry] = useState('');
-  const [message, setMessage] = useState('');
-
+export default ({ rows = 10, subject = '' }) => {
   return (
-    <Form name="footer-form" action={action} data-netlify="true" data-netlify-honeypot="_gotcha" className="fz-2">
+    <Form name="footer-form" data-netlify="true" data-netlify-honeypot="bot-field" className="fz-2">
       <Form.Group controlId="formBasicName">
         <Form.Label>Name</Form.Label>
-        <Form.Control
-          size="lg"
-          type="text"
-          placeholder="Name"
-          name="name"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          className="fz-2"
-        />
+        <Form.Control size="lg" type="text" placeholder="Name" name="name" className="fz-2" />
       </Form.Group>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email</Form.Label>
-        <Form.Control
-          size="lg"
-          type="email"
-          placeholder="Enter email"
-          name="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          className="fz-2"
-        />
+        <Form.Control size="lg" type="email" placeholder="Enter email" name="email" className="fz-2" />
       </Form.Group>
       <Form.Group controlId="formBasicEnquiryType">
         <Form.Label>Type of Enquiry</Form.Label>
-        <Form.Control
-          size="lg"
-          as="select"
-          value={enquiry}
-          onChange={e => setEnquiry(e.target.value)}
-          className="fz-2"
-          name="enquiry"
-        >
+        <Form.Control size="lg" as="select" className="fz-2" name="enquiry">
           <option>Need to know more</option>
           <option>Found a bug</option>
           <option>Want to say hello</option>
@@ -83,15 +55,7 @@ export default ({ action = '', rows = 10, subject = '' }) => {
       </Form.Group>
       <Form.Group controlId="formBasicMessage">
         <Form.Label>Message</Form.Label>
-        <Form.Control
-          size="lg"
-          as="textarea"
-          rows={rows}
-          value={message}
-          onChange={e => setMessage(e.target.value)}
-          className="fz-2"
-          name="message"
-        />
+        <Form.Control size="lg" as="textarea" rows={rows} className="fz-2" name="message" />
       </Form.Group>
       <input type="text" name="_gotcha" style={{ display: 'none' }} />
       {!!subject && <input type="hidden" name="subject" value={subject} />}
