@@ -196,9 +196,6 @@ export const pageQuery = graphql`
         template
         subtitle
         featuredImage
-        categories {
-          category
-        }
         menu
       }
     }

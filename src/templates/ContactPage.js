@@ -26,7 +26,8 @@ export const ContactPageTemplate = ({
   etsy,
   pinterest,
   email,
-  locations
+  locations,
+  enquiryType
 }) => (
   <main className="Contact">
     <PageHeader title={title} backgroundImage={featuredImage} />
@@ -96,7 +97,7 @@ export const ContactPageTemplate = ({
         </div>
 
         <div>
-          <FormSimpleAjax name="Simple Form Ajax" />
+          <FormSimpleAjax name="Simple Form Ajax" enquiryType={enquiryType} />
         </div>
       </div>
     </section>
@@ -134,6 +135,9 @@ export const pageQuery = graphql`
           mapLink
           lat
           lng
+        }
+        enquiryType {
+          type
         }
       }
     }

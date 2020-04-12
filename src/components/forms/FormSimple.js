@@ -34,7 +34,7 @@ export const simpleForm = ({
   </form>
 );
 
-export default ({ rows = 10, subject = '' }) => {
+export default ({ rows = 10, subject = '', dropdownOptions = [] }) => {
   return (
     <Form name="footer-form" data-netlify="true" data-netlify-honeypot="bot-field" className="fz-2">
       <Form.Group controlId="formBasicName">
@@ -48,9 +48,7 @@ export default ({ rows = 10, subject = '' }) => {
       <Form.Group controlId="formBasicEnquiryType">
         <Form.Label>Type of Enquiry</Form.Label>
         <Form.Control size="lg" as="select" className="fz-2" name="enquiry">
-          <option>Need to know more</option>
-          <option>Found a bug</option>
-          <option>Want to say hello</option>
+          {dropdownOptions.length && dropdownOptions.map(et => <option>{et.type}</option>)}
         </Form.Control>
       </Form.Group>
       <Form.Group controlId="formBasicMessage">

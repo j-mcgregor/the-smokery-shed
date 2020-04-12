@@ -76,6 +76,11 @@ collections: # A list of collections the CMS should be able to edit
           - { label: YouTube, name: youtube, widget: string, required: false }
           - { label: Pinterest, name: pinterest, widget: string, required: false }
           - { label: Etsy, name: etsy, widget: string, required: false }
+          - name: enquiryType
+            label: Enquiry Types
+            widget: list
+            fields:
+              - { name: type, label: Type, widget: string, required: false }
           - name: locations
             label: locations
             widget: list

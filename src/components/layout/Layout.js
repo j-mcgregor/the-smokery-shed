@@ -63,6 +63,9 @@ export default ({ children, meta, title }) => {
               address
               email
               phone
+              enquiryType {
+                type
+              }
             }
           }
         }

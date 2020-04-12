@@ -51,7 +51,7 @@ class Form extends React.Component {
   };
 
   render() {
-    const { subject } = this.props;
+    const { subject, enquiryType = [] } = this.props;
 
     return (
       <Fragment>
@@ -59,7 +59,7 @@ class Form extends React.Component {
           <script src="https://www.google.com/recaptcha/api.js" />
         </Helmet>
         <form
-          className="Form"
+          className="Form m-0"
           onSubmit={this.handleSubmit}
           name="contact-form"
           data-netlify="true"
@@ -103,11 +103,7 @@ class Form extends React.Component {
               <option disabled hidden>
                 Type of Enquiry
               </option>
-              <option>Need to know more</option>
-              <option>Catering</option>
-              <option>Want to say hello</option>
-              <option>Feedback</option>
-              <option>Allergies and Dietary requirements</option>
+              {enquiryType.length && enquiryType.map(et => <option>{et.type}</option>)}
             </select>
           </label>
           <label className="Form--Label">

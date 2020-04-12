@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../img/TheSmokeryShed_WithTagline_RGB_Large.png';
+
 export default ({ social }) => {
   const address = social.address ? social.address.split(', ') : [];
   return (
@@ -56,7 +57,7 @@ export default ({ social }) => {
             </ListGroup>
           </Col>
           <Col md={4} sm={{ span: 12 }}>
-            <Form rows={5} />
+            <Form rows={5} dropdownOptions={social.enquiryType} />
           </Col>
           <Col md={4} sm={{ span: 12 }} className="pt-2">
             <Image src={logo} fluid />
