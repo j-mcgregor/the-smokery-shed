@@ -95,7 +95,7 @@ export default ({ action = '', rows = 10, subject = '' }) => {
       </Form.Group>
       <input type="text" name="_gotcha" style={{ display: 'none' }} />
       {!!subject && <input type="hidden" name="subject" value={subject} />}
-      <input type="hidden" name="form-name" value={name} />
+      <input type="hidden" name="form-name" value="footer-form" />
       <Button variant="dark" type="submit" className="fz-2">
         Send message
       </Button>
