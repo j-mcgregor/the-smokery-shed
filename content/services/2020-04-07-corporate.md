@@ -11,8 +11,7 @@ meta:
   description: corporate
 date: 2020-04-07T22:43:15.555Z
 status: Published
-categories:
-  - category: Work
+categories: []
 ---
 
 Whether you just need a few nibbles for a business meeting or want to treat your corporate clients to a special working lunch on your company premises, The Smokery Shedwill have the right solution for you!
