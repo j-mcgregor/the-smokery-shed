@@ -9,7 +9,7 @@ const PageHeader = ({ title, subtitle, backgroundImage, large, className = '' })
   return (
     <div className={`PageHeader relative ${className}`}>
       {backgroundImage && <Image background resolutions="large" src={backgroundImage} alt={title} size="cover" />}
-      <div className="container relative">
+      <div className="container relative flex flex-center flex-column">
         <h1 className="PageHeader--Title">
           <span />
           {title}

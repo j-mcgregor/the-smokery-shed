@@ -11,7 +11,7 @@ export default ({ social }) => {
     <Container fluid className="footer p-0">
       <Container className="pv-4">
         <Row>
-          <Col md={4} sm={{ span: 10, offset: 1 }} className="pt-2">
+          <Col md={4} sm={{ span: 12 }} className="pt-2">
             <ListGroup variant="flush">
               <ListGroup.Item>The Smokery Shed</ListGroup.Item>
               {address.map(a => (
@@ -20,45 +20,45 @@ export default ({ social }) => {
               <ListGroup.Item className="mt-2">
                 {social.facebook && (
                   <a href={social.facebook} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon className="mr-1" icon={faFacebookF} />
+                    <FontAwesomeIcon className="mr-2" icon={faFacebookF} />
                   </a>
                 )}
                 {social.twitter && (
                   <a href={social.twitter} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon className="mr-1" icon={faTwitter} />
+                    <FontAwesomeIcon className="mr-2" icon={faTwitter} />
                   </a>
                 )}
                 {social.instagram && (
                   <a href={social.instagram} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon className="mr-1" icon={faInstagram} />
+                    <FontAwesomeIcon className="mr-2" icon={faInstagram} />
                   </a>
                 )}
                 {social.youtube && (
                   <a href={social.youtube} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon className="mr-1" icon={faYoutube} />
+                    <FontAwesomeIcon className="mr-2" icon={faYoutube} />
                   </a>
                 )}
               </ListGroup.Item>
               {social.phone && (
                 <ListGroup.Item className="mt-2">
                   <a href={`tel:${social.phone}`}>
-                    <FontAwesomeIcon className="mr-1" icon={faPhone} /> {social.phone}
+                    <FontAwesomeIcon className="mr-2" icon={faPhone} /> {social.phone}
                   </a>
                 </ListGroup.Item>
               )}
               {social.email && (
                 <ListGroup.Item className="mt-2">
                   <a href={`mailto:${social.email}`}>
-                    <FontAwesomeIcon className="mr-1" icon={faEnvelope} /> {social.email}
+                    <FontAwesomeIcon className="mr-2" icon={faEnvelope} /> {social.email}
                   </a>
                 </ListGroup.Item>
               )}
             </ListGroup>
           </Col>
-          <Col md={4} sm={{ span: 10, offset: 1 }}>
+          <Col md={4} sm={{ span: 12 }}>
             <Form rows={5} />
           </Col>
-          <Col md={4} sm={{ span: 10, offset: 1 }} className="pt-2">
+          <Col md={4} sm={{ span: 12 }} className="pt-2">
             <Image src={logo} fluid />
           </Col>
         </Row>

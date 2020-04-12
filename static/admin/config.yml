@@ -30,6 +30,12 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Template, name: template, widget: hidden, default: AboutPage }
           - { label: Slug, name: slug, widget: hidden, default: 'about' }
           - { label: Title, name: title, widget: string }
+          - label: slideshow
+            name: slideshow
+            widget: list
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Alternative Text, name: alt, widget: string }
           - { label: Featured Image, name: featuredImage, widget: image }
           - { label: Subtitle, name: subtitle, widget: markdown, required: false }
           - { label: Section1, name: section1, widget: markdown }

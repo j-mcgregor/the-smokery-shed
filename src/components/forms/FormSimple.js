@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
 
-export default ({
+export const simpleForm = ({
   name = 'Simple Form',
   subject = '', // optional subject of the notification email
   action = '',
@@ -32,3 +33,59 @@ export default ({
     <input className="Button Form--SubmitButton" type="submit" value="Enquire" />
   </form>
 );
+
+export default ({ action = '', rows = 10 }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [enquiry, setEnquiry] = useState('');
+  const [message, setMessage] = useState('');
+
+  return (
+    <Form action={action} data-netlify="" data-netlify-honeypot="_gotcha" className="fz-2">
+      <Form.Group controlId="formBasicName">
+        <Form.Label>Name</Form.Label>
+        <Form.Control
+          size="lg"
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          className="fz-2"
+        />
+      </Form.Group>
+      <Form.Group controlId="formBasicEmail">
+        <Form.Label>Email</Form.Label>
+        <Form.Control
+          size="lg"
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className="fz-2"
+        />
+      </Form.Group>
+      <Form.Group controlId="formBasicEnquiryType">
+        <Form.Label>Type of Enquiry</Form.Label>
+        <Form.Control size="lg" as="select" value={enquiry} onChange={e => setEnquiry(e.target.value)} className="fz-2">
+          <option>Need to know more</option>
+          <option>Found a bug</option>
+          <option>Want to say hello</option>
+        </Form.Control>
+      </Form.Group>
+      <Form.Group controlId="formBasicMessage">
+        <Form.Label>Message</Form.Label>
+        <Form.Control
+          size="lg"
+          as="textarea"
+          rows={rows}
+          value={message}
+          onChange={e => setMessage(e.target.value)}
+          className="fz-2"
+        />
+      </Form.Group>
+      <Button variant="dark" type="submit" className="fz-2">
+        Send message
+      </Button>
+    </Form>
+  );
+};
