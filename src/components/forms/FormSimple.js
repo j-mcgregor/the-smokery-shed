@@ -41,13 +41,14 @@ export default ({ action = '', rows = 10 }) => {
   const [message, setMessage] = useState('');
 
   return (
-    <Form action={action} data-netlify="" data-netlify-honeypot="_gotcha" className="fz-2">
+    <Form name="footer-form" action={action} data-netlify="" data-netlify-honeypot="_gotcha" className="fz-2">
       <Form.Group controlId="formBasicName">
         <Form.Label>Name</Form.Label>
         <Form.Control
           size="lg"
           type="text"
           placeholder="Name"
+          name="name"
           value={name}
           onChange={e => setName(e.target.value)}
           className="fz-2"
@@ -59,6 +60,7 @@ export default ({ action = '', rows = 10 }) => {
           size="lg"
           type="email"
           placeholder="Enter email"
+          name="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
           className="fz-2"
@@ -66,7 +68,14 @@ export default ({ action = '', rows = 10 }) => {
       </Form.Group>
       <Form.Group controlId="formBasicEnquiryType">
         <Form.Label>Type of Enquiry</Form.Label>
-        <Form.Control size="lg" as="select" value={enquiry} onChange={e => setEnquiry(e.target.value)} className="fz-2">
+        <Form.Control
+          size="lg"
+          as="select"
+          value={enquiry}
+          onChange={e => setEnquiry(e.target.value)}
+          className="fz-2"
+          name="enquiry"
+        >
           <option>Need to know more</option>
           <option>Found a bug</option>
           <option>Want to say hello</option>
@@ -81,6 +90,7 @@ export default ({ action = '', rows = 10 }) => {
           value={message}
           onChange={e => setMessage(e.target.value)}
           className="fz-2"
+          name="message"
         />
       </Form.Group>
       <Button variant="dark" type="submit" className="fz-2">

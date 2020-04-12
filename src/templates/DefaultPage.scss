@@ -7,6 +7,7 @@
   h2 {
     font-size: 3em;
   }
+
   p {
     font-family: 'Josefin Slab';
     text-align: justify;
@@ -22,8 +23,6 @@
     h1,
     h2 {
       text-align: center;
-      // @include title-banner(white, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-      // @include corner-banner(rgba(0, 0, 0, 0.7));
     }
     h2 {
       font-size: 3em;
@@ -32,6 +31,12 @@
       font-family: 'Josefin Slab';
       text-align: justify;
       font-size: 1.5em;
+    }
+
+    @media screen and (max-width: 768px) {
+      h2 {
+        font-size: 2.5em;
+      }
     }
   }
 
