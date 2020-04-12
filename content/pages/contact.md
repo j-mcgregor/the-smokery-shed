@@ -11,6 +11,10 @@ facebook: 'https://www.facebook.com/The-Smokery-Shed-Catering-Snacks-18672715190
 twitter: 'https://twitter.com/thesmokeryshed'
 instagram: 'https://www.instagram.com/thesmokeryshed'
 youtube: 'https://www.youtube.com/channel/UCW92h-Zr7TyT36C7LOim-aA'
+enquiryType:
+  - type: Catering
+  - type: Want to know more
+  - type: Feedback
 locations:
   - lat: '51.4105'
     lng: '0.8339'
