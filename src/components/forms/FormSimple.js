@@ -41,7 +41,7 @@ export default ({ action = '', rows = 10, subject = '' }) => {
   const [message, setMessage] = useState('');
 
   return (
-    <Form name="footer-form" action={action} data-netlify="" data-netlify-honeypot="_gotcha" className="fz-2">
+    <Form name="footer-form" action={action} data-netlify="true" data-netlify-honeypot="_gotcha" className="fz-2">
       <Form.Group controlId="formBasicName">
         <Form.Label>Name</Form.Label>
         <Form.Control
