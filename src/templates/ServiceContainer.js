@@ -1,14 +1,13 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Location } from '@reach/router';
 import qs from 'qs';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 import Layout from '../components/layout/Layout';
 import Content from '../components/layout/Content';
 import PageHeader from '../components/pageComponents/PageHeader';
 import ServiceSection from '../components/serviceComponents/ServiceSection';
-import ServiceCategoriesNav from '../components/serviceComponents/ServiceCategoriesNav';
 
 /**
  * Filter services by date. Feature dates will be fitered
@@ -41,7 +40,6 @@ export const ServiceContainerTemplate = ({
   featuredImage,
   section1,
   services = [],
-  serviceCategories = [],
   enableSearch = true,
   contentType
 }) => (
@@ -60,26 +58,27 @@ export const ServiceContainerTemplate = ({
       }
 
       return (
-        <main className="Blog">
+        <main className="service">
           <PageHeader title={title} subtitle={subtitle} backgroundImage={featuredImage} />
-
+          <div className="sticky-top sidebar">
+            <ul>
+              {filteredServices.map(f => (
+                <li className="mv-2" key={f.slug}>
+                  <Link to={f.slug}>{f.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           <Container className="pv-5">
-            <Row className="pv-5">
+            <Row className="pv-2 font-secondary fz-2">
               <Col md={{ span: 8, offset: 2 }}>
                 {' '}
-                <Content source={section1} className="font-secondary fz-2 ls-2" />
+                <Content source={section1} />
               </Col>
             </Row>
-            {!!serviceCategories.length && (
-              <Row className="pv-5" style={{ background: '#d8d8d8' }}>
-                <Col>
-                  <ServiceCategoriesNav enableSearch categories={serviceCategories} />
-                </Col>
-              </Row>
-            )}
             {!!services.length && (
-              <Row className="pv-5">
-                <Col>
+              <Row>
+                <Col md={{ span: 8, offset: 2 }}>
                   <ServiceSection services={filteredServices} />
                 </Col>
               </Row>
@@ -92,25 +91,27 @@ export const ServiceContainerTemplate = ({
 );
 
 // Export Default ServiceContainer for front-end
-const ServiceContainer = ({ data: { page, services, serviceCategories } }) => (
-  <Layout meta={page.frontmatter.meta || false} title={page.frontmatter.title || false}>
-    <ServiceContainerTemplate
-      {...page}
-      {...page.fields}
-      {...page.frontmatter}
-      services={services.edges.map(service => ({
-        ...service.node,
-        ...service.node.frontmatter,
-        ...service.node.fields
-      }))}
-      serviceCategories={serviceCategories.edges.map(service => ({
-        ...service.node,
-        ...service.node.frontmatter,
-        ...service.node.fields
-      }))}
-    />
-  </Layout>
-);
+const ServiceContainer = ({ data: { page, services, serviceCategories } }) => {
+  return (
+    <Layout meta={page.frontmatter.meta || false} title={page.frontmatter.title || false}>
+      <ServiceContainerTemplate
+        {...page}
+        {...page.fields}
+        {...page.frontmatter}
+        services={services.edges.map(service => ({
+          ...service.node,
+          ...service.node.frontmatter,
+          ...service.node.fields
+        }))}
+        serviceCategories={serviceCategories.edges.map(service => ({
+          ...service.node,
+          ...service.node.frontmatter,
+          ...service.node.fields
+        }))}
+      />
+    </Layout>
+  );
+};
 
 export default ServiceContainer;
 

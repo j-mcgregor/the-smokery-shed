@@ -4,14 +4,14 @@
 // -----------------------------------------------------------------------------
 
 :root {
-  --primary: #00c2bd;
+  --primary: #303f3e;
   --secondary: #000;
   --lightGrey: whitesmoke;
   --midGrey: #cacaca;
   --darkGrey: #272727;
   --danger: #ff3d3d;
-  --font-primary: 'Open Sans', sans-serif;
-  --font-system: system-ui; /* postcssPresetEnv */
+  --font-primary: 'josefin slab', sans-serif;
+  --font-system: 'josefin slab'; /* postcssPresetEnv */
   --borderRadius: 3px;
 }
 
@@ -40,12 +40,12 @@ html {
 
 body {
   font-family: var(--font-system);
+  font-size: 1.8em;
+  font-weight: 400;
   min-height: 100%;
   position: relative;
   background: rgb(233, 233, 233);
   color: var(--secondary);
-  font-size: 1.6em;
-  font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -53,6 +53,11 @@ body {
 
 a {
   color: var(--primary);
+
+  &:hover {
+    text-decoration: none;
+    font-weight: 400;
+  }
 }
 
 strong {

@@ -60,6 +60,9 @@ export default ({ children, meta, title }) => {
               twitter
               youtube
               instagram
+              address
+              email
+              phone
             }
           }
         }
@@ -99,7 +102,7 @@ export default ({ children, meta, title }) => {
 
             <Fragment>{children}</Fragment>
 
-            <Footer />
+            <Footer social={subNav.social} />
           </Fragment>
         );
       }}

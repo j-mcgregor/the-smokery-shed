@@ -2,16 +2,68 @@
   font-family: 'Josefin Slab';
   font-size: 14px;
   text-transform: uppercase;
-  background: rgba(41, 41, 41, 0.705);
+  background: rgba(0, 0, 0, 0.76);
+
   a {
     font-size: 1.2em;
     font-weight: 900;
   }
+
   .dropdown-service {
     font-size: 1.2rem;
   }
 
   &.navbar-light .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.801);
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  .navbar-toggler {
+    &:focus {
+      outline: none;
+    }
+    svg {
+      color: rgba(255, 255, 255, 0.801);
+    }
+  }
+
+  .dropdown-menu {
+    background: rgba(0, 0, 0, 0.76);
+    color: rgba(255, 255, 255, 0.801);
+    margin-top: 2.025rem;
+    border-radius: 0;
+
+    a.dropdown-item {
+      color: rgba(255, 255, 255, 0.801);
+      font-size: 14px;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.938);
+        background: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    .dropdown-menu {
+      background: inherit;
+      margin-top: auto;
+      color: rgba(255, 255, 255, 0.801);
+
+      a.dropdown-item {
+        color: rgba(255, 255, 255, 0.801);
+        font-size: 14px;
+
+        &:hover {
+          color: rgba(255, 255, 255, 0.938);
+          background: none;
+        }
+      }
+    }
   }
 }

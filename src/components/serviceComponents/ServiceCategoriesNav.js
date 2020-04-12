@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import BlogSearch from '../pageComponents/BlogSearch';
-
 const ServiceCategoriesNav = ({ categories, enableSearch }) => (
   <div className="ServiceCategoriesNav">
     <Link className="NavLink mr-1" exact="true" to={`/services`}>
@@ -13,8 +11,6 @@ const ServiceCategoriesNav = ({ categories, enableSearch }) => (
         {category.title}
       </Link>
     ))}
-
-    {enableSearch && <BlogSearch />}
   </div>
 );
 

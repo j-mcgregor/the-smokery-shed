@@ -5,6 +5,17 @@
 }
 
 .service {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    a {
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
   .Content {
     img {
       width: 50%;
@@ -23,6 +34,12 @@
     border: 5px rgba(0, 0, 0, 0.397);
   }
 
+  @media screen and (max-width: 768px) {
+    .card {
+      padding: 2rem;
+    }
+  }
+
   hr {
     border: 0;
     height: 1px;
@@ -33,7 +50,22 @@
       rgba(255, 255, 255, 0)
     );
   }
+
+  .sidebar {
+    width: auto;
+    top: 20%;
+    left: 5%;
+    float: left;
+    margin: 2em 0;
+  }
 }
+@media screen and (max-width: 768px) {
+  .sidebar ul {
+    display: none !important;
+    transform: none;
+  }
+}
+
 .SingleService {
   background: var(--lightGrey);
 }

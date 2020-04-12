@@ -7,7 +7,7 @@ import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import Content from '../components/layout/Content';
 import Layout from '../components/layout/Layout';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-
+import logo from '../img/Logo large with tagline black_large.png';
 import './HomePage.scss';
 
 // Export Template for use in CMS preview
@@ -37,12 +37,11 @@ export const HomePageTemplate = ({
   return (
     <main className="Home">
       {/* HERO */}
-      <div className="jumbotron jumbotron-fluid hero flex flex-center" style={{ ...hero(featuredImage, 700) }}>
+      <div className="jumbotron jumbotron-fluid hero flex flex-center" style={{ ...hero(featuredImage, 800) }}>
         <Container>
           <Row>
-            <Col>
-              <h1 className="PageHeader--Title title-banner">{title}</h1>
-              {subtitle && <Content className="PageHeader--Subtitle" src={subtitle} />}
+            <Col sm={6}>
+              <Image src={logo} fluid />
             </Col>
           </Row>
         </Container>
@@ -81,7 +80,7 @@ export const HomePageTemplate = ({
 
       {/* SECTION 4 */}
       <div
-        className="jumbotron jumbotron-fluid hero flex flex-center"
+        className="jumbotron jumbotron-fluid hero flex flex-center mb-0"
         style={{ ...hero(section4image, 400), backgroundAttachment: 'scroll' }}
       >
         <Container className="section__4">

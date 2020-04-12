@@ -15,4 +15,14 @@
   .sub-footer {
     background: #111;
   }
+
+  textarea::placeholder,
+  input::placeholder {
+    color: black;
+  }
+
+  a,
+  svg {
+    color: white;
+  }
 }

@@ -15,9 +15,16 @@ import { PDFMenu, savePdf } from '../components/shared/PDFTemplate';
 
 import './Service.scss';
 
-export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceURL, prevServiceURL, serviceMenu }) => {
+export const SingleServiceTemplate = ({
+  allServices = [],
+  title,
+  body,
+  featuredImage,
+  nextServiceURL,
+  prevServiceURL,
+  serviceMenu
+}) => {
   const mappedMenu = {};
-
   if (serviceMenu) {
     const {
       node: { id, frontmatter }
@@ -105,6 +112,15 @@ export const SingleServiceTemplate = ({ title, body, featuredImage, nextServiceU
   return (
     <main className="service">
       <PageHeader title={title} backgroundImage={featuredImage} />
+      <div className="sticky-top sidebar">
+        <ul>
+          {allServices.edges.map(f => (
+            <li className="mv-2" key={f.node.fields.slug}>
+              <Link to={f.node.fields.slug}>{f.node.frontmatter.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
       <Container className="pv-5">
         <Row className="pv-2">
           <Col sm={{ span: 8, offset: 2 }}>
@@ -151,6 +167,7 @@ const Service = ({ data: { service, allServices, allMenus } }) => {
       <SingleServiceTemplate
         {...service}
         {...service.frontmatter}
+        allServices={allServices}
         serviceMenu={menu}
         body={service.html}
         nextServiceURL={_get(thisEdge, 'next.fields.slug')}
@@ -193,6 +210,12 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
         }
         next {
           fields {

@@ -102,6 +102,18 @@ $default-border: $default-border-size solid #666;
   }
 }
 
+@for $i from 0 through 100 {
+  .trans-Y-up-#{$i} {
+    transform: translateY(-#{$i}em);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .no-transform-md {
+    transform: none;
+  }
+}
+
 @for $i from 0 through 10 {
   .lh-#{$i} {
     line-height: $i * $spacing !important;
