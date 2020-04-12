@@ -124,7 +124,6 @@ class Form extends React.Component {
             <input className="Form--Input Form--Textarea Form--CheckboxInput" name="newsletter" type="checkbox" />
             <span>Get news updates</span>
           </label>
-          <div className="g-recaptcha" data-sitekey="6LfKN3kUAAAAAGIM1CbXmaRZx3LIh_W2twn1tzkA" />
           {!!subject && <input type="hidden" name="subject" value={subject} />}
           <input type="hidden" name="form-name" value="contact-form" />
           <input className="Button Form--SubmitButton" type="submit" value="Enquire" disabled={this.state.disabled} />
