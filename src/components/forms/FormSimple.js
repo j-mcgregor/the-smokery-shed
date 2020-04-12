@@ -34,7 +34,7 @@ export const simpleForm = ({
   </form>
 );
 
-export default ({ action = '', rows = 10 }) => {
+export default ({ action = '', rows = 10, subject = '' }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [enquiry, setEnquiry] = useState('');
@@ -93,6 +93,9 @@ export default ({ action = '', rows = 10 }) => {
           name="message"
         />
       </Form.Group>
+      <input type="text" name="_gotcha" style={{ display: 'none' }} />
+      {!!subject && <input type="hidden" name="subject" value={subject} />}
+      <input type="hidden" name="form-name" value={name} />
       <Button variant="dark" type="submit" className="fz-2">
         Send message
       </Button>
