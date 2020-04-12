@@ -2,6 +2,16 @@
 template: AboutPage
 slug: about
 title: About Us
+slideshow:
+  - image: >-
+      https://ucarecdn.com/4630a917-a859-4aba-9647-4f5c14ac6a0e/-/crop/931x476/0,153/-/preview/
+    alt: banner 1
+  - image: >-
+      https://ucarecdn.com/0c5ac1d7-bc52-43c0-81a5-b362658dd0eb/-/crop/675x356/0,242/-/preview/
+    alt: banner 2
+  - image: >-
+      https://ucarecdn.com/2ffc1b36-e8c6-4c11-b805-bcecc3d6184a/-/crop/968x454/0,137/-/preview/
+    alt: banner 3
 featuredImage: 'https://ucarecdn.com/ed99cd09-1c00-4e1b-9b14-f9d6ff8e941a/'
 subtitle: Subtitle here
 section1: >-
