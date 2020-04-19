@@ -15,6 +15,7 @@ enquiryType:
   - type: Catering
   - type: Want to know more
   - type: Feedback
+  - type: Planning
 locations:
   - lat: '51.4105'
     lng: '0.8339'
