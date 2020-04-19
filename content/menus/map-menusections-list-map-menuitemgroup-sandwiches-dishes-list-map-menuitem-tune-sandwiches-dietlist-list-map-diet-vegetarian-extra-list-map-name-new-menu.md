@@ -1,5 +1,6 @@
 ---
-name: New Menu
+name: Corporate - Summer 20202
+price: '100'
 menuSections:
   - menuItemGroup: Sandwiches
     dishes:
