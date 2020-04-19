@@ -5,10 +5,12 @@ title: Frequently Asked Questions
 featuredImage: >-
   https://ucarecdn.com/0a485165-65c4-42ee-bf35-b93fbaf0fd2e/-/preview/-/rotate/270/
 accordion:
-  - title: Question 1
+  - title: What are your opening hours?
     content: Answer 1
   - title: Question 2
     content: Answer 2
+  - title: Question 3
+    content: Answer 1
 meta:
   description: test meta description
   title: test meta title
