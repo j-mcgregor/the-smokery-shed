@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Location } from '@reach/router';
 import qs from 'qs';
-import { Container, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import Layout from '../components/layout/Layout';
 import Content from '../components/layout/Content';

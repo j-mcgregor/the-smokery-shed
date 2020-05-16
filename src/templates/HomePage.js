@@ -48,7 +48,7 @@ export const HomePageTemplate = ({
       </div>
 
       {/* SECTION 1 */}
-      <Container className="p-10 section__1">
+      <Container className="p-10 p-5-md p-1-sm section__1">
         <Content source={body} />
       </Container>
 
@@ -66,7 +66,7 @@ export const HomePageTemplate = ({
       </div>
 
       {/* SECTION 3 */}
-      <Container className="p-10 section__3">
+      <Container className="p-10 p-5-md p-1-sm section__3">
         <Row className="text-center">
           <Col md={6} sm={12} className="flex flex-column flex-center">
             <h2 className="title-banner">{section3title}</h2>

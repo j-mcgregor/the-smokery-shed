@@ -72,3 +72,20 @@
     }
   }
 }
+
+@media only screen and (max-width: 575px) {
+  .DefaultPage {
+    .section__1,
+    .section__2,
+    .section__3,
+    .section__4 {
+      h2 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1.1em;
+        line-height: 1.2em;
+      }
+    }
+  }
+}

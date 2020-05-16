@@ -31,25 +31,19 @@
   }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .PageHeader {
-    padding: 7rem 0;
-  }
-  .PageHeader-large {
-    padding: 12.5rem 0;
+    height: auto;
   }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 575px) {
   .PageHeader {
-    height: 50vh;
     .PageHeader--Title {
-      font-size: 4em;
-      text-align: center;
-      margin-top: 2em;
+      font-size: 3em;
     }
-    h2 {
-      font-size: 2em;
+    .PageHeader--Subtitle {
+      font-size: 1em;
     }
   }
 }

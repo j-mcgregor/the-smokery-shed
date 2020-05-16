@@ -8,6 +8,24 @@ import Layout from '../components/layout/Layout';
 import Accordion from '../components/shared/Accordion';
 import './DefaultPage.scss';
 
+export const pageQuery = graphql`
+  query DefaultPage($id: String!) {
+    page: markdownRemark(id: { eq: $id }) {
+      ...Meta
+      html
+      frontmatter {
+        title
+        subtitle
+        featuredImage
+        accordion {
+          title
+          content
+        }
+      }
+    }
+  }
+`;
+
 // Export Template for use in CMS preview
 export const DefaultPageTemplate = ({ title, subtitle, featuredImage, body, accordion }) => (
   <main className="DefaultPage">
@@ -33,22 +51,5 @@ const DefaultPage = ({ data: { page } }) => (
     <DefaultPageTemplate {...page.frontmatter} body={page.html} />
   </Layout>
 );
-export default DefaultPage;
 
-export const pageQuery = graphql`
-  query DefaultPage($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
-      ...Meta
-      html
-      frontmatter {
-        title
-        subtitle
-        featuredImage
-        accordion {
-          title
-          content
-        }
-      }
-    }
-  }
-`;
+export default DefaultPage;
