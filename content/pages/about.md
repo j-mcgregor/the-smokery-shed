@@ -13,21 +13,21 @@ slideshow:
       https://ucarecdn.com/2ffc1b36-e8c6-4c11-b805-bcecc3d6184a/-/crop/968x454/0,137/-/preview/
     alt: banner 3
 featuredImage: 'https://ucarecdn.com/ed99cd09-1c00-4e1b-9b14-f9d6ff8e941a/'
-subtitle: Subtitle here
+subtitle: Welcome to a world of unforgettable dining experiences
 section1: >-
-  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-  eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-  voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-  kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  We will take you on a stress-free, professional journey offering bespoke
+  catering options for events large and small.
+
+
+  Our talented chefs and friendly service staff delight in the creation of
+  beautiful food, lovingly crafted and presented with socialising in mind.
 image1: 'https://ucarecdn.com/bd14a200-f1b6-435b-aba7-d102e6960af9/'
 section2: >-
-  Siam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-  sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-  amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-  eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-  voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-  kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  At The Smokery Shed, we take food seriously. All our food is freshly prepared
+  in our Wokingham kitchen with the highest hygiene practices. We use the
+  freshest ingredients sourced from the best food suppliers. Where possible, we
+  choose locally grown food created with sustainable & free-range farming
+  processes.
 image2: 'https://ucarecdn.com/c37048d7-825f-4dfb-86ee-b1db2cfd2d98/'
 meta:
   title: about us
