@@ -13,7 +13,7 @@ section2subtitle: >-
   prepared and we can cater for all dietary requirements. The Smokery Shed smoke
   all our own food so if you'd like to hear more about our smoked dishes, we'd
   love to tell you about them!
-section3image: 'https://ucarecdn.com/17fbc86c-2970-4c39-b582-828bdc754414/'
+section3image: 'https://ucarecdn.com/4da613e9-dcbc-4694-b30f-9ef35b43f853/'
 section3title: How we work
 section3subtitle: >-
   We can deliver to you, set up and leave or stay for the duration. We know that
@@ -31,7 +31,7 @@ meta:
   title: The Smokery Shed | Home
 tagline: lorem
 subtitle: Catering and bar snacks
-section2image: 'https://ucarecdn.com/55a185ba-a1cf-4f52-a3fd-ea5e8e0a789d/'
+section2image: 'https://ucarecdn.com/a86bdc86-a390-492e-90a5-d777d6350b03/'
 ---
 # Welcome to The Smokery Shed Catering & Snacks!
 
