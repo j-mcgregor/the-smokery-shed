@@ -4,7 +4,7 @@ bannerImage2: >-
 bannerImage3: 'https://ucarecdn.com/d926ae8d-760f-4c2a-9747-3257a63f2a4b/'
 template: HomePage
 slug: ''
-featuredImage: 'https://ucarecdn.com/8d2d8bc1-7b7a-4159-b855-4386341966ea/'
+featuredImage: 'https://ucarecdn.com/c2682724-fd77-4245-8ab2-ebed4a8e49e2/'
 title: The Smokery Shed
 section2title: What we do
 section2subtitle: >-
