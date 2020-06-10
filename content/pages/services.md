@@ -2,19 +2,11 @@
 template: ServiceContainer
 slug: services
 title: Catering
-featuredImage: 'https://ucarecdn.com/11349eb8-c0a8-4f14-9dfa-9a3cb8d9b6cd/'
-subtitle: 'Ut enim ad minima veniam, quis nostrum'
+featuredImage: 'https://ucarecdn.com/696a9c2b-3268-4f9d-9b73-9f5586cf6021/'
+subtitle: ''
 section1: >-
-  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-  eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-  voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-  kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-  gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-  dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-  invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-  eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-  sea takimata sanctus est Lorem ipsum dolor sit amet.
+  ## Our menus look as delicious as they taste. Have a look at some of our most
+  popular choices from our last year. With ever changing availability and
+  climate we try to incorporate seasonal ingredients but we greatly love
+  tailoring our menus to you, so get in touch if you'd like to discuss further.
 ---
