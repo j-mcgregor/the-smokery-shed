@@ -2,8 +2,7 @@
 template: DefaultPage
 slug: faq
 title: Frequently Asked Questions
-featuredImage: >-
-  https://ucarecdn.com/0a485165-65c4-42ee-bf35-b93fbaf0fd2e/-/preview/-/rotate/270/
+featuredImage: 'https://ucarecdn.com/52813c54-17ea-41b0-ac23-a734b180bddf/'
 accordion:
   - title: What are your minimum & maximum number requirements?
     content: >-
