@@ -12,8 +12,8 @@ slideshow:
 featuredImage: 'https://ucarecdn.com/ed99cd09-1c00-4e1b-9b14-f9d6ff8e941a/'
 subtitle: Welcome to a world of unforgettable dining experiences
 section1: >-
-  We will take you on a stress-free, professional journey offering bespoke
-  catering options for events large and small.
+  `We will take you on a stress-free, professional journey offering bespoke
+  catering options for events large and small.`
 
 
   Our talented chefs and friendly service staff delight in the creation of
