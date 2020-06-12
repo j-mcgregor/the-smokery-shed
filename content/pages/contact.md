@@ -24,6 +24,8 @@ meta:
   description: This is a meta description.
   title: Contact Page
 ---
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing eli. 
+`Feel free to drop us a line & talk to us about your event.`
 
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+
+You can find us on any of our social media accounts, via email or just give us a call. We look forward to hearing from you!
