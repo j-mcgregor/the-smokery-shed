@@ -1,7 +1,7 @@
 ---
 template: Menu
-group: Cakes and Pastries
-name: Cucumber preserve
+group: 'Sandwiches, Wraps, Rolls'
+name: Somerset Mature Cheddar & Spicy Tomato Relish (VG)
 vegetarian: true
 vegan: true
 dietList:
