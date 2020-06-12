@@ -34,7 +34,8 @@ section2: >-
 image2: >-
   https://ucarecdn.com/4e7cfea0-9277-40aa-8f7d-17d9c7680d23/-/preview/-/enhance/96/-/grayscale/
 meta:
-  title: about us
+  title: Fi McQuay
   description: about us
   canonicalLink: about us
+  noindex: false
 ---
