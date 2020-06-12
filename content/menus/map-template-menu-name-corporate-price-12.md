@@ -1,19 +1,14 @@
 ---
 template: Menu
-name: Corporate - Summer 19
-price: £30 per person
+name: Corporate - Summer 19/20
+price: £15 PP
 menuItems:
   - menuItem: Salmon
   - menuItem: Fishcakes
   - menuItem: Cucumber preserve
 menuSections:
   - menuItemGroup: Sandwiches
-    dishes:
-      - menuItem: Cucumber preserve
-      - menuItem: Fishcakes
-  - menuItemGroup: Cakes and Pastries
-    dishes:
-      - menuItem: Fishcakes
-      - menuItem: Cucumber preserve
-      - menuItem: Salmon
+  - menuItemGroup: 'Finger Food '
+  - menuItemGroup: Dessert
+  - menuItemGroup: 'Selection of teas, coffees & soft drinks'
 ---
