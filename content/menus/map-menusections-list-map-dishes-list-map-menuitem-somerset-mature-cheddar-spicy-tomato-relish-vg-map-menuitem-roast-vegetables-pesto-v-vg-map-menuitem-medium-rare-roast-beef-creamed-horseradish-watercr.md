@@ -1,6 +1,6 @@
 ---
-name: cm
-price: ''
+name: Corporate Buffet Menu 19/20
+price: £15 PP
 menuSections:
   - dishes:
       - menuItem: Somerset Mature Cheddar & Spicy Tomato Relish (VG)
