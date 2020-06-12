@@ -1,4 +1,6 @@
 ---
+template: Service
+title: Corporate
 featuredImage: 'https://ucarecdn.com/e43610f0-3bc0-42c9-8974-510cd8623002/'
 excerpt: >+
   Corporate events, big or small are vital for boosting staff morale and
@@ -6,14 +8,12 @@ excerpt: >+
   food, suited to any occasion. We can deliver, set up and collect - meaning you
   can concentrate on your business needs. 
 
-menu: Corporate - Summer 19/20
+menu: Corporate - Summer 20202
 meta:
   title: Corporate
   description: corporate
 date: 2020-04-07T22:43:15.555Z
 status: Published
-template: Service
-title: Corporate
 categories: []
 ---
 `Pre-packed platters not cut the mustard?`
