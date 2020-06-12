@@ -1,6 +1,6 @@
 ---
 template: Menu
-group: Sandwiches
-name: Salmon
+group: 'Sandwiches, Wraps, Rolls'
+name: 'Medium Rare Roast Beef, Creamed Horseradish & Watercress'
 vegetarian: true
 ---
