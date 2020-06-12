@@ -35,22 +35,12 @@ section2image: 'https://ucarecdn.com/a86bdc86-a390-492e-90a5-d777d6350b03/'
 ---
 # Welcome to The Smokery Shed Catering & Snacks!
 
+`Whether you're looking for caterers with a difference for your special event or some gourmet snacks for yourself or your establishment, we provide food to remember!`
 
-
-Whether you're looking for caterers with a difference for your special event or some gourmet snacks for yourself or your establishment, we provide food to remember!
-
-
-
-We offer chef hire & catering services within Reading, Berkshire, Hampshire, Oxfordshire & London. From **Canapes** & **Sit**-**down** **meals** to **Afternoon** **Teas**, **Hampers,** **Smoked** **Food** **workshop & [](http://thesmokeryshed.co.uk/weddings/4594714113)weddings**, we can tailor *your* event to *you*.
-
-
+We offer chef hire & catering services within Reading, Berkshire, Hampshire, Oxfordshire & London. From **Canapes** & **Sit**-**down** **meals** to **Afternoon** **Teas**, **Hampers,** **Smoked** **Food** **workshop &** [](http://thesmokeryshed.co.uk/weddings/4594714113)**weddings**, we can tailor *your* event to *you*.
 
 Based in Wokingham we provide beautiful food, delivered to you or catered in house. Have a look at our [Catering](http://thesmokeryshed.co.uk/catering/4594354717) page for more information.
 
+We also sell a range of smoked bar snacks - perfect for the hospitality industry and/or entertaining at home. Our mouth-watering nuts are all lovingly roasted, coated and smoked by us to deliver a flavour-packed punch. Contact us for a list of our stockists or directly for purchases.
 
-
-Our mouth-watering nuts are all lovingly roasted, coated and smoked by us to deliver a flavour-packed punch. Contact us for a list of our stockists or directly for purchases.
-
-
-
-All our bar snacks are vegan too and our packaging is 100% recyclable, so you can enjoy totally guilt free! Have a look below at our range
+`All our bar snacks are vegan too and our packaging is 100% recyclable, so you can enjoy totally guilt free! Have a look below at our range`
