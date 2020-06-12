@@ -16,4 +16,6 @@ template: Service
 title: Corporate
 categories: []
 ---
+`Pre-packed platters not cut the mustard?`
+
 We provide everything from bacon butties, simple sandwich lunches and finger buffets to fork buffets and hot lunches and you can choose between compostable consumables or china crockery & linen. Our clients place their trust in us to deliver fresh, high quality office catering with a wide range of choices to suit your budget and needs.
