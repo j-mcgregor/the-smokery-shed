@@ -1,5 +1,5 @@
 ---
 template: Menu
-group: Sandwiches
-name: Tune Sandwiches
+group: 'Sandwiches, Wraps, Rolls'
+name: Free-range Egg Mayonnaise & Cress (VG)
 ---
