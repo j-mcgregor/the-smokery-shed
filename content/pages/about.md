@@ -9,6 +9,10 @@ slideshow:
     alt: Wedding
   - image: 'https://ucarecdn.com/38bd31d0-df5b-4c77-b75c-a70b7d7557fe/'
     alt: Corporate lunch
+  - image: 'https://ucarecdn.com/a684de2c-af50-4319-9229-a6b485747064/'
+    alt: canapés platter
+  - image: 'https://ucarecdn.com/234473ad-c4c9-425e-835d-dc93f423a2c8/'
+    alt: fish starter
 featuredImage: 'https://ucarecdn.com/ed99cd09-1c00-4e1b-9b14-f9d6ff8e941a/'
 subtitle: Welcome to a world of unforgettable dining experiences
 section1: >-
