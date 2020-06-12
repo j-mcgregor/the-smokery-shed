@@ -1,6 +1,6 @@
 ---
 template: Menu
-group: Cakes and Pastries
-name: Fishcakes
+group: 'Sandwiches, Wraps, Rolls'
+name: Roast Vegetables & Pesto (V) (VG)
 vegetarian: true
 ---
