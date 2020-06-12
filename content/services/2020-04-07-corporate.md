@@ -6,7 +6,7 @@ excerpt: >+
   food, suited to any occasion. We can deliver, set up and collect - meaning you
   can concentrate on your business needs. 
 
-menu: Corporate - Summer 19
+menu: Corporate - Summer 19/20
 meta:
   title: Corporate
   description: corporate
