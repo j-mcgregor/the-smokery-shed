@@ -35,10 +35,12 @@ export const SingleServiceTemplate = ({
     if (frontmatter.menuSections) {
       mappedMenu.sections = frontmatter.menuSections.map(ms => ({
         section: ms.menuItemGroup,
-        dishes: ms.dishes.map(d => ({
-          dish: d.menuItem,
-          dietRestrictions: d.dietList
-        }))
+        dishes:
+          ms.dishes &&
+          ms.dishes.map(d => ({
+            dish: d.menuItem,
+            dietRestrictions: d.dietList ? d.dietList : []
+          }))
       }));
     }
     if (frontmatter.extra) {
@@ -239,16 +241,10 @@ export const pageQuery = graphql`
           frontmatter {
             name
             price
-            extra {
-              info
-            }
             menuSections {
               menuItemGroup
               dishes {
                 menuItem
-                dietList {
-                  diet
-                }
               }
             }
           }
