@@ -2,9 +2,7 @@
 template: Service
 title: Fine Dining
 featuredImage: 'https://ucarecdn.com/3ab83cf4-5f58-4552-b51a-e5193c072131/'
-excerpt: >-
-  Whether it's two, twenty or fifty, we can provide beautiful food with
-  impeccable service and menus to complement your occasion. 
+excerpt: Fine Dining
 date: 2020-04-08T19:28:41.443Z
 status: Published
 menu: Fine Dining - Summer 19
@@ -12,6 +10,8 @@ categories:
   - category: Social
   - category: Work
 ---
+`Whether it's two, twenty or fifty, we can provide beautiful food with impeccable service and menus to complement your occasion. `
+
 Successful events stem from creative planning, attention to details, ability to understand event visions and a desire for perfection.
 
 Our catering and event teams thrive in giving hosts and guests an experience to remember.
