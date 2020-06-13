@@ -1,8 +1,6 @@
 ---
 featuredImage: 'https://ucarecdn.com/cadd1f12-94d1-4dee-a2c5-ab7b3c412a76/'
-excerpt: >-
-  Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
-  quo minus id quod maxime placeat facere
+excerpt: Cold Buffet
 menu: Cold Buffet - Summer 19
 meta:
   title: cold buffet
