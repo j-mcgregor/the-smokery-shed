@@ -1,5 +1,5 @@
 ---
 template: Menu
 group: 'Savoury Canapés '
-name: Medium Rare Roast Beef & Mini Yorkshire Puddings
+name: Smokery Shed Smoked Salmon & Dill Cream Cheese Crostinis
 ---
