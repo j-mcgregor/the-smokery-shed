@@ -1,5 +1,5 @@
 ---
 template: Menu
 group: 'Savoury Canapés '
-name: Parma Ham & Asparagus Spears (GF)
+name: Medium Rare Roast Beef & Mini Yorkshire Puddings
 ---
