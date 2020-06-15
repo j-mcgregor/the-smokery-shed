@@ -1,7 +1,5 @@
 ---
 template: Menu
 group: Mains
-name: >-
-  Braised Beef Cheek in a Red Wine Rosemary & Vegetable Jus on Blue Cheese
-  Polenta (GF)
+name: Harissa Spiced Cauliflower Steaks with Cumin Chickpeas & Spinach (V) (GF)
 ---
