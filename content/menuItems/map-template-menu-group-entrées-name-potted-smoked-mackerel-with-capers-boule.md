@@ -1,5 +1,5 @@
 ---
 template: Menu
 group: 'Entrées '
-name: Potted Smoked Mackerel with Capers & Boule
+name: Goat’s Cheese on Garlic Toast with Black Olive Tapenade & Roasted Figs (VG)
 ---
