@@ -1,5 +1,7 @@
 ---
 template: Menu
 group: 'Entrées '
-name: Heirloom Tomato Bruschetta with Sourdough and Smoked Olive Oil (V)
+name: >-
+  Honey Rosemary Roasted Squashes with Toasted Seeds, Seasonal Leaves and a
+  Mustard Yoghurt Dressing (VG) (GF)
 ---
