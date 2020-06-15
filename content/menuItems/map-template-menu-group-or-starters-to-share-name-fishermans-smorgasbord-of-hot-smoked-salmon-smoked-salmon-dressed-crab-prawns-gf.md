@@ -2,6 +2,6 @@
 template: Menu
 group: Or (starters to share)
 name: >-
-  Fishermans Smorgasbord of Hot Smoked Salmon, Smoked Salmon, Dressed Crab &
-  Prawns (GF)
+  Charcuterie Board of Serrano Ham, Smoked Duck, Burrata Cheese & Rosemary
+  Focaccia
 ---
