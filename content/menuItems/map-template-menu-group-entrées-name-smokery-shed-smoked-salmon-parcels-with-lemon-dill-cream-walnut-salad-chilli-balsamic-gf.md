@@ -1,5 +1,5 @@
 ---
 template: Menu
-group: 'Entrées '
+group: ''
 name: Crispy Buttermilk-Battered Florets served with Roast Serrano Allioli (VG)
 ---
