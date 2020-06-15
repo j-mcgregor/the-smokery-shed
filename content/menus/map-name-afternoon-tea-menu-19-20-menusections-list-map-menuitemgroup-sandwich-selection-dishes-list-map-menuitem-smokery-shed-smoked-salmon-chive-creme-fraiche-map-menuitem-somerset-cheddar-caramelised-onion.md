@@ -1,5 +1,6 @@
 ---
 name: Afternoon Tea Menu 19/20
+price: £16.50 PP
 menuSections:
   - menuItemGroup: Sandwich Selection
     dishes:
