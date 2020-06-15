@@ -12,6 +12,10 @@ menuSections:
         dietList: []
       - menuItem: 'Honey Roast Ham, Wholegrain Mustard & Somerset Mature Cheddar'
       - menuItem: Chicken Tikka & Mango Chutney with Mint Yoghurt
+      - menuItem: Thyme Roast Chicken & Sage Stuffing
+      - menuItem: 'Avocado, Mustard & Mango Chutney (V) (VG)'
+      - menuItem: Roast Lamb & Mint Yoghurt with Rocket
+      - menuItem: Tuna Mayonnaise & Cucumber
     menuItemGroup: 'Sandwiches, Wraps, Rolls'
   - menuItemGroup: 'Finger Food '
     dishes:
@@ -20,6 +24,9 @@ menuSections:
       - menuItem: Peanut Satay Chicken Skewers with Dipping Sauce (GF)
       - menuItem: 'Organic Sausage Rolls with Tomato Relish '
       - menuItem: Somerset Mature Cheddar & Roasted Fig Stacks (VG) (GF)
+      - menuItem: Somerset Mature Cheddar & Roasted Fig Stacks (VG) (GF)
+      - menuItem: Vegetable Spring Onions with Sweet Chilli Dipping Sauce (V) (VG)
+      - menuItem: Sweet Potato & Chive Soured Cream Skins (VG)
   - menuItemGroup: Dessert
     dishes:
       - menuItem: Fresh Fruit Platter
@@ -27,6 +34,7 @@ menuSections:
       - menuItem: Shortbread Rounds with Clotted Cream & Strawberries
       - menuItem: Carrot Cake with Cream Cheese Frosting
       - menuItem: Victoria Sponge Cake with Vanilla Cream
+      - menuItem: Portuguese Custard Tarts
   - menuItemGroup: 'Selection of teas, coffees & soft drinks'
     dishes: []
 ---
