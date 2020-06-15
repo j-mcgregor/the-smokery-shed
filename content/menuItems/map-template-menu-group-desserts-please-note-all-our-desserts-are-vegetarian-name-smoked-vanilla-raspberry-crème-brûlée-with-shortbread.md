@@ -1,5 +1,5 @@
 ---
 template: Menu
 group: Desserts (please note all our desserts are vegetarian)
-name: Smoked Vanilla & Raspberry Crème Brûlée with Shortbread
+name: Warmed Apricot and Almond Tart with Clotted Cream
 ---
