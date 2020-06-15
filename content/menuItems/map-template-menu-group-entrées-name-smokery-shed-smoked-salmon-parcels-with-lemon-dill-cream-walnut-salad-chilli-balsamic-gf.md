@@ -1,7 +1,5 @@
 ---
 template: Menu
 group: 'Entrées '
-name: >-
-  Smokery Shed Smoked Salmon Parcels with Lemon Dill Cream, Walnut Salad &
-  Chilli Balsamic (GF)
+name: Crispy Buttermilk-Battered Florets served with Roast Serrano Allioli (VG)
 ---
