@@ -1,5 +1,5 @@
 ---
 template: Menu
 group: Desserts (please note all our desserts are vegetarian)
-name: Chocolate Brownie with Salted Caramel Sauce and Poached Pear
+name: Hazelnut Panna Cotta with Blackberry & Vanilla Compote and Ginger Tuile (GF)
 ---
