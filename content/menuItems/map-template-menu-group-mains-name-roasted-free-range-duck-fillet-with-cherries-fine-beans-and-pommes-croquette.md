@@ -1,5 +1,5 @@
 ---
 template: Menu
 group: Mains
-name: 'Roasted Free-Range Duck Fillet with Cherries, Fine Beans and Pommes Croquette'
+name: 'Braised Somerset Lamb Shoulder, Rosti, Pea Fricassee and Tomato Confit (GF)'
 ---
