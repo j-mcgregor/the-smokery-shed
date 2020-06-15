@@ -11,4 +11,8 @@ menuSections:
     dishes:
       - menuItem: Macaron Selection (GF)
       - menuItem: Scones with Cornish Clotted Cream & Local Strawberry Jam
+      - menuItem: >-
+          Assortment of Tea & Coffees (English Breakfast, Earl Grey, Green,
+          Peppermint & Reg/DC coffee)
+      - menuItem: Double Chocolate & Pecan Brownies
 ---
