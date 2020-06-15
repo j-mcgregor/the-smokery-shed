@@ -1,7 +1,5 @@
 ---
 template: Menu
 group: 'Entrées '
-name: >-
-  Lemongrass Prawns, Grapefruit, Cherry Tomatoes with Little Gem Lettuce, Chilli
-  & Coriander Dressing (GF)
+name: 'Coarse Pork and Liver Terrine, Red Onion Marmalade & Ciabatta'
 ---
