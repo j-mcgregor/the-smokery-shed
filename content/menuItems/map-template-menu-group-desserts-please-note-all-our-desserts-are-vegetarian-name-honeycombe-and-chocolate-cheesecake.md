@@ -1,5 +1,5 @@
 ---
 template: Menu
 group: Desserts (please note all our desserts are vegetarian)
-name: Honeycombe and Chocolate Cheesecake
+name: Port Fig and Pear Chocolate Cake with Clotted Cream
 ---
