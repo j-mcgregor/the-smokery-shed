@@ -1,5 +1,7 @@
 ---
 template: Menu
 group: Mains
-name: 'Pan-fried Sea Bream Fillet, Carrot & Anis Puree, Beurre Blanc Sauce'
+name: >-
+  Spinach and Ricotta Tortellini in a Creamy Parmesan and chives sauce, wild
+  mushrooms fricassee (vg)
 ---
