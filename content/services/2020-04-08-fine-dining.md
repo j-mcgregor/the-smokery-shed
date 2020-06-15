@@ -5,7 +5,7 @@ featuredImage: 'https://ucarecdn.com/3ab83cf4-5f58-4552-b51a-e5193c072131/'
 excerpt: Fine Dining
 date: 2020-04-08T19:28:41.443Z
 status: Published
-menu: Fine Dining - Summer 19
+menu: 'Fine Dining 19/20 (10 ppl minimum, 2 choices per course)'
 categories:
   - category: Social
   - category: Work
