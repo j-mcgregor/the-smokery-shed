@@ -1,3 +1,3 @@
 ---
-group: Or (to share)
+group: Or (starters to share)
 ---
