@@ -1,5 +1,7 @@
 ---
 template: Menu
 group: Mains
-name: Ravioli with Pumpkin & Sage (V)
+name: >-
+  Slow Cooked Shoulder of Pork with a Soy and Ginger Sauce and Sautéed Cabbage
+  (GF)
 ---
