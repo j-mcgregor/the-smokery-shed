@@ -1,5 +1,5 @@
 ---
 template: Menu
-group: Cakes & Pastries
+group: ''
 name: Double Chocolate & Pecan Brownies (VG)
 ---
