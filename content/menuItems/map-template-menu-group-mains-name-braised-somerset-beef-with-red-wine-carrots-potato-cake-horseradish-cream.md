@@ -1,5 +1,5 @@
 ---
 template: Menu
 group: Mains
-name: 'Braised Somerset Beef with Red Wine, Carrots, Potato Cake & Horseradish Cream'
+name: 'Pollock en papillote with a Chorizo, Butterbean and Tomato Broth (GF)'
 ---
