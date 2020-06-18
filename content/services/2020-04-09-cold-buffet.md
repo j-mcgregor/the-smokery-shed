@@ -1,7 +1,7 @@
 ---
 featuredImage: 'https://ucarecdn.com/cadd1f12-94d1-4dee-a2c5-ab7b3c412a76/'
 excerpt: Cold Buffet
-menu: Cold Buffet - Summer 19
+menu: Cold Fork Buffet 19/20
 meta:
   title: cold buffet
   description: cold buffet
