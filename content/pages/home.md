@@ -6,6 +6,7 @@ template: HomePage
 slug: ''
 featuredImage: 'https://ucarecdn.com/c2682724-fd77-4245-8ab2-ebed4a8e49e2/'
 title: The Smokery Shed
+subtitle: Catering and bar snacks
 section2title: What we do
 section2subtitle: >-
   Our services are tailored to you and your guests. We pride ourselves on
@@ -26,11 +27,11 @@ section4title: >-
   was stunning, our menus had to include a number of allergies but nothing was
   too much trouble. And they cleared up as well! Thank you.
 section4subtitle: '~ Emily V, Abingdon'
+accordion: []
 meta:
   description: Catering in Wokingham and the Berkshire area
   title: The Smokery Shed | Home
 tagline: lorem
-subtitle: Catering and bar snacks
 section2image: 'https://ucarecdn.com/a86bdc86-a390-492e-90a5-d777d6350b03/'
 ---
 # Welcome to The Smokery Shed Catering & Snacks!
