@@ -2,7 +2,7 @@
 template: ContactPage
 slug: contact
 title: Contact Us
-featuredImage: 'https://ucarecdn.com/e22a858a-b420-47af-99f6-ed54b6860333/'
+featuredImage: 'https://ucarecdn.com/7a97f219-5be1-4a68-8efd-6b33e6f0d153/'
 subtitle: This is the contact page subtitle.
 address: 'Wokingham, Berskshire, UK'
 phone: 0987 123 456
