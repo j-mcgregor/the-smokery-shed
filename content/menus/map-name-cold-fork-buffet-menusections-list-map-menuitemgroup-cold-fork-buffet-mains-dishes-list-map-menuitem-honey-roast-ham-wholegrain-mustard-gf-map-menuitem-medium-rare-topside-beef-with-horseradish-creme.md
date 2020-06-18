@@ -1,5 +1,5 @@
 ---
-name: Cold Fork Buffet
+name: Cold Fork Buffet 19/20
 menuSections:
   - menuItemGroup: Cold Fork Buffet Mains
     dishes:
