@@ -37,4 +37,8 @@ menuSections:
       - menuItem: Portuguese Custard Tarts
   - menuItemGroup: 'Selection of teas, coffees & soft drinks'
     dishes: []
+  - menuItemGroup: >-
+      Price is inclusive of set up, hire of porcelain platters, linen &
+      tablecloths. Please enquire for our range of hot options & corporate
+      dining.
 ---
