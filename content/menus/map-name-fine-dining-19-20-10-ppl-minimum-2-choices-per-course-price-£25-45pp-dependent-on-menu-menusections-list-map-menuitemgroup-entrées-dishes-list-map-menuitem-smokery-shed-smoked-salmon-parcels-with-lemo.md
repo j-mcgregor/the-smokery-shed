@@ -76,23 +76,7 @@ menuSections:
       - menuItem: >-
           Harissa Spiced Cauliflower Steaks with Cumin Chickpeas & Spinach (V)
           (GF)
-  - menuItemGroup: All dishes are served with seasonal vegetables
-  - menuItemGroup: Desserts (please note all our desserts are vegetarian)
-    dishes:
-      - menuItem: Dark Chocolate and Orange Flourless Cake with Fresh Cream (GF)
-      - menuItem: >-
-          Sticky Date Pudding with Classic Sticky Toffee Sauce & Vanilla Ice
-          Cream 
-      - menuItem: Chocolate Brownie with Salted Caramel Sauce and Poached Pear
-      - menuItem: >-
-          Hazelnut Panna Cotta with Blackberry & Vanilla Compote and Ginger
-          Tuile (GF)
-      - menuItem: Deconstructed Lemon Meringue Pie
-      - menuItem: Salted Caramel & Dark Chocolate Tart (V)
-      - menuItem: Smoked Vanilla & Raspberry Crème Brûlée with Shortbread
-      - menuItem: Warmed Apricot and Almond Tart with Clotted Cream
-      - menuItem: Honeycombe and Chocolate Cheesecake
-      - menuItem: Port Fig and Pear Chocolate Cake with Clotted Cream
-      - menuItem: "Barkham Blue, Winslade, Lyburn & Evenlode served with Sticky Fig Compote & Biscuits Macarons\L"
-      - menuItem: 'Tea, Coffee & Truffles'
+extra:
+  - info: All dishes are served with seasonal vegetables
+  - info: Desserts (please note all our desserts are vegetarian)
 ---
