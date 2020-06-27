@@ -24,8 +24,6 @@ meta:
   description: This is a meta description.
   title: Contact Page
 ---
-`Feel free to drop us a line & talk to us about your event.`
-
-
+## Feel free to drop us a line & talk to us about your event.
 
 You can find us on any of our social media accounts, via email or just give us a call. We look forward to hearing from you!
