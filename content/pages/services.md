@@ -13,4 +13,8 @@ section1: >-
   popular choices from our last year. With ever changing availability and
   climate we try to incorporate seasonal ingredients but we greatly love
   tailoring our menus to you, so get in touch if you'd like to discuss further.
+meta:
+  title: Services
+  description: Types of catering services we provide
+  canonicalLink: Services
 ---
