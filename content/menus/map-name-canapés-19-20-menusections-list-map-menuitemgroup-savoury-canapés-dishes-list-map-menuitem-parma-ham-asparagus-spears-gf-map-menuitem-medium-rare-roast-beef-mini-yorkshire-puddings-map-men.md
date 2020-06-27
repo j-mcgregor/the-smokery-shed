@@ -28,6 +28,7 @@ menuSections:
       - menuItem: Miniature Strawberry & White Chocolate Cheesecakes (V)
       - menuItem: Profiteroles with Dark Chocolate Dipping Sauce (V)
       - menuItem: Individual Key Lime Pie with Sugared Raspberries (V)
-  - menuItemGroup: '£15pp* based on 9 canapés each, selection of 5 from the above'
-  - menuItemGroup: '£20pp* based on 9 canapés each, selection of 5 savoury and 2 sweet'
+extra:
+  - info: '£15pp* based on 9 canapés each, selection of 5 from the above'
+  - info: '£20pp* based on 9 canapés each, selection of 5 savoury and 2 sweet'
 ---
