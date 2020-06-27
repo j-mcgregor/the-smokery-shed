@@ -37,7 +37,7 @@ accordion:
       We recycle as much of equipment as possible and can provide a copy of a
       Environmental Statement upon request. 
 meta:
-  description: test meta description
-  title: test meta title
+  description: Frequently Asked Questions
+  title: FAQ
 ---
 We are asked a range of questions from hire equipment, insurance, payment terms & allergies. Please see below for a list of FAQ but feel free drop us a line if there's anything else you'd like to ask.
