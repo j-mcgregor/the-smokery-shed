@@ -24,7 +24,7 @@ section3subtitle: >-
 section4image: >-
   https://ucarecdn.com/66ccee60-e4e1-43e5-933d-c13dbfab7000/-/crop/1055x288/0,125/-/preview/-/grayscale/
 section4title: >-
-  ## Fi & her team were professional, friendly and helpful from the start. The
+  > Fi & her team were professional, friendly and helpful from the start. The
   food was stunning, our menus had to include a number of allergies but nothing
   was too much trouble. And they cleared up as well! Thank you.
 section4subtitle: '~ Emily V, Abingdon'
