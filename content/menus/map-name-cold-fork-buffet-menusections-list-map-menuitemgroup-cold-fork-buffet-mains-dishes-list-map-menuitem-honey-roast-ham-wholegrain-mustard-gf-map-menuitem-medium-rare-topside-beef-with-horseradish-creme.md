@@ -35,7 +35,8 @@ menuSections:
       - menuItem: Beetroot & Spinach Salad with Toasted Nuts & Sourdough Croutons (V)
       - menuItem: Spicy Rice Salad (V) (GF)
       - menuItem: Greek Salad with Kalamata Olives (V) (GF)
-  - menuItemGroup: 2 Main & 3 Salad & Side Selections £12.50
-  - menuItemGroup: 3 Main & 4 Salad & Side Selections £14.50
-  - menuItemGroup: 4 Main & 5 Salad & Side Selections £17.50
+extra:
+  - info: 2 Main & 3 Salad & Side Selections £12.50
+  - info: 3 Main & 4 Salad & Side Selections £14.50
+  - info: 4 Main & 5 Salad & Side Selections £17.50
 ---
