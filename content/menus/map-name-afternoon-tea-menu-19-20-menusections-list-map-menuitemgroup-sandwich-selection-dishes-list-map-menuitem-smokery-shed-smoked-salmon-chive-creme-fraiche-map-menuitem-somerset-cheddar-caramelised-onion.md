@@ -16,5 +16,6 @@ menuSections:
           Assortment of Tea & Coffees (English Breakfast, Earl Grey, Green,
           Peppermint & Reg/DC coffee)
       - menuItem: Double Chocolate & Pecan Brownies
-  - menuItemGroup: £3.50 pp supplement for glass of Prosecco
+extra:
+  - info: £3.50 pp supplement for glass of Prosecco
 ---
