@@ -69,8 +69,8 @@ export const ServiceContainerTemplate = ({
               ))}
             </ul>
           </div>
-          <Container className="pv-5">
-            <Row className="pv-2 font-secondary fz-2">
+          <Container>
+            <Row>
               <Col md={{ span: 8, offset: 2 }}>
                 {' '}
                 <Content source={section1} />

@@ -1,0 +1,42 @@
+.chalkboard {
+  font-family: 'Windy Indigo', Verdana, Geneva, Tahoma, sans-serif;
+  padding: 4em 1em !important;
+  line-height: 1.7em;
+
+  h2 {
+    font-size: 1.7em;
+  }
+  h3 {
+    font-size: 1.7em;
+    margin-top: 1.3em;
+    text-transform: uppercase;
+    position: relative;
+    padding: 11px;
+    display: inline-block;
+
+    &::before {
+      content: '';
+      top: 0;
+      height: 1px;
+      background: white;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+    }
+    &::after {
+      content: '';
+      bottom: 0;
+      height: 1px;
+      background: white;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+    }
+  }
+
+  p.card-text {
+    font-size: 1.4em;
+  }
+}

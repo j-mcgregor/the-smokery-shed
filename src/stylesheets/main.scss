@@ -49,3 +49,25 @@
 .font-secondary {
   font-family: 'josefin-slab';
 }
+
+@font-face {
+  font-family: 'squeaky chalk sound';
+  src: url('../../static/fonts/squeakychalksound.eot');
+  src: url('../../static/fonts/squeakychalksound.eot?#iefix') format('embedded-opentype'),
+    url('../../static/fonts/squeakychalksound.woff2') format('woff2'),
+    url('../../static/fonts/squeakychalksound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Windy Indigo';
+  src: url('../../static/fonts/WindyIndigo.eot');
+  src: url('../../static/fonts/WindyIndigo.eot?#iefix') format('embedded-opentype'),
+    url('../../static/fonts/WindyIndigo.woff2') format('woff2'),
+    url('../../static/fonts/WindyIndigo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

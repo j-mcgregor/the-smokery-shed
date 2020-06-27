@@ -14,6 +14,7 @@ import checkArray from '../lib/checkArray';
 import { PDFMenu, savePdf } from '../components/shared/PDFTemplate';
 
 import './Service.scss';
+import './Chalkboard.scss';
 
 export const SingleServiceTemplate = ({
   allServices = [],
@@ -67,25 +68,25 @@ export const SingleServiceTemplate = ({
   };
 
   const menuCard = (
-    <Card className="text-center font-primary fz-3 ls-1">
+    <Card className="chalkboard">
       <Card.Body>
         <Card.Title>
-          <h2 className="fz-4-5">{mappedMenu.name} menu</h2>
+          <h2>{mappedMenu.name} menu</h2>
           <hr />
         </Card.Title>
         {checkArray(mappedMenu, 'sections')
           ? mappedMenu.sections.map(mm => {
               return (
-                <div key={_kebabCase(mm.section)} className="py-4">
-                  <h3 className="fz-3-5">{mm.section}</h3>
+                <div key={_kebabCase(mm.section)}>
+                  <h3>{mm.section}</h3>
                   {checkArray(mm, 'dishes')
                     ? mm.dishes.map(d => {
                         return (
-                          <Card.Text className="fz-2-5" key={_kebabCase(d.dish)}>
+                          <Card.Text key={_kebabCase(d.dish)}>
                             {d.dish}{' '}
                             {checkArray(d, 'dietRestrictions')
                               ? d.dietRestrictions.map(dt => (
-                                  <small key={dt.diet} className="px-2 fz-2" title={dt.diet}>
+                                  <small key={dt.diet} title={dt.diet}>
                                     ({parseDiet(dt.diet)})
                                   </small>
                                 ))
@@ -100,13 +101,8 @@ export const SingleServiceTemplate = ({
           : null}
         <hr />
         {mappedMenu.price}
-        <div className="pt-4 pb-4" />
-        {mappedMenu.extras &&
-          mappedMenu.extras.map(e => (
-            <p className="fz-1-5 font-secondary" key={_kebabCase(e)}>
-              {e}
-            </p>
-          ))}
+        <div />
+        {mappedMenu.extras && mappedMenu.extras.map(e => <p key={_kebabCase(e)}>{e}</p>)}
       </Card.Body>
     </Card>
   );
@@ -241,6 +237,9 @@ export const pageQuery = graphql`
           frontmatter {
             name
             price
+            extra {
+              info
+            }
             menuSections {
               menuItemGroup
               dishes {

@@ -2,35 +2,35 @@
 
 .About {
   font-family: 'Amatic SC';
-  font-size: 14px;
 
-  h2 {
-    font-size: 3em;
+  .container {
+    padding-top: 2em;
   }
+
   p {
     font-family: 'Josefin Slab';
     text-align: justify;
-    font-size: 1.5em;
   }
 
   .section__1,
   .section__2,
   .section__3,
   .section__4 {
-    font-size: 1.2em;
+    width: 960px;
+    margin: 0 auto;
 
     h1,
     h2 {
-      text-align: center;
-      @include title-banner(white, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+      @include monospaceBanner();
     }
-    h2 {
-      font-size: 3em;
-    }
+
     p {
       font-family: 'Josefin Slab';
       text-align: justify;
-      font-size: 1.5em;
+    }
+
+    img {
+      width: 100%;
     }
   }
 
@@ -51,14 +51,32 @@
   }
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 968px) {
   .About {
+    .container {
+      padding-top: 3.5em;
+    }
     .section__1,
     .section__2,
     .section__3,
     .section__4 {
+      width: 95%;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .About {
+    .container {
+      padding-top: 1em;
+    }
+    .section__1,
+    .section__2,
+    .section__3,
+    .section__4 {
+      h1,
       h2 {
-        font-size: 2em;
+        font-size: 18px;
       }
       p {
         font-size: 1.2em;

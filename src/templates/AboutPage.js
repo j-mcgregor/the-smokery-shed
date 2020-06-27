@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Fade } from 'react-slideshow-image';
 
 import Content from '../components/layout/Content';
@@ -9,21 +9,19 @@ import './AboutPage.scss';
 
 const CustomSlider = ({ slides = [], title, subtitle = '' }) => {
   const settings = {
-    duration: 5000,
-    transitionDuration: 500,
+    duration: 3000,
+    transitionDuration: 400,
     infinite: true,
     indicators: false,
     arrows: false,
-    onChange: (oldIndex, newIndex) => {
-      console.log(`fade transition from ${oldIndex} to ${newIndex}`);
-    },
+    onChange: () => {},
     autoplay: true
   };
   return (
     <div className="PageHeader p-0 slide-container " style={{ height: '600px' }}>
       <Fade {...settings}>
         {slides.map(s => (
-          <div className="each-fade">
+          <div className="each-fade" key={s.image}>
             <div
               className="image-container flex flex-center"
               style={{
@@ -49,15 +47,21 @@ const CustomSlider = ({ slides = [], title, subtitle = '' }) => {
 export const AboutTemplate = ({ title, subtitle, featuredImage, section1, image1, section2, image2, slideshow }) => (
   <main className="About">
     <CustomSlider slides={slideshow} title={title} subtitle={subtitle} />
-    <Container className="pv-5">
+    <Container>
       <Row className="section__1">
         <Col md={{ span: 8, offset: 2 }}>
           <Content source={section1} />
+          <div className="flex flex-center mv-3">
+            <Image src={image1} rounded />
+          </div>
         </Col>
       </Row>
       <Row className="section__2">
         <Col md={{ span: 8, offset: 2 }}>
           <Content source={section2} />
+          <div className="flex flex-center mv-3">
+            <Image src={image2} rounded />
+          </div>
         </Col>
       </Row>
     </Container>

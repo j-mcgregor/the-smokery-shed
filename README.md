@@ -1,4 +1,4 @@
-# Yellowcake
+# TheSmokeryShed
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5f6fe706-98b5-4c97-9a3a-92edb87f4d43/deploy-status)](https://app.netlify.com/sites/the-smokery-shed/deploys)
 
@@ -17,7 +17,7 @@ An opinionated starter project for creating lightning-fast websites with [Gatsby
 
 ## Get going
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thriveweb/yellowcake&stack=cms)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thriveweb/thesmokeryshed&stack=cms)
 
 1.  Hit the **Deploy to Netlify** button. This will:
 
@@ -107,7 +107,7 @@ For the scheduled content to appear on the website we need to deploy our website
 - check settings and hit the test button
 - Check your Netlify site if there has been triggered a new deploy
 - If that worked hit finish
-- Give your zap a name, example: "Automatic deploy Yellowcake" and make sure your zap is turned on
+- Give your zap a name, example: "Automatic deploy TheSmokeryShed" and make sure your zap is turned on
 
 That's it, you'r now ready to use scheduled content!!
 
@@ -120,7 +120,7 @@ https://hooks.zapier.com/hooks/catch/2881617/ea5exg/
 - Search for webhook by Zapier and select catch hook and continue to next step
 - In most cases leave this field empty and continue
 - Copy the generated url
-- Now go to the [form settings](https://app.netlify.com/sites/yellowcake/settings/forms#outgoing-notifications) in you Netlify project
+- Now go to the [form settings](https://app.netlify.com/sites/thesmokeryshed/settings/forms#outgoing-notifications) in you Netlify project
 - Find the form notifications section click the add notification button
 - Select the option `outgoing webhook`
 - Set the event to listen for

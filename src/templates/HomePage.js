@@ -53,7 +53,7 @@ export const HomePageTemplate = ({
       </Container>
 
       {/* SECTION 2 */}
-      <div className="jumbotron jumbotron-fluid hero flex flex-center" style={{ ...hero(section2image, 400) }}>
+      <div className="jumbotron jumbotron-fluid hero flex flex-center" style={{ ...hero(section2image, 600) }}>
         <Container className="section__2">
           <Row>
             <Col md={6} sm={0} />
@@ -86,11 +86,8 @@ export const HomePageTemplate = ({
         <Container className="section__4">
           <Row>
             <Col className="flex flex-center flex-column">
-              <h2 className="title-banner">
-                <FontAwesomeIcon icon={faQuoteLeft} />
-                {section4title}
-                <FontAwesomeIcon icon={faQuoteRight} />
-              </h2>
+              <Content src={section4title} className="quote" />
+
               {section4subtitle && <Content className="PageHeader--Subtitle ml-auto mr-2" src={section4subtitle} />}
             </Col>
           </Row>

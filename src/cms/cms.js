@@ -9,7 +9,7 @@ import { ContactPageTemplate } from '../templates/ContactPage';
 import { DefaultPageTemplate } from '../templates/DefaultPage';
 import { BlogIndexTemplate } from '../templates/BlogIndex';
 import { ServiceContainerTemplate } from '../templates/ServiceContainer';
-import { SinglePostTemplate } from '../templates/SinglePost';
+import { SingleServiceTemplate } from '../templates/Service';
 import uploadcare from 'netlify-cms-media-library-uploadcare';
 
 CMS.registerMediaLibrary(uploadcare);
@@ -27,4 +27,4 @@ CMS.registerPreviewTemplate('contact-page', ({ entry }) => <ContactPageTemplate 
 CMS.registerPreviewTemplate('infoPages', ({ entry }) => <DefaultPageTemplate {...entry.toJS().data} />);
 CMS.registerPreviewTemplate('blog-page', ({ entry }) => <BlogIndexTemplate {...entry.toJS().data} />);
 CMS.registerPreviewTemplate('services', ({ entry }) => <ServiceContainerTemplate {...entry.toJS().data} />);
-CMS.registerPreviewTemplate('posts', ({ entry }) => <SinglePostTemplate {...entry.toJS().data} />);
+CMS.registerPreviewTemplate('service', ({ entry }) => <SingleServiceTemplate {...entry.toJS().data} />);

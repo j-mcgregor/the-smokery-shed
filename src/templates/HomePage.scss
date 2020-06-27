@@ -2,42 +2,35 @@
 
 .Home {
   font-family: 'Amatic SC';
-  font-size: 14px;
 
   .hero {
     h1 {
-      font-size: 8em;
       position: relative;
     }
     p {
       font-family: 'Josefin Slab';
-      font-size: 2em;
     }
   }
+
   .section__1,
   .section__2,
   .section__3,
   .section__4 {
-    font-size: 1.5em;
-
-    h1,
-    h2 {
+    h1 {
       text-align: center;
+      font-size: 3em;
+      padding: 30px;
+      height: 100px;
       @include title-banner(white, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
     }
+
     h2 {
-      font-size: 3em;
+      @include monospaceBanner();
     }
+
     p {
       font-family: 'Josefin Slab';
       text-align: justify;
-      font-size: 1.5em;
-    }
-  }
-
-  .section__1 {
-    p {
-      font-size: 1.2em;
     }
   }
 
@@ -47,29 +40,42 @@
     }
   }
   .section__4 {
-    h2 {
-      svg {
-        padding: 0 20px;
+    .quote {
+      position: relative;
+      &::before,
+      &::after {
+        color: #e83e8c;
+        z-index: 20;
+        top: 0;
+        position: absolute;
+        font-size: 10em;
       }
-    }
-    p {
-      text-align: right;
+
+      &::before {
+        content: open-quote;
+        transform: translate(-30%, -30%) rotate(20deg);
+        left: -3%;
+      }
+      &::after {
+        content: close-quote;
+        right: -5%;
+        transform: translateY(-30%) rotate(-20deg);
+      }
     }
   }
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 768px) {
   .Home {
     .section__1,
     .section__2,
     .section__3,
     .section__4 {
-      h2 {
-        font-size: 2em;
+      h1 {
+        height: auto;
       }
       p {
-        font-size: 1.1em;
-        line-height: 1.2em;
+        line-height: 1.7em;
       }
     }
   }
