@@ -1,16 +1,16 @@
 ---
-template: Service
-title: Fine Dining
 featuredImage: 'https://ucarecdn.com/3ab83cf4-5f58-4552-b51a-e5193c072131/'
 excerpt: Fine Dining
 date: 2020-04-08T19:28:41.443Z
 status: Published
+template: Service
+title: Fine Dining
 menu: 'Fine Dining 19/20 (10 ppl minimum, 2 choices per course)'
 categories:
   - category: Social
   - category: Work
 ---
-`Whether it's two, twenty or fifty, we can provide beautiful food with impeccable service and menus to complement your occasion. `
+## Whether it's two, twenty or fifty, we can provide beautiful food with impeccable service and menus to complement your occasion.
 
 Successful events stem from creative planning, attention to details, ability to understand event visions and a desire for perfection.
 
