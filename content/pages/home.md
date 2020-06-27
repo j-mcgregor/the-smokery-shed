@@ -44,4 +44,4 @@ Based in Wokingham we provide beautiful food, delivered to you or catered in hou
 
 We also sell a range of smoked bar snacks - perfect for the hospitality industry and/or entertaining at home. Our mouth-watering nuts are all lovingly roasted, coated and smoked by us to deliver a flavour-packed punch. Contact us for a list of our stockists or directly for purchases.
 
-## All our bar snacks are vegan too and our packaging is 100% recyclable, so you can enjoy totally guilt free! Have a look below at our range
+All our bar snacks are vegan too and our packaging is 100% recyclable, so you can enjoy totally guilt free! Have a look below at our range
