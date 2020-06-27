@@ -4,7 +4,7 @@ slug: contact
 title: Contact Us
 featuredImage: 'https://ucarecdn.com/7a97f219-5be1-4a68-8efd-6b33e6f0d153/'
 subtitle: This is the contact page subtitle.
-address: 'Wokingham, Berskshire, UK'
+address: 'Wokingham, Berkshire, UK'
 phone: 07798 616112
 email: info@thesmokeryshed.co.uk
 facebook: 'https://www.facebook.com/The-Smokery-Shed-Catering-Snacks-186727151905323/'
