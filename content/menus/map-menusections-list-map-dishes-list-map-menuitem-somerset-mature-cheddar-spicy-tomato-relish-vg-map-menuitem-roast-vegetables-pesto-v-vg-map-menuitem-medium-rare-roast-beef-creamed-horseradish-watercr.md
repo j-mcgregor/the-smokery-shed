@@ -35,10 +35,10 @@ menuSections:
       - menuItem: Carrot Cake with Cream Cheese Frosting
       - menuItem: Victoria Sponge Cake with Vanilla Cream
       - menuItem: Portuguese Custard Tarts
-  - menuItemGroup: 'Selection of teas, coffees & soft drinks'
-    dishes: []
-  - menuItemGroup: >-
+extra:
+  - info: >-
       Price is inclusive of set up, hire of porcelain platters, linen &
       tablecloths. Please enquire for our range of hot options & corporate
-      dining.
+      dining
+  - info: 'Selection of teas, coffees & soft drinks'
 ---
