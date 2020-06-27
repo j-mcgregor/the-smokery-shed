@@ -7,6 +7,7 @@ slug: ''
 featuredImage: 'https://ucarecdn.com/c2682724-fd77-4245-8ab2-ebed4a8e49e2/'
 title: The Smokery Shed
 subtitle: Catering and bar snacks
+section2image: 'https://ucarecdn.com/a86bdc86-a390-492e-90a5-d777d6350b03/'
 section2title: What we do
 section2subtitle: >-
   Our services are tailored to you and your guests. We pride ourselves on
@@ -32,11 +33,10 @@ meta:
   description: Catering in Wokingham and the Berkshire area
   title: The Smokery Shed | Home
 tagline: lorem
-section2image: 'https://ucarecdn.com/a86bdc86-a390-492e-90a5-d777d6350b03/'
 ---
 # Welcome to The Smokery Shed Catering & Snacks!
 
-`Whether you're looking for caterers with a difference for your special event or some gourmet snacks for yourself or your establishment, we provide food to remember!`
+## Whether you're looking for caterers with a difference for your special event or some gourmet snacks for yourself or your establishment, we provide food to remember!
 
 We offer chef hire & catering services within Reading, Berkshire, Hampshire, Oxfordshire & London. From **Canapes** & **Sit**-**down** **meals** to **Afternoon** **Teas**, **Hampers,** **Smoked** **Food** **workshop &** [](http://thesmokeryshed.co.uk/weddings/4594714113)**weddings**, we can tailor *your* event to *you*.
 
