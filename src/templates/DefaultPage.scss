@@ -1,48 +1,42 @@
 @import '../stylesheets/abstracts/mixins';
 
 .DefaultPage {
-  font-family: 'Amatic SC';
-  font-size: 14px;
-
-  h2 {
-    font-size: 3em;
-  }
-
   p {
     font-family: 'Josefin Slab';
     text-align: justify;
-    font-size: 1.5em;
   }
 
   .section__1,
   .section__2,
   .section__3,
   .section__4 {
-    font-size: 1.5em;
-
     h1,
     h2 {
-      text-align: center;
+      @include monospaceBanner();
     }
-    h2 {
-      font-size: 3em;
+
+    .Accordion {
+      h1,
+      h2 {
+        font-family: 'Josefin Slab';
+        font-size: 1.1em;
+        text-transform: inherit;
+        box-shadow: none;
+        margin-bottom: 0;
+      }
     }
+
     p {
       font-family: 'Josefin Slab';
       text-align: justify;
-      font-size: 1.5em;
     }
 
     @media screen and (max-width: 768px) {
-      h2 {
-        font-size: 2.5em;
-      }
     }
   }
 
   .section__1 {
     p {
-      font-size: 1.2em;
     }
   }
 
@@ -63,12 +57,7 @@
   }
   .Accordion--item {
     h2 {
-      font-size: 1.6em;
       text-align: left;
-    }
-
-    .description {
-      font-size: 1.4em;
     }
   }
 }
@@ -79,11 +68,7 @@
     .section__2,
     .section__3,
     .section__4 {
-      h2 {
-        font-size: 2em;
-      }
       p {
-        font-size: 1.1em;
         line-height: 1.2em;
       }
     }
