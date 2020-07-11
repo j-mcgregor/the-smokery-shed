@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, ListGroup, Image } from 'react-bootstrap';
-import Form from '../forms/FormSimple';
+import Form from '../forms/FormSimpleAjax';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -57,7 +57,7 @@ export default ({ social }) => {
             </ListGroup>
           </Col>
           <Col md={4} sm={{ span: 12 }}>
-            <Form rows={5} dropdownOptions={social.enquiryType} />
+            <Form name="Footer" enquiryType={social.enquiryType} />
           </Col>
           <Col md={4} sm={{ span: 12 }} className="pt-2">
             <Image src={logo} fluid />

@@ -4,6 +4,18 @@ import { stringify } from 'qs';
 import { serialize } from 'dom-form-serializer';
 
 class Form extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: this.props.name,
+      subject: '', // optional subject of the notification email
+      action: '',
+      successMessage: 'Thanks for your enquiry, we will get back to you soon',
+      errorMessage: 'There is a problem, your message has not been sent, please try contacting us via email'
+    };
+  }
+
   static defaultProps = {
     name: 'Simple Form Ajax',
     subject: '', // optional subject of the notification email
@@ -19,11 +31,14 @@ class Form extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
     if (this.state.disabled) return;
 
     const form = e.target;
     const data = serialize(form);
+
     this.setState({ disabled: true });
+
     fetch(form.action + '?' + stringify(data), {
       method: 'POST'
     })
@@ -103,7 +118,7 @@ class Form extends React.Component {
               <option disabled hidden>
                 Type of Enquiry
               </option>
-              {enquiryType.length && enquiryType.map(et => <option>{et.type}</option>)}
+              {enquiryType.length && enquiryType.map((et, i) => <option key={`${et.type}-${i}`}>{et.type}</option>)}
             </select>
           </label>
           <label className="Form--Label">

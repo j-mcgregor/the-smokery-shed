@@ -7,7 +7,6 @@ import { graphql } from 'gatsby';
 import PageHeader from '../components/pageComponents/PageHeader';
 import FormSimpleAjax from '../components/forms/FormSimpleAjax';
 import Content from '../components/layout/Content';
-import GoogleMap from '../components/socialComponents/GoogleMap';
 import Layout from '../components/layout/Layout';
 import './ContactPage.scss';
 
@@ -26,7 +25,6 @@ export const ContactPageTemplate = ({
   etsy,
   pinterest,
   email,
-  locations,
   enquiryType
 }) => (
   <main className="Contact">
@@ -97,7 +95,7 @@ export const ContactPageTemplate = ({
         </div>
 
         <div>
-          <FormSimpleAjax name="Simple Form Ajax" enquiryType={enquiryType} />
+          <FormSimpleAjax name="Contact page" enquiryType={enquiryType} />
         </div>
       </div>
     </section>
