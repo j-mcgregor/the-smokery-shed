@@ -71,6 +71,7 @@ class Form extends React.Component {
           name="contact-form"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
         >
           {this.state.alert && <div className="Form--Alert">{this.state.alert}</div>}
           <div className="Form--Group">
@@ -129,7 +130,9 @@ class Form extends React.Component {
           </label>
           {!!subject && <input type="hidden" name="subject" value={subject} />}
           <input type="hidden" name="form-name" value="contact-form" />
-          <input className="Button Form--SubmitButton" type="submit" value="Enquire" disabled={this.state.disabled} />
+          <input name="bot-field" type="hidden" />
+          <div data-netlify-recaptcha="true"></div>
+          <input className="Button Form--SubmitButton" type="submit" value="Send" disabled={this.state.disabled} />
         </form>
       </Fragment>
     );
