@@ -8,25 +8,17 @@ class Form extends React.Component {
     super(props);
 
     this.state = {
-      name: this.props.name,
-      subject: '', // optional subject of the notification email
-      action: '',
-      successMessage: 'Thanks for your enquiry, we will get back to you soon',
-      errorMessage: 'There is a problem, your message has not been sent, please try contacting us via email'
+      alert: '',
+      disabled: false
     };
   }
 
   static defaultProps = {
-    name: 'Simple Form Ajax',
+    name: 'Form',
     subject: '', // optional subject of the notification email
     action: '',
     successMessage: 'Thanks for your enquiry, we will get back to you soon',
     errorMessage: 'There is a problem, your message has not been sent, please try contacting us via email'
-  };
-
-  state = {
-    alert: '',
-    disabled: false
   };
 
   handleSubmit = e => {
@@ -66,7 +58,7 @@ class Form extends React.Component {
   };
 
   render() {
-    const { subject, enquiryType = [] } = this.props;
+    const { subject, enquiryType = [], showLabels = true } = this.props;
 
     return (
       <Fragment>
@@ -90,7 +82,7 @@ class Form extends React.Component {
                 name="firstname"
                 required
               />
-              <span>Firstname</span>
+              {showLabels && <span>Firstname</span>}
             </label>
             <label className="Form--Label">
               <input
@@ -100,7 +92,7 @@ class Form extends React.Component {
                 name="lastname"
                 required
               />
-              <span>Lastname</span>
+              {showLabels && <span>Lastname</span>}
             </label>
           </div>
           <label className="Form--Label">
@@ -111,7 +103,7 @@ class Form extends React.Component {
               name="emailAddress"
               required
             />
-            <span>Email address</span>
+            {showLabels && <span>Email address</span>}
           </label>
           <label className="Form--Label has-arrow">
             <select className="Form--Input Form--Select" name="type" defaultValue="Type of Enquiry" required>
@@ -129,7 +121,7 @@ class Form extends React.Component {
               rows="10"
               required
             />
-            <span>Message</span>
+            {showLabels && <span>Message</span>}
           </label>
           <label className="Form--Label Form-Checkbox">
             <input className="Form--Input Form--Textarea Form--CheckboxInput" name="newsletter" type="checkbox" />
