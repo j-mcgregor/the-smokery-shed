@@ -67,8 +67,7 @@ class Form extends React.Component {
           onSubmit={this.handleSubmit}
           name={formName}
           data-netlify="true"
-          netlify-honeypot="bot-field"
-          data-netlify-recaptcha="true"
+          data-netlify-honeypot="bot-field"
         >
           {this.state.alert && <div className="Form--Alert">{this.state.alert}</div>}
           <div className="Form--Group">
@@ -133,7 +132,6 @@ class Form extends React.Component {
               <input name="bot-field" type="hidden" />
             </label>
           </p>
-          <div data-netlify-recaptcha="true"></div>
         </form>
       </Fragment>
     );
