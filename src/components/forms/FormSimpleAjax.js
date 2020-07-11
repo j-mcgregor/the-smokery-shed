@@ -67,7 +67,7 @@ class Form extends React.Component {
           onSubmit={this.handleSubmit}
           name={formName}
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
+          netlify-honeypot="bot-field"
           data-netlify-recaptcha="true"
         >
           {this.state.alert && <div className="Form--Alert">{this.state.alert}</div>}
@@ -127,13 +127,13 @@ class Form extends React.Component {
           </label>
           {!!subject && <input type="hidden" name="subject" value={subject} />}
           <input type="hidden" name="form-name" value={this.props.formName} />
-          <div data-netlify-recaptcha="true"></div>
           <input className="Button Form--SubmitButton" type="submit" value="Send" disabled={this.state.disabled} />
           <p class="hidden">
             <label>
               <input name="bot-field" type="hidden" />
             </label>
           </p>
+          <div data-netlify-recaptcha="true"></div>
         </form>
       </Fragment>
     );
