@@ -126,10 +126,14 @@ class Form extends React.Component {
             <span>Get news updates</span>
           </label>
           {!!subject && <input type="hidden" name="subject" value={subject} />}
-          <input type="hidden" name="form-name" value="contact-form" />
-          <input name="bot-field" type="hidden" />
+          <input type="hidden" name="form-name" value={this.props.formName} />
           <div data-netlify-recaptcha="true"></div>
           <input className="Button Form--SubmitButton" type="submit" value="Send" disabled={this.state.disabled} />
+          <p class="hidden">
+            <label>
+              <input name="bot-field" type="hidden" />
+            </label>
+          </p>
         </form>
       </Fragment>
     );
