@@ -57,7 +57,7 @@ export default ({ social }) => {
             </ListGroup>
           </Col>
           <Col md={4} sm={{ span: 12 }}>
-            <Form formName="Footer Form" name="Footer" enquiryType={social.enquiryType} showLabels={false} />
+            <Form formName="footer-form" name="Footer" enquiryType={social.enquiryType} showLabels={false} />
           </Col>
           <Col md={4} sm={{ span: 12 }} className="pt-2">
             <Image src={logo} fluid />
