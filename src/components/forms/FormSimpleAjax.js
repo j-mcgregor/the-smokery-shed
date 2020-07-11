@@ -58,17 +58,14 @@ class Form extends React.Component {
   };
 
   render() {
-    const { subject, enquiryType = [], showLabels = true } = this.props;
+    const { subject, enquiryType = [], showLabels = true, formName } = this.props;
 
     return (
       <Fragment>
-        <Helmet>
-          <script src="https://www.google.com/recaptcha/api.js" />
-        </Helmet>
         <form
           className="Form m-0"
           onSubmit={this.handleSubmit}
-          name="contact-form"
+          name={formName}
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           data-netlify-recaptcha="true"

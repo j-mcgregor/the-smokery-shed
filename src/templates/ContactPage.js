@@ -14,7 +14,6 @@ import './ContactPage.scss';
 export const ContactPageTemplate = ({
   body,
   title,
-  subtitle,
   featuredImage,
   address,
   phone,
@@ -95,7 +94,7 @@ export const ContactPageTemplate = ({
         </div>
 
         <div>
-          <FormSimpleAjax name="Contact page" enquiryType={enquiryType} />
+          <FormSimpleAjax formName="Contact Form" name="Contact page" enquiryType={enquiryType} />
         </div>
       </div>
     </section>
