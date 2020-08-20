@@ -127,7 +127,7 @@ class Form extends React.Component {
           {!!subject && <input type="hidden" name="subject" value={subject} />}
           <input type="hidden" name="form-name" value={this.props.formName} />
           <input className="Button Form--SubmitButton" type="submit" value="Send" disabled={this.state.disabled} />
-          <p class="hidden">
+          <p className="hidden">
             <label>
               <input name="bot-field" type="hidden" />
             </label>
